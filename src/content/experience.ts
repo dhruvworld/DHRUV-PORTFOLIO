@@ -1,33 +1,43 @@
 export type ExperienceRow = {
   label: string;
   period: string;
+  location: string;
   description: string;
   tags: string[];
 };
 
+/** Current focus strip — matches resume experience. */
 export const experienceRows: ExperienceRow[] = [
   {
-    label: "Dhruv World",
-    period: "2024 — Present",
-    description: "Founder-led identity platform: editorial content, entity SEO, and product narrative.",
-    tags: ["Brand", "SEO", "Systems"],
-  },
-  {
     label: "Quantis Global",
-    period: "2023 — Present",
-    description: "Global trade, sourcing, and execution systems for international partnerships.",
-    tags: ["Trade", "Operations"],
+    period: "Feb 2026 — Present",
+    location: "Gujarat, India",
+    description:
+      "Founder of an international trading and sourcing company: procurement, logistics, branding, SEO, and automation for global partnerships.",
+    tags: ["Trade", "Operations", "Founder"],
   },
   {
-    label: "AI Product Lab",
-    period: "2022 — Present",
-    description: "Workflow tools, publishing automation, and practical AI-first product experiments.",
-    tags: ["AI", "Product"],
+    label: "Southern New Hampshire University",
+    period: "Sep 2025 — May 2026",
+    location: "Manchester, NH",
+    description:
+      "Student Assistant for assistive technology — academic software support and accessibility-focused technical workflows.",
+    tags: ["Accessibility", "Support"],
   },
   {
-    label: "Engineering & R&D",
-    period: "Ongoing",
-    description: "Cross-platform prototypes, open-source direction, and utility software exploration.",
-    tags: ["Engineering", "UX"],
+    label: "MASS INFOTECH",
+    period: "Nov 2023 — Jun 2024",
+    location: "Kalol, Gujarat",
+    description:
+      "Python intern building backend modules, debugging features, and contributing to application improvements.",
+    tags: ["Python", "Backend"],
+  },
+  {
+    label: "INNOVATE WEBTEC",
+    period: "Jan 2023 — Apr 2023",
+    location: "Ahmedabad, Gujarat",
+    description:
+      "Django intern on an E-Resume Portal: authentication, admin dashboards, responsive UI, and QA.",
+    tags: ["Django", "Full stack"],
   },
 ];

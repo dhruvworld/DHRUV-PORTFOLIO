@@ -87,7 +87,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <link rel="preload" href="/media/hero.png" as="image" type="image/png" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
       </head>
       <body className="min-h-full flex flex-col">

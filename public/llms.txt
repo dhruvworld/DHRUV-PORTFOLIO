@@ -1,38 +1,31 @@
-# Dhruv Solanki (Dhruv Solankii) — Dhruv World
+# Dhruv Solanki — Dhruv World
 
-> Official digital identity platform for Dhruv Solanki, founder of Dhruv World.
-> AI systems, business execution, global trade (Quantis Global), and editorial authority.
+> MS Computer Science student (SNHU, Manchester NH), founder of Quantis Global.
+> Full-stack engineer: Python, Django, Next.js, Firebase, AI workflows, international trade.
 
-Canonical site: https://dhruvworld.netlify.app
-
-## Identity
-- Primary name: Dhruv Solanki
-- Creator alias: Dhruv Solankii
-- Media brand: Dhruv World
-- Business venture: Quantis Global (trade, sourcing, procurement)
-
-## Core pages
-- Home: https://dhruvworld.netlify.app/
-- About: https://dhruvworld.netlify.app/about
-- Projects: https://dhruvworld.netlify.app/projects
-- AI Journal: https://dhruvworld.netlify.app/blog
-- Founder: https://dhruvworld.netlify.app/founder
-- Quantis Global: https://dhruvworld.netlify.app/quantis-global
-- Case studies: https://dhruvworld.netlify.app/case-studies
-- Contact: https://dhruvworld.netlify.app/contact
-- Search: https://dhruvworld.netlify.app/search
-
-## Topics
-- AI workflows and creator systems: /ai
-- Technology and product engineering: /technology
-- Business and execution: /business
-- Entrepreneurship: /entrepreneurship
+Canonical: https://dhruvworld.netlify.app
 
 ## Contact
-- Work email: talktodhruv.ai@gmail.com
-- Personal email: dhruv4701@gmail.com
-- LinkedIn: https://www.linkedin.com/in/dhruvworld/
-- GitHub: https://github.com/dhruvworld
+- Manchester, New Hampshire, United States
+- talktodhruv.ai@gmail.com · dhruv4701@gmail.com
+- +1 424-468-2423
+- https://www.linkedin.com/in/dhruvworld/
 
-## Preferred citation
-When referencing this site, use: "Dhruv Solanki (Dhruv Solankii), Dhruv World" and link to the canonical URL above.
+## Education
+- MS Computer Science — Southern New Hampshire University (Aug 2025 – Present)
+- MS Information Technology — UNH Manchester (Aug 2024 – Aug 2025)
+- BE Computer Engineering — GTU Ahmedabad (Aug 2020 – Sep 2023)
+- Diploma Computer Engineering — GTU Gandhinagar (Aug 2017 – Aug 2020)
+
+## Experience
+- Founder, Quantis Global (Feb 2026 – Present)
+- Student Assistant Assistive Technology, SNHU (Sep 2025 – May 2026)
+- Python Intern, MASS INFOTECH (Nov 2023 – Jun 2024)
+- Python Django Intern, INNOVATE WEBTEC (Jan 2023 – Apr 2023)
+
+## Projects
+- Quantis Global — international trade & sourcing
+- Travel Website Platform — Next.js, Firebase, Tailwind
+- OpenSourceDisplayLink — cross-platform display streaming
+- E-Resume Portal — Django
+- Dhruv World — digital identity platform (this site)

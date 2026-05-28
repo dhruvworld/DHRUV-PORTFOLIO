@@ -1,69 +1,73 @@
 import Link from "next/link";
-import { EditorialImage } from "@/components/brand/editorial-image";
-import { mediaAssets } from "@/lib/media";
+import { focusAreas, technicalSkills } from "@/content/skills";
+
+const highlights = [
+  "Founder of Quantis Global — international sourcing, import-export, and logistics coordination.",
+  "MS Computer Science at Southern New Hampshire University; MS IT from UNH Manchester.",
+  "Full-stack builder: Python, Django, Next.js, Firebase, and AI workflow automation.",
+];
 
 export function AboutEditorial() {
   return (
     <>
-      <div className="grid gap-10 md:grid-cols-[1.05fr_0.95fr_1.1fr] md:gap-8">
-        <div className="md:pt-2">
-          <p className="text-xs uppercase tracking-[0.24em] text-[#5f5f5f]">About Me</p>
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <p className="text-xs uppercase tracking-[0.24em] text-[#5f5f5f]">About</p>
           <h2 className="section-title mt-5 text-[clamp(2.6rem,5vw,4.2rem)] font-semibold leading-[0.95]">
-            Design meets execution.
+            Systems, trade, and code.
           </h2>
           <p className="body-soft mt-6 text-base leading-relaxed">
-            I specialize in turning complex problems into elegant solutions. My approach blends creativity
-            with strategic thinking to deliver systems that look refined and perform reliably.
+            Results-driven computer science graduate student with experience in software development, AI
+            systems, digital branding, and international business strategy. I connect product engineering with
+            execution — whether that is a Django backend, a Next.js platform, or a global sourcing operation.
           </p>
-          <div
-            className="mt-10 h-28 w-28 rounded-full border border-black/8 opacity-30"
-            style={{
-              background:
-                "conic-gradient(from 200deg, transparent 0 70%, rgba(19,34,50,0.15) 70% 100%)",
-            }}
-            aria-hidden
-          />
-        </div>
-
-        <article className="flex flex-col rounded-[1.75rem] border hairline bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
-          <div className="grid h-10 w-10 place-items-center rounded-full border hairline text-sm">◎</div>
-          <p className="mt-8 text-[clamp(3rem,6vw,4.5rem)] font-semibold leading-none tracking-tight text-[#132232]">
-            AI × Biz
-          </p>
-          <p className="mt-3 max-w-[22ch] text-sm leading-relaxed text-[#666]">
-            Dual focus: practical AI workflows and global business execution
-          </p>
-          <div className="relative mt-8 min-h-[280px] flex-1 overflow-hidden rounded-[1.25rem] bg-[#efeeea]">
-            <EditorialImage asset={mediaAssets.about.centerPortrait} className="grayscale-[18%]" />
+          <div className="mt-8 space-y-4">
+            {highlights.map((text) => (
+              <div key={text} className="flex gap-4">
+                <span
+                  className="mt-1 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#132232] text-xs text-white"
+                  aria-hidden
+                >
+                  ✦
+                </span>
+                <p className="text-sm leading-relaxed text-[#555] md:text-base">{text}</p>
+              </div>
+            ))}
           </div>
-        </article>
-
-        <div className="space-y-6 md:pt-2">
           <Link
             href="/contact"
-            className="relative block aspect-square w-full max-w-[220px] overflow-hidden rounded-[1.25rem] border hairline bg-[#efeeea] transition hover:border-black/20"
+            className="mt-8 inline-flex text-sm font-medium text-[#132232] underline decoration-black/25 underline-offset-4"
           >
-            <EditorialImage asset={mediaAssets.about.sidePortrait} className="grayscale-[12%]" />
-            <div className="absolute right-3 top-3 grid h-11 w-11 place-items-center rounded-full bg-white text-lg text-[#132232] shadow-sm">
-              ↗
-            </div>
+            Get in touch ↗
           </Link>
-
-          {[
-            "With 4+ years of experience, I specialize in creating intuitive, user-focused systems that solve real-world problems.",
-            "I thrive on working closely with clients, blending creativity with strategy to bring long-term digital identity visions to life.",
-          ].map((text) => (
-            <div key={text} className="flex gap-4">
-              <span className="mt-1 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#132232] text-xs text-white">
-                ✦
-              </span>
-              <p className="text-sm leading-relaxed text-[#555] md:text-base">{text}</p>
-            </div>
-          ))}
         </div>
+
+        <aside className="rounded-[1.75rem] border hairline bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#5f5f5f]">Core stack</p>
+          <ul className="mt-5 flex flex-wrap gap-2" aria-label="Technical skills">
+            {technicalSkills.map((skill) => (
+              <li
+                key={skill}
+                className="rounded-full border hairline bg-[#f8f7f4] px-3 py-1.5 text-xs text-[#444]"
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-xs uppercase tracking-[0.2em] text-[#5f5f5f]">Focus</p>
+          <ul className="mt-3 space-y-2 text-sm text-[#555]">
+            {focusAreas.map((area) => (
+              <li key={area}>{area}</li>
+            ))}
+          </ul>
+          <p className="mt-8 text-[clamp(2.5rem,5vw,3.5rem)] font-semibold leading-none tracking-tight text-[#132232]">
+            AI × Trade
+          </p>
+          <p className="mt-2 text-sm text-[#666]">Engineering depth with global business execution.</p>
+        </aside>
       </div>
 
-      <div className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="Brand palette">
         {[
           ["Primary", "#132232", "bg-[#132232] text-white"],
           ["Accent", "#D9AA3F", "bg-[#D9AA3F] text-[#132232]"],

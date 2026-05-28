@@ -1,34 +1,11 @@
-# Media replacement guide
+# Media (optional)
 
-Replace these files in `public/media/` to upgrade visuals — no code changes needed.
+This site is **text-first**. Placeholder UI screenshots are not used.
 
-| File | Used for | Recommended |
-|------|----------|-------------|
-| `hero.png` | Homepage hero | Portrait or laptop hero, 1600×1200+ |
-| `about-center.png` | About card portrait | 4:5 ratio, min 1200×1500 |
-| `about-side.png` | About side portrait | Square 800×800+ |
-| `project-01.png` | Work card 1 | 4:3 or 16:9 showcase |
-| `project-02.png` | Work card 2 | 4:3 or 16:9 showcase |
-| `project-03.png` | Work card 3 | 4:3 or 16:9 showcase |
-| `project-strip.png` | Legacy fallback | Optional |
-| `gallery-mobile.png` | Latest works carousel | Mobile mockups 1600×2400+ |
-| `experience.png` | Experience preview | Optional UI/timeline shot |
-| `consultation.png` | CTA banner background | Dark cinematic texture |
+When you add a verified portrait, use a single file with precise alt text, for example:
 
-## Optional per-project files
+| File | Alt text |
+|------|----------|
+| `portrait.jpg` | Dhruv Solanki, founder of Quantis Global, Manchester New Hampshire |
 
-Add separate files and update `mediaAssets.work` in `src/lib/media.ts`:
-
-- `project-01.png`
-- `project-02.png`
-- `project-03.png`
-
-## Style
-
-- Slightly desaturated, editorial lighting
-- Avoid neon gradients and heavy filters
-- Keep consistent tone across all assets
-
-## Note
-
-Duplicate reference screenshots were removed from this folder to keep deploy size lean. Only the semantic filenames above are used by the site.
+Wire it in `src/lib/media.ts` as `optionalPortrait` only when the asset is real photography — not mockups or reference screenshots.

@@ -21,7 +21,7 @@ export default function ContactPage() {
           Let&apos;s Connect.
         </h1>
         <p className="body-soft mt-6 max-w-3xl text-lg">
-          Collaboration, consulting, and strategic partnerships.
+          Manchester, New Hampshire · collaborations, Quantis Global trade inquiries, and engineering projects.
         </p>
       </section>
 

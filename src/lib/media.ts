@@ -1,78 +1,12 @@
+/**
+ * Optional media slots — only use real photography with descriptive alt text.
+ * The live site is text-first; do not add UI screenshot placeholders here.
+ */
 export type MediaAsset = {
   src: string;
   alt: string;
   objectPosition?: string;
 };
 
-/**
- * Drop-in media map. Replace files in /public/media/ — no code changes needed.
- */
-export const mediaAssets = {
-  hero: {
-    src: "/media/hero.png",
-    alt: "Dhruv Solanki portfolio hero",
-    objectPosition: "72% 42%",
-  },
-  about: {
-    centerPortrait: {
-      src: "/media/about-center.png",
-      alt: "Dhruv Solanki portrait",
-      objectPosition: "38% 72%",
-    },
-    sidePortrait: {
-      src: "/media/about-side.png",
-      alt: "Dhruv Solanki profile",
-      objectPosition: "78% 28%",
-    },
-  },
-  work: [
-    {
-      src: "/media/project-01.png",
-      alt: "Portfolio project one",
-      objectPosition: "center",
-    },
-    {
-      src: "/media/project-02.png",
-      alt: "Portfolio project two",
-      objectPosition: "center",
-    },
-    {
-      src: "/media/project-03.png",
-      alt: "Portfolio project three",
-      objectPosition: "center",
-    },
-  ],
-  gallery: [
-    {
-      src: "/media/gallery-mobile.png",
-      alt: "Mobile portfolio showcase one",
-      objectPosition: "22% 50%",
-    },
-    {
-      src: "/media/gallery-mobile.png",
-      alt: "Mobile portfolio showcase two",
-      objectPosition: "50% 50%",
-    },
-    {
-      src: "/media/gallery-mobile.png",
-      alt: "Mobile portfolio showcase three",
-      objectPosition: "78% 50%",
-    },
-  ],
-  experience: {
-    src: "/media/experience.png",
-    alt: "Experience timeline reference",
-    objectPosition: "center top",
-  },
-  consultation: {
-    src: "/media/consultation.png",
-    alt: "Consultation background",
-    objectPosition: "center",
-  },
-} as const;
-
-/** @deprecated Use mediaAssets.hero */
-export const founderPortrait = mediaAssets.hero;
-
-/** @deprecated Use mediaAssets.gallery */
-export const homepageGallery = mediaAssets.gallery;
+/** Reserved for a future verified portrait. Not rendered until provided. */
+export const optionalPortrait: MediaAsset | null = null;

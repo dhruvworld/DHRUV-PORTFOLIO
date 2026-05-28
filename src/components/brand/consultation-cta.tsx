@@ -1,27 +1,28 @@
 import Link from "next/link";
-import { mediaAssets } from "@/lib/media";
-import { EditorialImage } from "@/components/brand/editorial-image";
 
 export function ConsultationCTA() {
   return (
-    <section className="relative mt-20 min-h-[320px] overflow-hidden rounded-[1.75rem] border hairline bg-[#1a1f28] p-10 text-center md:min-h-[360px] md:p-14">
-      <div className="absolute inset-0 opacity-35">
-        <EditorialImage asset={mediaAssets.consultation} className="grayscale" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1f28]/30 via-[#1a1f28]/75 to-[#1a1f28]" />
-      </div>
+    <section
+      className="relative mt-20 overflow-hidden rounded-[1.75rem] border hairline bg-[#1a1f28] p-10 text-center md:p-14"
+      aria-labelledby="consultation-heading"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(201,166,107,0.2),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(46,94,78,0.15),transparent_45%)]"
+        aria-hidden
+      />
       <div className="relative z-10 mx-auto max-w-3xl">
-        <p className="text-xs uppercase tracking-[0.2em] text-[#d4bb8e]">Book your free consultation</p>
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#f5f3ef] md:text-5xl">
-          Let&apos;s design your next system together.
+        <p className="text-xs uppercase tracking-[0.2em] text-[#d4bb8e]">Collaboration</p>
+        <h2 id="consultation-heading" className="mt-4 text-3xl font-semibold tracking-tight text-[#f5f3ef] md:text-5xl">
+          Discuss a product, trade, or AI workflow.
         </h2>
         <p className="mt-4 text-sm leading-relaxed text-[#c8c4ba] md:text-base">
-          Discuss AI workflows, product direction, and digital identity strategy with a practical execution lens.
+          Open to engineering projects, Quantis Global partnerships, and digital identity consulting.
         </p>
         <Link
           href="/contact"
           className="mt-8 inline-flex text-sm font-medium text-[#f5f3ef] underline decoration-[#d9aa3f] underline-offset-4"
         >
-          Let&apos;s talk ↗
+          Contact Dhruv ↗
         </Link>
       </div>
     </section>

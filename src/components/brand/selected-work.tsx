@@ -1,47 +1,33 @@
 import Link from "next/link";
 import { homeFeaturedProjects } from "@/content/projects";
-import { mediaAssets } from "@/lib/media";
-import { EditorialImage } from "@/components/brand/editorial-image";
 
 export function SelectedWork() {
   return (
-    <section className="mt-28 space-y-10">
+    <section className="mt-28 space-y-10" aria-labelledby="selected-work-heading">
       <div className="flex items-end justify-between gap-4">
-        <h2 className="section-title text-4xl font-semibold md:text-5xl">Portfolio Highlights</h2>
+        <h2 id="selected-work-heading" className="section-title text-4xl font-semibold md:text-5xl">
+          Selected work
+        </h2>
         <Link href="/projects" className="text-sm text-[#5f5f5f] hover:text-[#132232]">
           View all projects ↗
         </Link>
       </div>
 
-      <div className="grid gap-7 md:grid-cols-3">
-        {homeFeaturedProjects.map((project, index) => {
-          const visual = mediaAssets.work[index];
-          return (
-            <Link
-              key={project.slug}
-              href={project.href}
-              className="group overflow-hidden rounded-[1.35rem] border hairline bg-white/70 transition hover:border-black/20"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-[#eceae5]">
-                <EditorialImage asset={visual} className="grayscale-[10%] transition duration-500 group-hover:scale-[1.02]" />
-                <div className="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-full bg-[#2b2f38] text-white shadow-[0_8px_18px_rgba(0,0,0,0.22)]">
-                  ↗
-                </div>
-              </div>
-              <div className="border-t hairline p-5">
-                <p className="text-xs uppercase tracking-[0.14em] text-[#6f6f6f]">{project.category}</p>
-                <h3 className="mt-2 text-2xl font-semibold tracking-tight text-[#132232]">{project.title}</h3>
-                <p className="mt-2 text-sm text-[#606060]">{project.summary}</p>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
-
-      <div className="flex items-center justify-center gap-2">
-        <span className="h-2 w-10 rounded-full bg-[#132232]" />
-        <span className="h-2 w-2 rounded-full bg-[#9a9a9a]" />
-        <span className="h-2 w-2 rounded-full bg-[#9a9a9a]" />
+      <div className="grid gap-5 md:grid-cols-3">
+        {homeFeaturedProjects.map((project) => (
+          <Link
+            key={project.slug}
+            href={project.href}
+            aria-label={`${project.title}: ${project.summary}`}
+            className="group flex flex-col rounded-[1.35rem] border hairline bg-white/70 p-6 transition hover:border-black/20"
+          >
+            <p className="text-xs uppercase tracking-[0.14em] text-[#6f6f6f]">{project.category}</p>
+            <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[#132232]">{project.title}</h3>
+            <p className="mt-2 flex-1 text-sm text-[#606060]">{project.summary}</p>
+            <p className="mt-4 text-xs uppercase tracking-[0.12em] text-[#2e5e4e]">{project.stack}</p>
+            <span className="mt-5 text-sm font-medium text-[#132232]">Open project ↗</span>
+          </Link>
+        ))}
       </div>
     </section>
   );

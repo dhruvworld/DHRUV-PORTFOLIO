@@ -9,7 +9,7 @@ import { ManifestoSection } from "@/components/brand/manifesto-section";
 import { QuantisPreview } from "@/components/brand/quantis-preview";
 import { SectionReveal } from "@/components/brand/section-reveal";
 import { SelectedWork } from "@/components/brand/selected-work";
-import { VisualGallery } from "@/components/brand/visual-gallery";
+import { CoreStacks } from "@/components/brand/core-stacks";
 import { EditorialTestimonials } from "@/components/brand/editorial-testimonials";
 import { buildPageMetadata, siteConfig } from "@/lib/seo";
 
@@ -52,7 +52,7 @@ export default function Home() {
         <QuantisPreview />
       </SectionReveal>
       <SectionReveal>
-        <VisualGallery />
+        <CoreStacks />
       </SectionReveal>
       <SectionReveal>
         <FinalCTA />
