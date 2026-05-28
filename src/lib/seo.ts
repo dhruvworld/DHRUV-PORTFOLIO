@@ -1,0 +1,111 @@
+export const siteConfig = {
+  siteUrl: "https://dhruvsolanki.com",
+  name: "Dhruv Solanki",
+  creatorAlias: "Dhruv Solankii",
+  mediaIdentity: "Dhruv World",
+  description:
+    "Official digital identity platform of Dhruv Solanki (Dhruv Solankii), founder of Dhruv World.",
+};
+
+export function getPersonSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.name,
+    alternateName: [siteConfig.creatorAlias, siteConfig.mediaIdentity],
+    url: siteConfig.siteUrl,
+    jobTitle: "AI, Technology, and Business Builder",
+    sameAs: [
+      "https://www.linkedin.com/in/dhruvworld/",
+      "https://github.com/dhruvworld",
+      "https://instagram.com/_dhruvworld",
+      "https://www.facebook.com/dhruv.solanki.4701",
+      "https://www.facebook.com/TechXdhruvworld",
+      "https://youtube.com/@dhruvworld",
+      "https://medium.com/@dhruvworld",
+    ],
+  };
+}
+
+export function getWebsiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.siteUrl,
+    description: siteConfig.description,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteConfig.siteUrl}/blog?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
+export function getOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Quantis Global",
+    url: `${siteConfig.siteUrl}/quantis-global`,
+    founder: {
+      "@type": "Person",
+      name: siteConfig.name,
+    },
+    description:
+      "Global trade, sourcing, import/export, and procurement initiatives.",
+  };
+}
+
+export function getBreadcrumbSchema(pathname: string, name: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name,
+        item: `${siteConfig.siteUrl}${pathname}`,
+      },
+    ],
+  };
+}
+
+export function getBlogPostingSchema(input: {
+  title: string;
+  description: string;
+  slug: string;
+  publishedAt: string;
+  updatedAt?: string;
+  image?: string;
+  keywords?: string[];
+}) {
+  const url = `${siteConfig.siteUrl}/blog/${input.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: input.title,
+    description: input.description,
+    datePublished: input.publishedAt,
+    dateModified: input.updatedAt ?? input.publishedAt,
+    image: input.image ?? `${siteConfig.siteUrl}/og-default.jpg`,
+    mainEntityOfPage: url,
+    keywords: input.keywords ?? [],
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      alternateName: [siteConfig.creatorAlias, siteConfig.mediaIdentity],
+    },
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.name,
+    },
+  };
+}

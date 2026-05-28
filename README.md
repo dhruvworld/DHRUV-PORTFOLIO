@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dhruv Solanki Digital Identity Platform
 
-## Getting Started
+Personal brand, portfolio, SEO authority, and media ecosystem platform for:
+- Dhruv Solanki
+- Dhruv Solankii
+- Dhruv World
 
-First, run the development server:
+## Stack
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- next-themes
+- Vercel Analytics
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Implemented Modules
+- Brand and identity homepage with premium hero system
+- Route architecture for core pages and SEO clusters
+- Dynamic page generation for cluster and identity routes
+- Blog/resource/case-study content engine with static generation
+- JSON-LD schema system (`Person`, `WebSite`, `Organization`, `BreadcrumbList`, `BlogPosting`)
+- Technical SEO routes (`/robots.txt`, `/sitemap.xml`)
+- Search page across content collections
+- Newsletter/community page with API scaffold and tracking hooks
+- Quantis Global premium business module
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
+- `src/app` route and API layer
+- `src/components` reusable UI and form components
+- `src/content` seeded editorial data sources
+- `src/lib` SEO and analytics helpers
+- `docs/launch-checklist.md` deployment and launch runbook
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local Setup
+1. Install dependencies:
+   - `npm install`
+2. Setup environment:
+   - `cp .env.example .env.local`
+3. Run development server:
+   - `npm run dev`
+4. Open:
+   - `http://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build and Validation
+- Lint: `npm run lint`
+- Production build: `npm run build`
+- Start production server: `npm run start`
+- Pre-deploy verification: `npm run verify`
+- CI: GitHub Actions runs `npm run verify` on PRs and pushes to `main`/`master`
 
-## Learn More
+## Newsletter Integration
+- API scaffold is at `src/app/api/newsletter/route.ts`.
+- Connect your provider (Resend/ConvertKit/Beehiiv/etc.) in that endpoint.
+- Client event tracking is in `src/lib/metrics.ts`.
 
-To learn more about Next.js, take a look at the following resources:
+## SEO Notes
+- Primary canonical domain should be `https://dhruvsolanki.com`.
+- Secondary domains should redirect to primary:
+  - `dhruvsolankii.com`
+  - `dhruvworld.com`
+- Ensure identity mapping is consistently present across content and metadata:
+  - Dhruv Solanki = Dhruv Solankii = Dhruv World
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# DHRUV-PORTFOLIO
