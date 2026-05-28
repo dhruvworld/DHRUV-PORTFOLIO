@@ -11,8 +11,13 @@ export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
-  const post = blogPosts.find((item) => item.slug === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((item) => item.slug === slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -29,8 +34,13 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   };
 }
 
-export default function BlogPostPage({ params }: { params: Params }) {
-  const post = blogPosts.find((item) => item.slug === params.slug);
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params;
+  const post = blogPosts.find((item) => item.slug === slug);
   if (!post) notFound();
 
   const blogSchema = getBlogPostingSchema({
@@ -44,11 +54,11 @@ export default function BlogPostPage({ params }: { params: Params }) {
 
   return (
     <SiteShell>
-      <article className="rounded-3xl border border-black/5 bg-white p-10 shadow-sm">
-        <p className="text-sm text-brand-gold">{post.publishedAt}</p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight">{post.title}</h1>
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">{post.description}</p>
-        <div className="mt-8 space-y-4 text-base leading-8 text-foreground">
+      <article className="glass-panel rounded-3xl p-10 shadow-sm">
+        <p className="text-xs uppercase tracking-[0.14em] text-brand-cyan">{post.publishedAt}</p>
+        <h1 className="section-title mt-3 text-4xl font-semibold tracking-tight text-slate-900">{post.title}</h1>
+        <p className="body-soft mt-4 max-w-3xl text-lg text-slate-600">{post.description}</p>
+        <div className="body-soft mt-8 space-y-4 text-base text-slate-700">
           <p>
             Dhruv Solanki (Dhruv Solankii) builds Dhruv World as a long-term internet
             identity platform powered by AI, technology, and business systems.
@@ -59,13 +69,13 @@ export default function BlogPostPage({ params }: { params: Params }) {
           </p>
         </div>
         <div className="mt-8 flex flex-wrap gap-3 text-sm">
-          <Link href="/blog" className="rounded-full border border-black/10 px-4 py-2">
+          <Link href="/blog" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
             Back to Blog
           </Link>
-          <Link href="/projects" className="rounded-full border border-black/10 px-4 py-2">
+          <Link href="/projects" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
             Explore Projects
           </Link>
-          <Link href="/contact" className="rounded-full border border-black/10 px-4 py-2">
+          <Link href="/contact" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
             Contact
           </Link>
         </div>

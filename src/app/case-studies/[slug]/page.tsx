@@ -11,8 +11,13 @@ export function generateStaticParams() {
   return caseStudies.map((study) => ({ slug: study.slug }));
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
-  const study = caseStudies.find((entry) => entry.slug === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const study = caseStudies.find((entry) => entry.slug === slug);
   if (!study) return {};
   return {
     title: study.title,
@@ -23,8 +28,13 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   };
 }
 
-export default function CaseStudyDetailPage({ params }: { params: Params }) {
-  const study = caseStudies.find((entry) => entry.slug === params.slug);
+export default async function CaseStudyDetailPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params;
+  const study = caseStudies.find((entry) => entry.slug === slug);
   if (!study) notFound();
 
   const breadcrumbSchema = getBreadcrumbSchema(
@@ -34,19 +44,19 @@ export default function CaseStudyDetailPage({ params }: { params: Params }) {
 
   return (
     <SiteShell>
-      <article className="rounded-3xl border border-black/5 bg-white p-10 shadow-sm">
-        <p className="text-sm text-brand-gold">{study.domain}</p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight">{study.title}</h1>
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">{study.summary}</p>
-        <p className="mt-8 text-base leading-8 text-foreground">{study.outcome}</p>
+      <article className="glass-panel rounded-3xl p-10 shadow-sm">
+        <p className="text-xs uppercase tracking-[0.14em] text-brand-cyan">{study.domain}</p>
+        <h1 className="section-title mt-3 text-4xl font-semibold tracking-tight text-slate-900">{study.title}</h1>
+        <p className="body-soft mt-4 max-w-3xl text-lg text-slate-600">{study.summary}</p>
+        <p className="body-soft mt-8 text-base text-slate-700">{study.outcome}</p>
         <div className="mt-8 flex gap-3">
           <Link
             href="/case-studies"
-            className="rounded-full border border-black/10 px-4 py-2 text-sm"
+            className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-900"
           >
             Back to Case Studies
           </Link>
-          <Link href="/contact" className="rounded-full border border-black/10 px-4 py-2 text-sm">
+          <Link href="/contact" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-900">
             Collaborate
           </Link>
         </div>

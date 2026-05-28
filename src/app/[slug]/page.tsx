@@ -13,12 +13,13 @@ export function generateStaticParams() {
   return dynamicSlugs.map((slug) => ({ slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: PageParams;
-}): Metadata {
-  const content = dynamicRouteContent[params.slug];
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const content = dynamicRouteContent[slug];
   if (!content) {
     return {};
   }
@@ -27,19 +28,24 @@ export function generateMetadata({
     title: content.title,
     description: content.description,
     alternates: {
-      canonical: `https://dhruvsolanki.com/${params.slug}`,
+      canonical: `https://dhruvsolanki.com/${slug}`,
     },
     openGraph: {
       title: `${content.title} | Dhruv Solanki`,
       description: content.description,
-      url: `https://dhruvsolanki.com/${params.slug}`,
+      url: `https://dhruvsolanki.com/${slug}`,
       type: "website",
     },
   };
 }
 
-export default function DynamicRoutePage({ params }: { params: PageParams }) {
-  const content = dynamicRouteContent[params.slug];
+export default async function DynamicRoutePage({
+  params,
+}: {
+  params: Promise<PageParams>;
+}) {
+  const { slug } = await params;
+  const content = dynamicRouteContent[slug];
   if (!content) {
     notFound();
   }
@@ -49,28 +55,28 @@ export default function DynamicRoutePage({ params }: { params: PageParams }) {
     "@type": "WebPage",
     name: content.title,
     description: content.description,
-    url: `https://dhruvsolanki.com/${params.slug}`,
+    url: `https://dhruvsolanki.com/${slug}`,
     about: {
       "@type": "Person",
       name: "Dhruv Solanki",
       alternateName: ["Dhruv Solankii", "Dhruv World"],
     },
   };
-  const breadcrumbSchema = getBreadcrumbSchema(`/${params.slug}`, content.title);
+  const breadcrumbSchema = getBreadcrumbSchema(`/${slug}`, content.title);
 
   return (
     <>
       <RouteTemplate title={content.title} description={content.description} />
-      <section className="mx-auto mt-6 w-full max-w-6xl rounded-3xl border border-black/5 bg-white p-8">
-        <h2 className="text-xl font-semibold">Related Paths</h2>
+      <section className="glass-panel mx-auto mt-6 w-full max-w-6xl rounded-3xl p-8">
+        <h2 className="section-title text-2xl font-semibold text-slate-900">Related Paths</h2>
         <div className="mt-4 flex flex-wrap gap-3 text-sm">
-          <Link href="/dhruv-solanki" className="rounded-full border border-black/10 px-4 py-2">
+          <Link href="/dhruv-solanki" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
             Dhruv Solanki
           </Link>
-          <Link href="/blog" className="rounded-full border border-black/10 px-4 py-2">
+          <Link href="/blog" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
             Blog
           </Link>
-          <Link href="/contact" className="rounded-full border border-black/10 px-4 py-2">
+          <Link href="/contact" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
             Contact
           </Link>
         </div>

@@ -44,7 +44,7 @@ export function NewsletterForm() {
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         placeholder="you@example.com"
-        className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-brand-cyan"
+        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-brand-cyan"
       />
       <button
         type="submit"
@@ -53,7 +53,7 @@ export function NewsletterForm() {
       >
         {loading ? "Subscribing..." : "Subscribe"}
       </button>
-      <p className="text-sm text-slate-300 sm:ml-2 sm:self-center">
+      <p className="text-sm text-slate-600 sm:ml-2 sm:self-center">
         {status === "success" && "Subscribed successfully."}
         {status === "error" && "Subscription failed. Try again."}
       </p>

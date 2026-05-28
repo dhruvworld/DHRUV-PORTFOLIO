@@ -5,11 +5,10 @@ import { resources } from "@/content/resources";
 export default function ResourcesPage() {
   return (
     <SiteShell>
-      <section className="rounded-3xl border border-black/5 bg-white p-10 shadow-sm">
-        <h1 className="text-4xl font-semibold tracking-tight">Resources</h1>
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">
-          Downloadable guides, templates, notes, and research designed to support
-          builders, students, and founders.
+      <section className="glass-panel creator-glow rounded-3xl p-8 shadow-sm md:p-10">
+        <h1 className="display-title text-5xl font-semibold tracking-tight text-slate-900 md:text-6xl">Resources</h1>
+        <p className="body-soft mt-4 max-w-3xl text-lg text-slate-600">
+          Guides, frameworks, and practical assets for builders, students, and founders.
         </p>
       </section>
       <section className="mt-8 grid gap-4 md:grid-cols-2">
