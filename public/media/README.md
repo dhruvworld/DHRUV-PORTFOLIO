@@ -1,18 +1,29 @@
-Media replacement guide
+# Media replacement guide
 
-1) Keep these filenames for instant replacement:
-- founder-portrait.svg
-- gallery-01.svg
-- gallery-02.svg
-- gallery-03.svg
+Replace these files in `public/media/` to upgrade visuals without touching code.
 
-2) You can replace .svg with .jpg/.png/.webp.
-If you do, update paths in `src/lib/media.ts`.
+| File | Used for | Recommended |
+|------|----------|-------------|
+| `hero.png` | Homepage hero | Portrait or laptop hero, 1600×1200+ |
+| `about-center.png` | About card portrait | 4:5 ratio, min 1200×1500 |
+| `about-side.png` | About side portrait | Square 800×800+ |
+| `project-strip.png` | Work cards (3 crops) | Wide showcase image 2400×1200+ |
+| `gallery-mobile.png` | Latest works carousel | Mobile mockups 1600×2400+ |
+| `experience.png` | Experience preview | Optional UI/timeline shot |
+| `consultation.png` | CTA banner background | Dark cinematic texture |
 
-3) Recommended exports:
-- Founder portrait: 4:5 ratio, minimum 1200x1500
-- Gallery: 4:3 ratio, minimum 1600x1200
+## Optional per-project files
 
-4) Visual style:
-- Use slightly dark/cinematic images
-- Keep low saturation for premium consistency
+To use separate images per project card, add:
+
+- `project-01.png`
+- `project-02.png`
+- `project-03.png`
+
+Then update `mediaAssets.work` in `src/lib/media.ts`.
+
+## Style
+
+- Slightly desaturated, editorial lighting
+- Avoid neon gradients and heavy filters
+- Keep consistent tone across all assets
