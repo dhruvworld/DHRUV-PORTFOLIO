@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { socialLinks } from "@/lib/social";
 
 const commands = [
   { href: "/", label: "Home" },
@@ -89,19 +90,17 @@ export function CommandPalette() {
               {action.label}
             </button>
           ))}
-          <Link
-            href="https://www.linkedin.com/in/dhruvworld/"
-            onClick={() => setOpen(false)}
-            className="rounded-lg border hairline bg-white px-4 py-3 text-sm text-[#333] hover:border-[#2e5e4e]"
-          >
+          <Link href={socialLinks.linkedin} onClick={() => setOpen(false)} className="rounded-lg border hairline bg-white px-4 py-3 text-sm text-[#333] hover:border-[#2e5e4e]">
             Open LinkedIn
           </Link>
-          <Link
-            href="https://github.com/dhruvworld"
-            onClick={() => setOpen(false)}
-            className="rounded-lg border hairline bg-white px-4 py-3 text-sm text-[#333] hover:border-[#2e5e4e]"
-          >
+          <Link href={socialLinks.github} onClick={() => setOpen(false)} className="rounded-lg border hairline bg-white px-4 py-3 text-sm text-[#333] hover:border-[#2e5e4e]">
             Open GitHub
+          </Link>
+          <Link href={socialLinks.instagram} onClick={() => setOpen(false)} className="rounded-lg border hairline bg-white px-4 py-3 text-sm text-[#333] hover:border-[#2e5e4e]">
+            Open Instagram
+          </Link>
+          <Link href={socialLinks.whatsappUs} onClick={() => setOpen(false)} className="rounded-lg border hairline bg-white px-4 py-3 text-sm text-[#333] hover:border-[#2e5e4e]">
+            Open WhatsApp
           </Link>
         </div>
       </div>

@@ -7,16 +7,19 @@ const projects = [
     title: "Quantis Global",
     what: "International sourcing and trade execution platform.",
     category: "Business Systems",
+    href: "/quantis-global",
   },
   {
     title: "SaveMePDF",
     what: "Fast document workflow for PDF, Word, and Excel tasks.",
     category: "Productivity",
+    href: "/projects#savemepdf",
   },
   {
     title: "Post2Plan",
     what: "Turns raw ideas into structured publishing plans.",
     category: "AI Workflow",
+    href: "/projects#post2plan",
   },
 ];
 
@@ -34,9 +37,10 @@ export function SelectedWork() {
         {projects.map((project, index) => {
           const visual = mediaAssets.work[index];
           return (
-            <article
+            <Link
               key={project.title}
-              className="group overflow-hidden rounded-[1.35rem] border hairline bg-white/70"
+              href={project.href}
+              className="group overflow-hidden rounded-[1.35rem] border hairline bg-white/70 transition hover:border-black/20"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-[#eceae5]">
                 <EditorialImage asset={visual} className="grayscale-[10%] transition duration-500 group-hover:scale-[1.02]" />
@@ -49,7 +53,7 @@ export function SelectedWork() {
                 <h3 className="mt-2 text-2xl font-semibold tracking-tight text-[#132232]">{project.title}</h3>
                 <p className="mt-2 text-sm text-[#606060]">{project.what}</p>
               </div>
-            </article>
+            </Link>
           );
         })}
       </div>

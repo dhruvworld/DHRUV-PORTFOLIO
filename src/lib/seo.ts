@@ -1,3 +1,5 @@
+import { getSchemaSameAs } from "@/lib/social";
+
 export const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://dhruvworld.netlify.app",
   name: "Dhruv Solanki",
@@ -15,15 +17,7 @@ export function getPersonSchema() {
     alternateName: [siteConfig.creatorAlias, siteConfig.mediaIdentity],
     url: siteConfig.siteUrl,
     jobTitle: "AI, Technology, and Business Builder",
-    sameAs: [
-      "https://www.linkedin.com/in/dhruvworld/",
-      "https://github.com/dhruvworld",
-      "https://instagram.com/_dhruvworld",
-      "https://www.facebook.com/dhruv.solanki.4701",
-      "https://www.facebook.com/TechXdhruvworld",
-      "https://youtube.com/@dhruvworld",
-      "https://medium.com/@dhruvworld",
-    ],
+    sameAs: getSchemaSameAs(),
   };
 }
 

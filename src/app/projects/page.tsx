@@ -6,6 +6,7 @@ import { ConsultationCTA } from "@/components/brand/consultation-cta";
 
 const highlightedProjects = [
   {
+    slug: "quantis-global",
     title: "Quantis Global",
     stack: "Business Systems • Trade Ops",
     details: [
@@ -15,6 +16,7 @@ const highlightedProjects = [
     ],
   },
   {
+    slug: "savemepdf",
     title: "SaveMePDF",
     stack: "Product Utility • Creator Tools",
     details: [
@@ -24,6 +26,7 @@ const highlightedProjects = [
     ],
   },
   {
+    slug: "post2plan",
     title: "Post2Plan",
     stack: "AI Workflow • Publishing System",
     details: [
@@ -33,6 +36,7 @@ const highlightedProjects = [
     ],
   },
   {
+    slug: "opensource-displaylink",
     title: "OpenSourceDisplayLink",
     stack: "Engineering R&D • Cross-platform",
     details: [
@@ -42,6 +46,7 @@ const highlightedProjects = [
     ],
   },
   {
+    slug: "dhruv-world",
     title: "Dhruv World",
     stack: "Identity Platform • Media Systems",
     details: [
@@ -72,7 +77,7 @@ export default function ProjectsPage() {
         {highlightedProjects.map((project, index) => {
           const visual = mediaAssets.work[index % mediaAssets.work.length];
           return (
-            <article key={project.title} className="overflow-hidden rounded-[1.35rem] border hairline bg-white/65">
+            <article id={project.slug} key={project.title} className="scroll-mt-28 overflow-hidden rounded-[1.35rem] border hairline bg-white/65">
               <div className="relative aspect-[16/8] bg-[#eceae5]">
                 <EditorialImage asset={visual} className="grayscale-[12%]" />
                 <div className="absolute right-5 top-5 grid h-12 w-12 place-items-center rounded-full bg-[#2b2f38] text-white">
