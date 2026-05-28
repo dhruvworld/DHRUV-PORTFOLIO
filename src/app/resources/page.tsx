@@ -19,7 +19,7 @@ export default function ResourcesPage() {
       <PageIntro
         eyebrow="Library"
         title="Resources"
-        description="Guides, frameworks, and practical assets for builders, students, and founders."
+        description="Practical prompts and assets you can copy and use — starting with AI image workflows."
       />
       <section className="mt-10 grid gap-4 md:grid-cols-2">
         {resources.map((item) => (
