@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
+import { ContactForm } from "@/components/forms/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -49,6 +50,7 @@ export default function ContactPage() {
             </Link>
           </div>
         </div>
+        <ContactForm />
       </section>
     </SiteShell>
   );

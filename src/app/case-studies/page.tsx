@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { ContentCard } from "@/components/content-card";
 import { caseStudies } from "@/content/case-studies";
+
+export const metadata: Metadata = {
+  title: "Case Studies",
+  description:
+    "Case studies by Dhruv Solanki covering AI systems, digital identity architecture, and execution outcomes.",
+};
 
 export default function CaseStudiesPage() {
   return (

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
 
@@ -16,6 +17,12 @@ const kpiEvents = [
   "newsletter_submit_error",
   "search_query_changed",
 ];
+
+export const metadata: Metadata = {
+  title: "Newsletter",
+  description:
+    "Join the Dhruv World newsletter for weekly insights on AI workflows, systems, and founder execution.",
+};
 
 export default function NewslettersPage() {
   return (
