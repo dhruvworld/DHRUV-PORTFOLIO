@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { blogPosts } from "@/content/blog-posts";
+import { formatReadingTime, getReadingTimeMinutes } from "@/lib/reading-time";
 
 export function EditorialWriting() {
   const today = new Date();
@@ -15,7 +16,8 @@ export function EditorialWriting() {
       <div className="mt-8 space-y-6">
         {blogPosts.slice(0, 3).map((post) => {
           const postDate = new Date(post.publishedAt);
-          const metaLabel = postDate > today ? "Scheduled" : post.publishedAt;
+          const reading = formatReadingTime(getReadingTimeMinutes(post.content.join(" ")));
+          const metaLabel = postDate > today ? `Scheduled • ${reading}` : `${post.publishedAt} • ${reading}`;
           return (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="block border-b hairline pb-6">
               <p className="text-xs uppercase tracking-[0.14em] text-[#2e5e4e]">{metaLabel}</p>

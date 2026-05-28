@@ -5,6 +5,7 @@ import { EditorialArticle } from "@/components/brand/editorial-article";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { RelatedPosts } from "@/components/brand/related-posts";
 import { blogPosts } from "@/content/blog-posts";
+import { formatReadingTime, getReadingTimeMinutes } from "@/lib/reading-time";
 import { buildPageMetadata, getBlogPostingSchema, getBreadcrumbSchema } from "@/lib/seo";
 
 type Params = { slug: string };
@@ -49,7 +50,11 @@ export default async function BlogPostPage({
 
   const today = new Date();
   const postDate = new Date(post.publishedAt);
-  const metaLabel = postDate > today ? "Scheduled" : post.publishedAt;
+  const readingMinutes = getReadingTimeMinutes(post.content.join(" "));
+  const metaLabel =
+    postDate > today
+      ? `Scheduled • ${formatReadingTime(readingMinutes)}`
+      : `${post.publishedAt} • ${formatReadingTime(readingMinutes)}`;
 
   return (
     <SiteShell>

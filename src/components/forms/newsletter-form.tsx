@@ -37,25 +37,34 @@ export function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="mt-6 flex flex-col gap-3 sm:flex-row">
-      <input
-        type="email"
-        required
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-        placeholder="you@example.com"
-        className="w-full rounded-xl border hairline bg-white/75 px-4 py-3 text-sm text-[#132232] outline-none focus:border-[#2e5e4e]"
-      />
-      <button
-        type="submit"
-        disabled={loading}
-        className="rounded-xl bg-[#132232] px-5 py-3 text-sm font-medium text-[#f8f7f4] disabled:opacity-70"
-      >
-        {loading ? "Subscribing..." : "Subscribe"}
-      </button>
-      <p className="text-sm text-[#5f5f5f] sm:ml-2 sm:self-center">
-        {status === "success" && "Subscribed successfully."}
-        {status === "error" && "Subscription failed. Try again."}
+    <form onSubmit={onSubmit} className="mt-6 space-y-3">
+      <label htmlFor="newsletter-email" className="text-xs uppercase tracking-[0.14em] text-[#6b6b6b]">
+        Email
+      </label>
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <input
+          id="newsletter-email"
+          name="email"
+          type="email"
+          required
+          autoComplete="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          placeholder="you@example.com"
+          className="w-full rounded-xl border hairline bg-white/75 px-4 py-3 text-sm text-[#132232] outline-none focus:border-[#2e5e4e]"
+        />
+        <button
+          type="submit"
+          disabled={loading}
+          className="rounded-xl bg-[#132232] px-5 py-3 text-sm font-medium text-[#f8f7f4] disabled:opacity-70"
+        >
+          {loading ? "Subscribing..." : "Subscribe"}
+        </button>
+      </div>
+      <p className="text-sm text-[#5f5f5f]" role="status" aria-live="polite">
+        {status === "success" && "Subscribed successfully. Check your inbox."}
+        {status === "error" && "Subscription failed. Try again in a moment."}
+        {status === "idle" && !loading && "No spam. Unsubscribe anytime."}
       </p>
     </form>
   );

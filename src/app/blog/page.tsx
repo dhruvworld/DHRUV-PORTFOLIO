@@ -4,6 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 import { PageIntro } from "@/components/brand/page-intro";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { blogPosts } from "@/content/blog-posts";
+import { formatReadingTime, getReadingTimeMinutes } from "@/lib/reading-time";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -28,12 +29,23 @@ export default function BlogPage() {
       <section className="mt-12 space-y-7">
         {blogPosts.map((post) => {
           const postDate = new Date(post.publishedAt);
-          const metaLabel = postDate > today ? "Scheduled" : post.publishedAt;
+          const reading = formatReadingTime(getReadingTimeMinutes(post.content.join(" ")));
+          const metaLabel = postDate > today ? `Scheduled • ${reading}` : `${post.publishedAt} • ${reading}`;
           return (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="block border-b hairline pb-7">
               <p className="text-xs uppercase tracking-[0.15em] text-[#2e5e4e]">{metaLabel}</p>
               <h2 className="mt-2 text-4xl font-medium tracking-tight text-[#132232]">{post.title}</h2>
               <p className="mt-3 max-w-3xl text-[#6b6b6b]">{post.excerpt}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border hairline bg-white/60 px-3 py-1 text-xs text-[#555]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </Link>
           );
         })}

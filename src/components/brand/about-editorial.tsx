@@ -1,5 +1,6 @@
-import { mediaAssets } from "@/lib/media";
+import Link from "next/link";
 import { EditorialImage } from "@/components/brand/editorial-image";
+import { mediaAssets } from "@/lib/media";
 
 export function AboutEditorial() {
   return (
@@ -38,12 +39,15 @@ export function AboutEditorial() {
         </article>
 
         <div className="space-y-6 md:pt-2">
-          <figure className="relative aspect-square w-full max-w-[220px] overflow-hidden rounded-[1.25rem] border hairline bg-[#efeeea]">
+          <Link
+            href="/contact"
+            className="relative block aspect-square w-full max-w-[220px] overflow-hidden rounded-[1.25rem] border hairline bg-[#efeeea] transition hover:border-black/20"
+          >
             <EditorialImage asset={mediaAssets.about.sidePortrait} className="grayscale-[12%]" />
             <div className="absolute right-3 top-3 grid h-11 w-11 place-items-center rounded-full bg-white text-lg text-[#132232] shadow-sm">
               ↗
             </div>
-          </figure>
+          </Link>
 
           {[
             "With 4+ years of experience, I specialize in creating intuitive, user-focused systems that solve real-world problems.",

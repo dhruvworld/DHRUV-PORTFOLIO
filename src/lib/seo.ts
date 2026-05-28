@@ -110,6 +110,31 @@ export function getBreadcrumbSchema(pathname: string, name: string) {
   };
 }
 
+export function getCaseStudySchema(input: {
+  title: string;
+  description: string;
+  slug: string;
+}) {
+  const url = `${siteConfig.siteUrl}/case-studies/${input.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: input.title,
+    description: input.description,
+    url,
+    mainEntityOfPage: url,
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      alternateName: [siteConfig.creatorAlias, siteConfig.mediaIdentity],
+    },
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.name,
+    },
+  };
+}
+
 export function getBlogPostingSchema(input: {
   title: string;
   description: string;
@@ -127,7 +152,7 @@ export function getBlogPostingSchema(input: {
     description: input.description,
     datePublished: input.publishedAt,
     dateModified: input.updatedAt ?? input.publishedAt,
-    image: input.image ?? `${siteConfig.siteUrl}/og-default.jpg`,
+    image: input.image ?? `${siteConfig.siteUrl}/opengraph-image`,
     mainEntityOfPage: url,
     keywords: input.keywords ?? [],
     author: {
