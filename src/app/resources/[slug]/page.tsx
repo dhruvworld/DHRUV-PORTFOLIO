@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
+import { EditorialArticle } from "@/components/brand/editorial-article";
+import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { resources } from "@/content/resources";
 import { getBreadcrumbSchema, siteConfig } from "@/lib/seo";
 
@@ -41,22 +42,18 @@ export default async function ResourceDetailPage({
 
   return (
     <SiteShell>
-      <article className="glass-panel rounded-3xl p-10 shadow-sm">
-        <p className="text-xs uppercase tracking-[0.14em] text-brand-cyan">
-          {item.type} • {item.audience}
+      <EditorialArticle
+        meta={`${item.type} • ${item.audience}`}
+        title={item.title}
+        description={item.description}
+        links={[{ href: "/resources", label: "Back to Resources" }]}
+      >
+        <p>
+          This resource page is ready for Cloudinary assets, downloadable files, and embedded previews
+          with newsletter-gated distribution.
         </p>
-        <h1 className="section-title mt-3 text-4xl font-semibold tracking-tight text-white">{item.title}</h1>
-        <p className="body-soft mt-4 max-w-3xl text-lg text-slate-300">{item.description}</p>
-        <p className="body-soft mt-8 text-base text-slate-300">
-          This resource page is ready for Cloudinary assets, downloadable files, and
-          embedded previews with newsletter-gated distribution.
-        </p>
-        <div className="mt-8">
-          <Link href="/resources" className="cta-pill rounded-full border border-white/20 px-4 py-2 text-sm text-white">
-            Back to Resources
-          </Link>
-        </div>
-      </article>
+      </EditorialArticle>
+      <ConsultationCTA />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

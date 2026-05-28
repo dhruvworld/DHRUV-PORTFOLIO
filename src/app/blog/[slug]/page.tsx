@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
+import { EditorialArticle } from "@/components/brand/editorial-article";
+import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { blogPosts } from "@/content/blog-posts";
 import { getBlogPostingSchema, getBreadcrumbSchema, siteConfig } from "@/lib/seo";
 
@@ -52,29 +53,27 @@ export default async function BlogPostPage({
   });
   const breadcrumbSchema = getBreadcrumbSchema(`/blog/${post.slug}`, post.title);
 
+  const today = new Date();
+  const postDate = new Date(post.publishedAt);
+  const metaLabel = postDate > today ? "Scheduled" : post.publishedAt;
+
   return (
     <SiteShell>
-      <article className="glass-panel rounded-3xl p-10 shadow-sm">
-        <p className="text-xs uppercase tracking-[0.14em] text-brand-cyan">{post.publishedAt}</p>
-        <h1 className="section-title mt-3 text-4xl font-semibold tracking-tight text-white">{post.title}</h1>
-        <p className="body-soft mt-4 max-w-3xl text-lg text-slate-300">{post.description}</p>
-        <div className="body-soft mt-8 space-y-4 text-base text-slate-300">
-          {post.content.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-        <div className="mt-8 flex flex-wrap gap-3 text-sm">
-          <Link href="/blog" className="cta-pill rounded-full border border-white/20 px-4 py-2 text-white">
-            Back to Blog
-          </Link>
-          <Link href="/projects" className="cta-pill rounded-full border border-white/20 px-4 py-2 text-white">
-            Explore Projects
-          </Link>
-          <Link href="/contact" className="cta-pill rounded-full border border-white/20 px-4 py-2 text-white">
-            Contact
-          </Link>
-        </div>
-      </article>
+      <EditorialArticle
+        meta={metaLabel}
+        title={post.title}
+        description={post.description}
+        links={[
+          { href: "/blog", label: "Back to Blog" },
+          { href: "/projects", label: "Explore Projects" },
+          { href: "/contact", label: "Contact" },
+        ]}
+      >
+        {post.content.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </EditorialArticle>
+      <ConsultationCTA />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}

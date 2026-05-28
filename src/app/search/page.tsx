@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
+import { PageIntro } from "@/components/brand/page-intro";
 import { blogPosts } from "@/content/blog-posts";
 import { resources } from "@/content/resources";
 import { caseStudies } from "@/content/case-studies";
@@ -53,11 +54,8 @@ export default function SearchPage() {
 
   return (
     <SiteShell>
-      <section className="glass-panel creator-glow rounded-3xl p-8 shadow-sm md:p-10">
-        <h1 className="display-title text-5xl font-semibold tracking-tight text-white md:text-6xl">Search</h1>
-        <p className="body-soft mt-4 text-lg">
-          Search posts, resources, and case studies.
-        </p>
+      <PageIntro title="Search" description="Search posts, resources, and case studies." />
+      <section className="mt-6">
         <input
           value={query}
           onChange={(event) => {
@@ -66,17 +64,20 @@ export default function SearchPage() {
             trackEvent("search_query_changed", { queryLength: nextValue.length });
           }}
           placeholder="Search AI, systems, business..."
-          className="mt-6 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-brand-cyan"
+          className="w-full rounded-xl border hairline bg-white/75 px-4 py-3 text-sm text-[#132232] outline-none focus:border-[#2e5e4e]"
         />
       </section>
       <section className="mt-8 grid gap-4">
         {results.map((result) => (
-          <article key={result.href} className="glass-panel creator-card rounded-2xl p-6">
-            <p className="text-xs uppercase tracking-[0.15em] text-brand-cyan">{result.source}</p>
-            <h2 className="section-title mt-2 text-2xl font-semibold text-white">{result.title}</h2>
-            <p className="body-soft mt-2 text-slate-300">{result.description}</p>
-            <Link href={result.href} className="cta-pill mt-4 inline-flex rounded-full border border-white/20 px-4 py-2 text-sm text-white">
-              Open
+          <article key={result.href} className="rounded-2xl border hairline bg-white/65 p-6">
+            <p className="text-xs uppercase tracking-[0.15em] text-[#2e5e4e]">{result.source}</p>
+            <h2 className="section-title mt-2 text-2xl font-semibold">{result.title}</h2>
+            <p className="body-soft mt-2">{result.description}</p>
+            <Link
+              href={result.href}
+              className="cta-pill mt-4 inline-flex rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]"
+            >
+              Open ↗
             </Link>
           </article>
         ))}

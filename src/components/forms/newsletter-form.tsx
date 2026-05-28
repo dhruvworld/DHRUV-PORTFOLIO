@@ -44,16 +44,16 @@ export function NewsletterForm() {
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         placeholder="you@example.com"
-        className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-brand-cyan"
+        className="w-full rounded-xl border hairline bg-white/75 px-4 py-3 text-sm text-[#132232] outline-none focus:border-[#2e5e4e]"
       />
       <button
         type="submit"
         disabled={loading}
-        className="rounded-xl bg-brand-cyan px-5 py-3 text-sm font-medium text-slate-950 disabled:opacity-70"
+        className="rounded-xl bg-[#132232] px-5 py-3 text-sm font-medium text-[#f8f7f4] disabled:opacity-70"
       >
         {loading ? "Subscribing..." : "Subscribe"}
       </button>
-      <p className="text-sm text-slate-300 sm:ml-2 sm:self-center">
+      <p className="text-sm text-[#5f5f5f] sm:ml-2 sm:self-center">
         {status === "success" && "Subscribed successfully."}
         {status === "error" && "Subscription failed. Try again."}
       </p>

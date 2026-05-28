@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
+import { PageIntro } from "@/components/brand/page-intro";
+import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { blogPosts } from "@/content/blog-posts";
 
 export const metadata: Metadata = {
@@ -19,25 +21,25 @@ export default function BlogPage() {
 
   return (
     <SiteShell>
-      <section className="py-2 md:py-6">
-        <h1 className="display-title text-5xl font-semibold tracking-tight md:text-6xl">AI Journal</h1>
-        <p className="body-soft mt-4 max-w-3xl text-lg">
-          Writing on AI, systems, technology, and execution.
-        </p>
-      </section>
+      <PageIntro
+        eyebrow="Journal"
+        title="AI Journal"
+        description="Writing on AI, systems, technology, and execution."
+      />
       <section className="mt-12 space-y-7">
         {blogPosts.map((post) => {
           const postDate = new Date(post.publishedAt);
           const metaLabel = postDate > today ? "Scheduled" : post.publishedAt;
           return (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="block border-b border-black/10 pb-7">
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="block border-b hairline pb-7">
               <p className="text-xs uppercase tracking-[0.15em] text-[#2e5e4e]">{metaLabel}</p>
-              <h2 className="mt-2 text-4xl font-medium tracking-tight text-[#111]">{post.title}</h2>
+              <h2 className="mt-2 text-4xl font-medium tracking-tight text-[#132232]">{post.title}</h2>
               <p className="mt-3 max-w-3xl text-[#6b6b6b]">{post.excerpt}</p>
             </Link>
           );
         })}
       </section>
+      <ConsultationCTA />
     </SiteShell>
   );
 }

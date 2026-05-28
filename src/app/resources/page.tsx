@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
+import { PageIntro } from "@/components/brand/page-intro";
+import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { ContentCard } from "@/components/content-card";
 import { resources } from "@/content/resources";
 
@@ -12,13 +14,12 @@ export const metadata: Metadata = {
 export default function ResourcesPage() {
   return (
     <SiteShell>
-      <section className="glass-panel creator-glow rounded-3xl p-8 shadow-sm md:p-10">
-        <h1 className="display-title text-5xl font-semibold tracking-tight text-white md:text-6xl">Resources</h1>
-        <p className="body-soft mt-4 max-w-3xl text-lg">
-          Guides, frameworks, and practical assets for builders, students, and founders.
-        </p>
-      </section>
-      <section className="mt-8 grid gap-4 md:grid-cols-2">
+      <PageIntro
+        eyebrow="Library"
+        title="Resources"
+        description="Guides, frameworks, and practical assets for builders, students, and founders."
+      />
+      <section className="mt-10 grid gap-4 md:grid-cols-2">
         {resources.map((item) => (
           <ContentCard
             key={item.slug}
@@ -29,6 +30,7 @@ export default function ResourcesPage() {
           />
         ))}
       </section>
+      <ConsultationCTA />
     </SiteShell>
   );
 }

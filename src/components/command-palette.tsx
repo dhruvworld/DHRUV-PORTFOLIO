@@ -18,7 +18,7 @@ const commands = [
 
 const quickActions = [
   { label: "Copy Personal Email", value: "DHRUV4701@GMAIL.COM" },
-  { label: "Copy Work Email", value: "TALKTOSHRUV.AI@GMAIL.COM" },
+  { label: "Copy Work Email", value: "talktodhruv.ai@gmail.com" },
   { label: "Copy WhatsApp Number", value: "+14244682423" },
   { label: "Copy India Number", value: "+919998734388" },
 ];
@@ -59,14 +59,14 @@ export function CommandPalette() {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 pt-28 backdrop-blur-sm">
-      <div className="glass-panel w-full max-w-2xl rounded-2xl p-4">
+    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 p-4 pt-28 backdrop-blur-sm">
+      <div className="w-full max-w-2xl rounded-2xl border hairline bg-[#f8f7f4] p-4 shadow-[0_24px_48px_rgba(0,0,0,0.12)]">
         <input
           autoFocus
           placeholder="Search routes..."
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-brand-cyan"
+          className="w-full rounded-xl border hairline bg-white px-4 py-3 text-sm text-[#132232] outline-none focus:border-[#2e5e4e]"
         />
         <div className="mt-3 grid gap-2">
           {filtered.map((item) => (
@@ -74,7 +74,7 @@ export function CommandPalette() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 hover:border-brand-cyan"
+              className="rounded-lg border hairline bg-white px-4 py-3 text-sm text-[#333] hover:border-[#2e5e4e]"
             >
               {item.label}
             </Link>
@@ -84,7 +84,7 @@ export function CommandPalette() {
               key={action.label}
               type="button"
               onClick={() => copyText(action.value)}
-              className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-slate-200 hover:border-brand-cyan"
+              className="rounded-lg border hairline bg-white px-4 py-3 text-left text-sm text-[#333] hover:border-[#2e5e4e]"
             >
               {action.label}
             </button>
@@ -92,14 +92,14 @@ export function CommandPalette() {
           <Link
             href="https://www.linkedin.com/in/dhruvworld/"
             onClick={() => setOpen(false)}
-            className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 hover:border-brand-cyan"
+            className="rounded-lg border hairline bg-white px-4 py-3 text-sm text-[#333] hover:border-[#2e5e4e]"
           >
             Open LinkedIn
           </Link>
           <Link
             href="https://github.com/dhruvworld"
             onClick={() => setOpen(false)}
-            className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 hover:border-brand-cyan"
+            className="rounded-lg border hairline bg-white px-4 py-3 text-sm text-[#333] hover:border-[#2e5e4e]"
           >
             Open GitHub
           </Link>
