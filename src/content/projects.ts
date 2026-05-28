@@ -15,8 +15,10 @@ export type HighlightProject = {
   summary: string;
   stack: string;
   details: string[];
-  /** Primary link — on-site route, GitHub repo, or anchor */
+  /** Primary on-site route or fallback anchor */
   href: string;
+  /** Prefer live product URL over GitHub in UI */
+  liveUrl?: string;
   githubRepo?: string;
   caseStudySlug?: string;
   featuredOnHome?: boolean;
@@ -44,6 +46,7 @@ export const highlightProjects: HighlightProject[] = [
       "Live site: quantisglobal.co",
     ],
     href: "/quantis-global",
+    liveUrl: "https://quantisglobal.co",
     githubRepo: "Quantis-Global",
     caseStudySlug: "quantis-global-brand-foundation",
     featuredOnHome: true,
@@ -62,6 +65,7 @@ export const highlightProjects: HighlightProject[] = [
       "Built and iterated in Cursor.",
     ],
     href: "/",
+    liveUrl: "https://dhruvworld.netlify.app",
     githubRepo: "DHRUV-PORTFOLIO",
     caseStudySlug: "digital-identity-architecture",
     featuredOnHome: true,

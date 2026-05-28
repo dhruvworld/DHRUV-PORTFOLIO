@@ -1,13 +1,15 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
+import { ContactChannels } from "@/components/brand/contact-channels";
 import { ContactForm } from "@/components/forms/contact-form";
-import { socialLinks } from "@/lib/social";
+import { contactResponseNote } from "@/content/profile";
+import { whoIHelp } from "@/content/profile";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Contact",
-  description: "Contact Dhruv Solanki for collaborations, consulting, and partnerships.",
+  description:
+    "Contact Dhruv Solanki via WhatsApp, LinkedIn, or email — collaborations, Quantis Global trade, and engineering projects.",
   path: "/contact",
 });
 
@@ -17,49 +19,23 @@ export default function ContactPage() {
       <section className="py-2 md:py-6">
         <p className="text-xs uppercase tracking-[0.2em] text-[#5f5f5f]">Contact</p>
         <h1 className="display-title mt-4 text-5xl font-semibold tracking-tight md:text-6xl">
-          Let&apos;s Connect.
+          Let&apos;s connect.
         </h1>
-        <p className="body-soft mt-6 max-w-3xl text-lg">
-          Manchester, New Hampshire · collaborations, Quantis Global trade inquiries, and engineering projects.
+        <p className="mt-6 max-w-3xl text-lg font-medium text-[#132232]">{whoIHelp}</p>
+        <p className="body-soft mt-4 max-w-3xl text-base">
+          Manchester, New Hampshire · Quantis Global trade inquiries · engineering & client projects.
         </p>
       </section>
 
       <section className="mt-10 rounded-2xl border hairline bg-white/60 p-7 md:p-9">
-        <div className="grid gap-5 md:grid-cols-2">
-          <div className="space-y-3 text-sm text-[#575757]">
-            <p>
-              Personal:{" "}
-              <a href="mailto:dhruv4701@gmail.com" className="underline decoration-black/25 underline-offset-4">
-                dhruv4701@gmail.com
-              </a>
-            </p>
-            <p>
-              Work:{" "}
-              <a href="mailto:talktodhruv.ai@gmail.com" className="underline decoration-black/25 underline-offset-4">
-                talktodhruv.ai@gmail.com
-              </a>
-            </p>
-            <p>WhatsApp (IN): +91 99987 34388</p>
-            <p>WhatsApp (US): +1 424 468 2423</p>
-          </div>
-          <div className="flex flex-wrap content-start gap-3">
-            <Link href={socialLinks.linkedin} className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]">
-              LinkedIn
-            </Link>
-            <Link href={socialLinks.github} className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]">
-              GitHub
-            </Link>
-            <Link href={socialLinks.instagram} className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]">
-              Instagram
-            </Link>
-            <Link href={socialLinks.facebook} className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]">
-              Facebook
-            </Link>
-            <Link href={socialLinks.whatsappIn} className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]">
-              WhatsApp
-            </Link>
-          </div>
-        </div>
+        <ContactChannels />
+      </section>
+
+      <section className="mt-10 rounded-2xl border hairline bg-white/60 p-7 md:p-9">
+        <h2 className="text-xl font-semibold text-[#132232]">Or send a message</h2>
+        <p className="mt-2 text-sm text-[#666]">
+          Forms are fine — direct channels above usually get a faster reply. {contactResponseNote}
+        </p>
         <ContactForm />
       </section>
     </SiteShell>

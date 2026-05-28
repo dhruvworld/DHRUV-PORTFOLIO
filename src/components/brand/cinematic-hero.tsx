@@ -2,6 +2,7 @@ import Link from "next/link";
 import { EditorialImage } from "@/components/brand/editorial-image";
 import { mediaAssets } from "@/lib/media";
 import { resumePdfPath } from "@/content/certifications";
+import { whoIHelp } from "@/content/profile";
 import { socialLinks } from "@/lib/social";
 
 export function CinematicHero() {
@@ -19,19 +20,16 @@ export function CinematicHero() {
             >
               Dhruv Solanki
             </h1>
-            <p className="mt-3 text-lg text-[#434343]">
-              Founder of Quantis Global · full-stack engineer · AI workflow builder
-            </p>
-            <p className="body-soft mt-5 max-w-xl text-base leading-relaxed">
-              I build products and trade systems — Python, Django, Next.js, and practical AI execution for
-              founders, students, and global business partners.
+            <p className="mt-4 max-w-xl text-lg font-medium leading-relaxed text-[#132232]">{whoIHelp}</p>
+            <p className="body-soft mt-4 max-w-xl text-sm leading-relaxed text-[#5f5f5f]">
+              Founder of Quantis Global · full-stack engineer · Cursor-native builder · Manchester, NH
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="cta-pill rounded-full bg-[#132232] px-5 py-3 text-sm font-medium text-[#f8f7f4]"
               >
-                Book a call
+                Contact · WhatsApp / LinkedIn
               </Link>
               <Link
                 href="/projects"
