@@ -1,66 +1,19 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
-import { mediaAssets } from "@/lib/media";
-import { EditorialImage } from "@/components/brand/editorial-image";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
-
-const highlightedProjects = [
-  {
-    slug: "quantis-global",
-    title: "Quantis Global",
-    stack: "Business Systems • Trade Ops",
-    details: [
-      "Challenge: fragmented sourcing workflows and low trust signals.",
-      "Execution: structured sourcing, verification, and logistics coordination layer.",
-      "Outcome: clearer positioning for premium global execution partnerships.",
-    ],
-  },
-  {
-    slug: "savemepdf",
-    title: "SaveMePDF",
-    stack: "Product Utility • Creator Tools",
-    details: [
-      "Challenge: repetitive document operations and manual formatting.",
-      "Execution: utility-first PDF workflow concept with speed and consistency focus.",
-      "Outcome: cleaner creator and student productivity pathway.",
-    ],
-  },
-  {
-    slug: "post2plan",
-    title: "Post2Plan",
-    stack: "AI Workflow • Publishing System",
-    details: [
-      "Challenge: inconsistent posting and weak strategic repurposing.",
-      "Execution: convert ideas into structured publishing plans.",
-      "Outcome: more consistent content velocity and authority compounding.",
-    ],
-  },
-  {
-    slug: "opensource-displaylink",
-    title: "OpenSourceDisplayLink",
-    stack: "Engineering R&D • Cross-platform",
-    details: [
-      "Challenge: extend displays across devices with low latency.",
-      "Execution: realtime streaming and pointer-tracking architecture.",
-      "Outcome: practical prototype direction for high-performance utility software.",
-    ],
-  },
-  {
-    slug: "dhruv-world",
-    title: "Dhruv World",
-    stack: "Identity Platform • Media Systems",
-    details: [
-      "Challenge: fragmented online identity and weak search consistency.",
-      "Execution: unified personal brand architecture across pages, writing, and entity signals.",
-      "Outcome: stronger narrative clarity and long-term authority compounding.",
-    ],
-  },
-];
+import { EditorialImage } from "@/components/brand/editorial-image";
+import { highlightProjects } from "@/content/projects";
+import { mediaAssets } from "@/lib/media";
+import { siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Projects",
   description:
     "Selected projects by Dhruv Solanki across Quantis Global, AI workflows, productivity tools, and digital identity systems.",
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/projects`,
+  },
 };
 
 export default function ProjectsPage() {
@@ -74,15 +27,16 @@ export default function ProjectsPage() {
       </section>
 
       <section className="mt-12 grid gap-12">
-        {highlightedProjects.map((project, index) => {
+        {highlightProjects.map((project, index) => {
           const visual = mediaAssets.work[index % mediaAssets.work.length];
           return (
-            <article id={project.slug} key={project.title} className="scroll-mt-28 overflow-hidden rounded-[1.35rem] border hairline bg-white/65">
+            <article
+              id={project.slug}
+              key={project.slug}
+              className="scroll-mt-28 overflow-hidden rounded-[1.35rem] border hairline bg-white/65"
+            >
               <div className="relative aspect-[16/8] bg-[#eceae5]">
                 <EditorialImage asset={visual} className="grayscale-[12%]" />
-                <div className="absolute right-5 top-5 grid h-12 w-12 place-items-center rounded-full bg-[#2b2f38] text-white">
-                  ↗
-                </div>
               </div>
               <div className="border-t hairline p-6 md:p-8">
                 <h2 className="section-title text-4xl font-semibold">{project.title}</h2>
@@ -92,6 +46,22 @@ export default function ProjectsPage() {
                     <li key={line}>{line}</li>
                   ))}
                 </ul>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link
+                    href={project.href}
+                    className="cta-pill rounded-full bg-[#132232] px-5 py-2.5 text-sm font-medium text-[#f8f7f4]"
+                  >
+                    View project ↗
+                  </Link>
+                  {project.caseStudySlug ? (
+                    <Link
+                      href={`/case-studies/${project.caseStudySlug}`}
+                      className="cta-pill rounded-full border border-black/15 px-5 py-2.5 text-sm font-medium text-[#132232]"
+                    >
+                      Read case study
+                    </Link>
+                  ) : null}
+                </div>
               </div>
             </article>
           );

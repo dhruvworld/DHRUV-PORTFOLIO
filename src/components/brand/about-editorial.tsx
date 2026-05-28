@@ -27,10 +27,10 @@ export function AboutEditorial() {
         <article className="flex flex-col rounded-[1.75rem] border hairline bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
           <div className="grid h-10 w-10 place-items-center rounded-full border hairline text-sm">◎</div>
           <p className="mt-8 text-[clamp(3rem,6vw,4.5rem)] font-semibold leading-none tracking-tight text-[#132232]">
-            120%
+            AI × Biz
           </p>
           <p className="mt-3 max-w-[22ch] text-sm leading-relaxed text-[#666]">
-            Average increase in client engagement in the first 6 months
+            Dual focus: practical AI workflows and global business execution
           </p>
           <div className="relative mt-8 min-h-[280px] flex-1 overflow-hidden rounded-[1.25rem] bg-[#efeeea]">
             <EditorialImage asset={mediaAssets.about.centerPortrait} className="grayscale-[18%]" />

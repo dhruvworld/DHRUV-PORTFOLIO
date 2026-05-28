@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef } from "react";
 import { mediaAssets } from "@/lib/media";
 import { EditorialImage } from "@/components/brand/editorial-image";
@@ -21,25 +22,30 @@ export function VisualGallery() {
       <div className="flex items-end justify-between gap-4">
         <div>
           <h2 className="section-title text-4xl font-semibold text-[#132232]">Latest Works</h2>
-          <p className="mt-2 text-sm text-[#3f3f3f]">Perfect solution for digital experience</p>
+          <p className="mt-2 text-sm text-[#3f3f3f]">Product, brand, and systems in motion</p>
         </div>
-        <div className="hidden gap-2 md:flex">
-          <button
+        <div className="hidden items-center gap-4 md:flex">
+          <Link href="/projects" className="text-sm font-medium text-[#132232] underline decoration-black/25 underline-offset-4">
+            All projects ↗
+          </Link>
+          <div className="flex gap-2">
+            <button
             type="button"
             onClick={() => scrollByCard("left")}
             className="grid h-10 w-10 place-items-center rounded-full border border-black/20 bg-white/80 text-[#132232]"
             aria-label="Previous works"
           >
             ←
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollByCard("right")}
-            className="grid h-10 w-10 place-items-center rounded-full border border-black/20 bg-[#132232] text-white"
-            aria-label="Next works"
-          >
-            →
-          </button>
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollByCard("right")}
+              className="grid h-10 w-10 place-items-center rounded-full border border-black/20 bg-[#132232] text-white"
+              aria-label="Next works"
+            >
+              →
+            </button>
+          </div>
         </div>
       </div>
 
@@ -58,10 +64,15 @@ export function VisualGallery() {
         ))}
       </div>
 
-      <div className="mt-5 flex justify-center gap-2 md:hidden">
-        <span className="h-2 w-9 rounded-full bg-[#132232]" />
-        <span className="h-2 w-2 rounded-full bg-[#6f6f6f]" />
-        <span className="h-2 w-2 rounded-full bg-[#6f6f6f]" />
+      <div className="mt-5 flex flex-col items-center gap-4 md:hidden">
+        <div className="flex justify-center gap-2">
+          <span className="h-2 w-9 rounded-full bg-[#132232]" />
+          <span className="h-2 w-2 rounded-full bg-[#6f6f6f]" />
+          <span className="h-2 w-2 rounded-full bg-[#6f6f6f]" />
+        </div>
+        <Link href="/projects" className="text-sm font-medium text-[#132232] underline decoration-black/25 underline-offset-4">
+          All projects ↗
+        </Link>
       </div>
     </section>
   );

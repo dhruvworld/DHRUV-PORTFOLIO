@@ -10,12 +10,12 @@ export function CinematicHero() {
           <div className="md:py-4">
             <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-sm text-[#4f4f4f]">
               <p>
-                <span className="text-2xl font-semibold text-[#132232]">+200</span>
-                <span className="ml-2">Project completed</span>
+                <span className="text-2xl font-semibold text-[#132232]">4+</span>
+                <span className="ml-2">Years building</span>
               </p>
               <p>
-                <span className="text-2xl font-semibold text-[#132232]">+50</span>
-                <span className="ml-2">Startup raised</span>
+                <span className="text-2xl font-semibold text-[#132232]">2</span>
+                <span className="ml-2">Layers — identity & execution</span>
               </p>
             </div>
             <h1 className="display-title mt-10 text-[clamp(4.5rem,10vw,8.8rem)] font-medium text-[#132232]">

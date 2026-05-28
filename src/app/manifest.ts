@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Digital identity platform for Dhruv Solanki (Dhruv Solankii): AI, technology, business, and media ecosystem.",
     start_url: "/",
     display: "standalone",
-    background_color: "#f6f8fc",
-    theme_color: "#0b1b33",
+    background_color: "#f5f3ef",
+    theme_color: "#132232",
     icons: [
       {
         src: "/favicon.ico",

@@ -1,27 +1,7 @@
 import Link from "next/link";
+import { homeFeaturedProjects } from "@/content/projects";
 import { mediaAssets } from "@/lib/media";
 import { EditorialImage } from "@/components/brand/editorial-image";
-
-const projects = [
-  {
-    title: "Quantis Global",
-    what: "International sourcing and trade execution platform.",
-    category: "Business Systems",
-    href: "/quantis-global",
-  },
-  {
-    title: "SaveMePDF",
-    what: "Fast document workflow for PDF, Word, and Excel tasks.",
-    category: "Productivity",
-    href: "/projects#savemepdf",
-  },
-  {
-    title: "Post2Plan",
-    what: "Turns raw ideas into structured publishing plans.",
-    category: "AI Workflow",
-    href: "/projects#post2plan",
-  },
-];
 
 export function SelectedWork() {
   return (
@@ -34,11 +14,11 @@ export function SelectedWork() {
       </div>
 
       <div className="grid gap-7 md:grid-cols-3">
-        {projects.map((project, index) => {
+        {homeFeaturedProjects.map((project, index) => {
           const visual = mediaAssets.work[index];
           return (
             <Link
-              key={project.title}
+              key={project.slug}
               href={project.href}
               className="group overflow-hidden rounded-[1.35rem] border hairline bg-white/70 transition hover:border-black/20"
             >
@@ -51,7 +31,7 @@ export function SelectedWork() {
               <div className="border-t hairline p-5">
                 <p className="text-xs uppercase tracking-[0.14em] text-[#6f6f6f]">{project.category}</p>
                 <h3 className="mt-2 text-2xl font-semibold tracking-tight text-[#132232]">{project.title}</h3>
-                <p className="mt-2 text-sm text-[#606060]">{project.what}</p>
+                <p className="mt-2 text-sm text-[#606060]">{project.summary}</p>
               </div>
             </Link>
           );
