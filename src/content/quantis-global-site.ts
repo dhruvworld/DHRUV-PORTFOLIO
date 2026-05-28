@@ -140,7 +140,7 @@ export const quantisGlobalSite = {
     address: "SF-71, City Mall 2, Navjivan Mill Compound, Kalol – 382721",
     phone: "+91 9157857893",
     phoneDisplay: "+91 91-578-578-93",
-    emails: ["info@quantisglobal.co", "support@quantisglobal.co"],
+    emails: ["info@quantisglobal.co", "customerservice@quantisglobal.co"],
     responseTime: "24 hours",
   },
 } as const;
