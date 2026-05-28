@@ -8,7 +8,7 @@ export function AboutEditorial() {
         <div className="md:pt-2">
           <p className="text-xs uppercase tracking-[0.24em] text-[#5f5f5f]">About Me</p>
           <h2 className="section-title mt-5 text-[clamp(2.6rem,5vw,4.2rem)] font-semibold leading-[0.95]">
-            About Me
+            Design meets execution.
           </h2>
           <p className="body-soft mt-6 text-base leading-relaxed">
             I specialize in turning complex problems into elegant solutions. My approach blends creativity

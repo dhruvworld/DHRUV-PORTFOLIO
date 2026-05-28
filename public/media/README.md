@@ -1,6 +1,6 @@
 # Media replacement guide
 
-Replace these files in `public/media/` to upgrade visuals without touching code.
+Replace these files in `public/media/` to upgrade visuals — no code changes needed.
 
 | File | Used for | Recommended |
 |------|----------|-------------|
@@ -14,16 +14,18 @@ Replace these files in `public/media/` to upgrade visuals without touching code.
 
 ## Optional per-project files
 
-To use separate images per project card, add:
+Add separate files and update `mediaAssets.work` in `src/lib/media.ts`:
 
 - `project-01.png`
 - `project-02.png`
 - `project-03.png`
-
-Then update `mediaAssets.work` in `src/lib/media.ts`.
 
 ## Style
 
 - Slightly desaturated, editorial lighting
 - Avoid neon gradients and heavy filters
 - Keep consistent tone across all assets
+
+## Note
+
+Duplicate reference screenshots were removed from this folder to keep deploy size lean. Only the semantic filenames above are used by the site.

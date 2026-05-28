@@ -2,12 +2,14 @@ import { CommandPalette } from "@/components/command-palette";
 import { AmbientBackground } from "@/components/brand/ambient-background";
 import { GlassHeader } from "@/components/brand/glass-header";
 import { PremiumFooter } from "@/components/brand/premium-footer";
+import { ScrollProgress } from "@/components/brand/scroll-progress";
 import { SpotlightCursor } from "@/components/brand/spotlight-cursor";
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <AmbientBackground />
+      <ScrollProgress />
       <SpotlightCursor />
       <CommandPalette />
       <GlassHeader />
