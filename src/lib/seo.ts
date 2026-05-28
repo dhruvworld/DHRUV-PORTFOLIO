@@ -15,11 +15,13 @@ export function buildPageMetadata({
   description,
   path,
   ogImage,
+  type = "website",
 }: {
   title: string;
   description: string;
   path: string;
   ogImage?: string;
+  type?: "website" | "article";
 }): Metadata {
   const url = `${siteConfig.siteUrl}${path}`;
   const fullTitle = `${title} | ${siteConfig.name}`;
@@ -32,7 +34,7 @@ export function buildPageMetadata({
       title: fullTitle,
       description,
       url,
-      type: "website",
+      type,
       siteName: siteConfig.name,
       ...(ogImage ? { images: [{ url: ogImage }] } : {}),
     },

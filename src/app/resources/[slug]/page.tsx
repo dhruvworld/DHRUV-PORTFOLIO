@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 import { EditorialArticle } from "@/components/brand/editorial-article";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { resources } from "@/content/resources";
-import { getBreadcrumbSchema, siteConfig } from "@/lib/seo";
+import { buildPageMetadata, getBreadcrumbSchema } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -20,13 +20,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const item = resources.find((resource) => resource.slug === slug);
   if (!item) return {};
-  return {
+  return buildPageMetadata({
     title: item.title,
     description: item.description,
-    alternates: {
-      canonical: `${siteConfig.siteUrl}/resources/${item.slug}`,
-    },
-  };
+    path: `/resources/${item.slug}`,
+    type: "article",
+  });
 }
 
 export default async function ResourceDetailPage({

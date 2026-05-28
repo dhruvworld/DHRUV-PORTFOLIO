@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 import { EditorialArticle } from "@/components/brand/editorial-article";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { blogPosts } from "@/content/blog-posts";
-import { getBlogPostingSchema, getBreadcrumbSchema, siteConfig } from "@/lib/seo";
+import { buildPageMetadata, getBlogPostingSchema, getBreadcrumbSchema } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -20,19 +20,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = blogPosts.find((item) => item.slug === slug);
   if (!post) return {};
-  return {
+  return buildPageMetadata({
     title: post.title,
     description: post.description,
-    alternates: {
-      canonical: `${siteConfig.siteUrl}/blog/${post.slug}`,
-    },
-    openGraph: {
-      title: `${post.title} | Dhruv Solanki`,
-      description: post.description,
-      url: `${siteConfig.siteUrl}/blog/${post.slug}`,
-      type: "article",
-    },
-  };
+    path: `/blog/${post.slug}`,
+    type: "article",
+  });
 }
 
 export default async function BlogPostPage({

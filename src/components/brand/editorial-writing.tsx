@@ -6,7 +6,12 @@ export function EditorialWriting() {
 
   return (
     <section className="mt-28">
-      <h2 className="section-title text-4xl font-semibold md:text-5xl">AI Journal</h2>
+      <div className="flex items-end justify-between gap-4">
+        <h2 className="section-title text-4xl font-semibold md:text-5xl">AI Journal</h2>
+        <Link href="/blog" className="text-sm text-[#5f5f5f] hover:text-[#132232]">
+          View all posts ↗
+        </Link>
+      </div>
       <div className="mt-8 space-y-6">
         {blogPosts.slice(0, 3).map((post) => {
           const postDate = new Date(post.publishedAt);

@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 import { EditorialArticle } from "@/components/brand/editorial-article";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { caseStudies } from "@/content/case-studies";
-import { getBreadcrumbSchema, siteConfig } from "@/lib/seo";
+import { buildPageMetadata, getBreadcrumbSchema } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -20,13 +20,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const study = caseStudies.find((entry) => entry.slug === slug);
   if (!study) return {};
-  return {
+  return buildPageMetadata({
     title: study.title,
     description: study.summary,
-    alternates: {
-      canonical: `${siteConfig.siteUrl}/case-studies/${study.slug}`,
-    },
-  };
+    path: `/case-studies/${study.slug}`,
+    type: "article",
+  });
 }
 
 export default async function CaseStudyDetailPage({

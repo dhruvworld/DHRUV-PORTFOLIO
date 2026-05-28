@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { CinematicHero } from "@/components/brand/cinematic-hero";
 import { CurrentFocus } from "@/components/brand/current-focus";
@@ -10,6 +11,18 @@ import { SectionReveal } from "@/components/brand/section-reveal";
 import { SelectedWork } from "@/components/brand/selected-work";
 import { VisualGallery } from "@/components/brand/visual-gallery";
 import { EditorialTestimonials } from "@/components/brand/editorial-testimonials";
+import { buildPageMetadata, siteConfig } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  ...buildPageMetadata({
+    title: siteConfig.name,
+    description: siteConfig.description,
+    path: "/",
+  }),
+  title: {
+    absolute: "Dhruv Solanki (Dhruv Solankii) | Dhruv World",
+  },
+};
 
 export default function Home() {
   return (
