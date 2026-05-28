@@ -3,7 +3,19 @@ export type NavItem = {
   label: string;
 };
 
-/** Main header links — always visible on desktop. */
+/** Single header order — logical flow, no category labels. */
+export const headerNav: NavItem[] = [
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/blog", label: "Journal" },
+  { href: "/quantis-global", label: "Quantis" },
+  { href: "/resources", label: "Resources" },
+  { href: "/founder", label: "Founder" },
+  { href: "/contact", label: "Contact" },
+];
+
+/** Footer column: core pages */
 export const primaryNav: NavItem[] = [
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
@@ -12,13 +24,10 @@ export const primaryNav: NavItem[] = [
   { href: "/contact", label: "Contact" },
 ];
 
-/** Proof, business, and depth pages — shown in Explore bar + mobile + footer. */
+/** Footer column: depth & proof */
 export const exploreNav: NavItem[] = [
   { href: "/case-studies", label: "Case Studies" },
   { href: "/quantis-global", label: "Quantis Global" },
   { href: "/resources", label: "Resources" },
   { href: "/ai", label: "AI Lab" },
 ];
-
-/** @deprecated Use exploreNav */
-export const footerExplore = exploreNav;

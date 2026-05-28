@@ -1,4 +1,4 @@
-import { exploreNav, primaryNav } from "@/lib/site-nav";
+import { exploreNav, headerNav } from "@/lib/site-nav";
 
 export type CommandRoute = {
   href: string;
@@ -18,8 +18,8 @@ const extraRoutes: CommandRoute[] = [
 /** Deduplicated palette routes for ⌘K navigation. */
 export const commandRoutes: CommandRoute[] = [
   ...extraRoutes,
-  ...primaryNav.map((item) => ({ href: item.href, label: item.label })),
+  ...headerNav.map((item) => ({ href: item.href, label: item.label })),
   ...exploreNav
-    .filter((item) => !primaryNav.some((nav) => nav.href === item.href))
+    .filter((item) => !headerNav.some((nav) => nav.href === item.href))
     .map((item) => ({ href: item.href, label: item.label })),
 ].filter((route, index, list) => list.findIndex((entry) => entry.href === route.href) === index);
