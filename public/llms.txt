@@ -28,8 +28,7 @@ Canonical: https://dhruvworld.netlify.app
 - Quantis-Global — international trade & sourcing (live venture)
 - DHRUV-PORTFOLIO — this digital identity site
 - OpenSourceDisplayLink — cross-platform display streaming
-- HG_app — Flutter/Dart mobile
-- h_g_smelters — related smelters mobile app
+- HG_app — Flutter mobile app for H G Smelters Pvt Ltd Company (h_g_smelters repo related)
 - megh — Astro web project
 - sir — Sir data checker (TypeScript)
 - epicsearch — search web experiment
