@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 export default function FounderPage() {
   return (
     <SiteShell>
-      <section className="glass-panel creator-glow rounded-3xl p-8 md:p-12">
-        <p className="text-xs uppercase tracking-[0.2em] text-brand-cyan">Founder Manifesto</p>
-        <h1 className="display-title mt-4 text-5xl font-semibold text-white md:text-6xl">
+      <section className="py-3 md:py-8">
+        <p className="text-xs uppercase tracking-[0.2em] text-[#2e5e4e]">Founder Manifesto</p>
+        <h1 className="display-title mt-4 text-5xl font-semibold md:text-6xl">
           Build with clarity. Execute with depth.
         </h1>
         <p className="body-soft mt-6 max-w-4xl text-lg md:text-xl">
@@ -32,18 +32,18 @@ export default function FounderPage() {
         </p>
       </section>
 
-      <section className="mt-8 grid gap-5 md:grid-cols-2">
-        <article className="glass-panel rounded-2xl p-7">
-          <h2 className="section-title text-3xl font-semibold text-white">Operating Principles</h2>
-          <div className="mt-5 space-y-3 text-slate-300">
+      <section className="mt-12 grid gap-10 border-y border-black/10 py-12 md:grid-cols-2">
+        <article>
+          <h2 className="section-title text-3xl font-semibold">Operating Principles</h2>
+          <div className="mt-5 space-y-3 text-[#575757]">
             {beliefs.map((item) => (
               <p key={item}>{item}</p>
             ))}
           </div>
         </article>
-        <article className="glass-panel rounded-2xl p-7">
-          <h2 className="section-title text-3xl font-semibold text-white">Current Focus</h2>
-          <div className="mt-5 space-y-3 text-slate-300">
+        <article>
+          <h2 className="section-title text-3xl font-semibold">Current Focus</h2>
+          <div className="mt-5 space-y-3 text-[#575757]">
             <p>AI-first creator and productivity workflows</p>
             <p>Personal authority through writing and products</p>
             <p>Global trade and sourcing via Quantis Global</p>

@@ -31,9 +31,9 @@ export const metadata: Metadata = {
 export default function AiPage() {
   return (
     <SiteShell>
-      <section className="glass-panel creator-glow rounded-3xl p-8 md:p-12">
-        <p className="text-xs uppercase tracking-[0.2em] text-brand-cyan">AI Lab</p>
-        <h1 className="display-title mt-4 text-5xl font-semibold text-white md:text-6xl">
+      <section className="py-3 md:py-8">
+        <p className="text-xs uppercase tracking-[0.2em] text-[#2e5e4e]">AI Lab</p>
+        <h1 className="display-title mt-4 text-5xl font-semibold md:text-6xl">
           Practical AI Systems for Real Execution
         </h1>
         <p className="body-soft mt-6 max-w-4xl text-lg md:text-xl">
@@ -41,11 +41,11 @@ export default function AiPage() {
         </p>
       </section>
 
-      <section className="mt-8 grid gap-5 md:grid-cols-3">
+      <section className="mt-12 grid gap-7 md:grid-cols-3">
         {tracks.map((track) => (
-          <article key={track.title} className="glass-panel creator-card rounded-2xl p-6">
-            <h2 className="section-title text-2xl font-semibold text-white">{track.title}</h2>
-            <p className="body-soft mt-3 text-slate-300">{track.detail}</p>
+          <article key={track.title} className="border-b border-black/10 pb-6">
+            <h2 className="section-title text-3xl font-semibold text-[#111]">{track.title}</h2>
+            <p className="body-soft mt-3 text-[#6b6b6b]">{track.detail}</p>
           </article>
         ))}
       </section>
@@ -53,7 +53,7 @@ export default function AiPage() {
       <section className="mt-8">
         <Link
           href="/blog"
-          className="cta-pill rounded-full border border-white/20 px-5 py-2.5 text-sm text-white"
+          className="cta-pill rounded-full border border-black/15 px-5 py-2.5 text-sm text-[#111]"
         >
           Explore AI Writing
         </Link>

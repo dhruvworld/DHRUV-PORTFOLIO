@@ -11,7 +11,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <SpotlightCursor />
       <CommandPalette />
       <GlassHeader />
-      <main className="creator-grid-bg relative z-10 mx-auto w-full max-w-6xl px-6 py-12 md:py-20">
+      <main className="creator-grid-bg relative z-10 mx-auto w-full max-w-7xl px-6 py-14 md:py-24">
         {children}
       </main>
       <PremiumFooter />

@@ -40,24 +40,24 @@ const projects = [
 
 export function SelectedWork() {
   return (
-    <section className="mt-16 space-y-8">
+    <section className="mt-22 space-y-11">
       <div className="flex items-end justify-between gap-4">
-        <h2 className="section-title text-4xl font-semibold text-white md:text-5xl">Selected Work</h2>
-        <Link href="/projects" className="text-sm text-slate-300 hover:text-brand-cyan">
+        <h2 className="section-title text-4xl font-semibold md:text-5xl">Selected Work</h2>
+        <Link href="/projects" className="text-sm text-[#5f5f5f] hover:text-[#2e5e4e]">
           View all projects
         </Link>
       </div>
-      <div className="space-y-5">
+      <div className="space-y-10">
         {projects.map((project) => (
-          <article key={project.title} className="group border-b border-white/10 pb-5 last:border-none">
-            <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em] text-slate-400">
+          <article key={project.title} className="group border-b hairline pb-9 last:border-none">
+            <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em] text-[#777]">
               <span>{project.category}</span>
               <span>•</span>
               <span>{project.status}</span>
             </div>
-            <h3 className="mt-2 text-3xl font-semibold text-white">{project.title}</h3>
-            <p className="mt-2 text-slate-300">{project.what}</p>
-            <p className="mt-2 text-slate-400">{project.why}</p>
+            <h3 className="mt-2 text-4xl font-semibold text-[#111]">{project.title}</h3>
+            <p className="mt-3 max-w-3xl text-[#333]">{project.what}</p>
+            <p className="mt-2 max-w-3xl text-[#6b6b6b]">{project.why}</p>
           </article>
         ))}
       </div>

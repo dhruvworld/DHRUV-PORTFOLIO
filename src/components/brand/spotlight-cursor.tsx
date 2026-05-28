@@ -15,7 +15,7 @@ export function SpotlightCursor() {
 
   return (
     <div
-      className="pointer-events-none fixed z-0 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(79,140,255,0.16),rgba(79,140,255,0.02),transparent_70%)] blur-2xl transition-transform duration-300"
+      className="pointer-events-none fixed z-0 hidden h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(201,166,107,0.16),rgba(201,166,107,0.03),transparent_70%)] blur-2xl transition-transform duration-300 md:block"
       style={{ left: pos.x, top: pos.y }}
       aria-hidden
     />

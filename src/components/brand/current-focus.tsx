@@ -7,13 +7,13 @@ const focus = [
 
 export function CurrentFocus() {
   return (
-    <section className="mt-16">
-      <h2 className="section-title text-4xl font-semibold text-white">Currently Building</h2>
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
+    <section className="mt-18">
+      <h2 className="section-title text-4xl font-semibold">Currently Building</h2>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
         {focus.map(([label, value]) => (
-          <div key={label} className="glass-panel rounded-2xl p-5">
-            <p className="text-xs uppercase tracking-[0.16em] text-brand-cyan">{label}</p>
-            <p className="mt-2 text-base text-slate-200">{value}</p>
+          <div key={label} className="rounded-2xl border hairline bg-white/60 p-6">
+            <p className="text-xs uppercase tracking-[0.16em] text-[#2e5e4e]">{label}</p>
+            <p className="mt-2 text-base text-[#333]">{value}</p>
           </div>
         ))}
       </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
-import { ContentCard } from "@/components/content-card";
 import { blogPosts } from "@/content/blog-posts";
 
 export const metadata: Metadata = {
@@ -19,24 +19,22 @@ export default function BlogPage() {
 
   return (
     <SiteShell>
-      <section className="glass-panel creator-glow rounded-3xl p-10 shadow-sm">
-        <h1 className="display-title text-5xl font-semibold tracking-tight text-white md:text-6xl">AI Journal</h1>
+      <section className="py-2 md:py-6">
+        <h1 className="display-title text-5xl font-semibold tracking-tight md:text-6xl">AI Journal</h1>
         <p className="body-soft mt-4 max-w-3xl text-lg">
           Writing on AI, systems, technology, and execution.
         </p>
       </section>
-      <section className="mt-8 grid gap-4 md:grid-cols-2">
+      <section className="mt-12 space-y-7">
         {blogPosts.map((post) => {
           const postDate = new Date(post.publishedAt);
           const metaLabel = postDate > today ? "Scheduled" : post.publishedAt;
           return (
-            <ContentCard
-              key={post.slug}
-              title={post.title}
-              description={post.excerpt}
-              href={`/blog/${post.slug}`}
-              meta={metaLabel}
-            />
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="block border-b border-black/10 pb-7">
+              <p className="text-xs uppercase tracking-[0.15em] text-[#2e5e4e]">{metaLabel}</p>
+              <h2 className="mt-2 text-4xl font-medium tracking-tight text-[#111]">{post.title}</h2>
+              <p className="mt-3 max-w-3xl text-[#6b6b6b]">{post.excerpt}</p>
+            </Link>
           );
         })}
       </section>

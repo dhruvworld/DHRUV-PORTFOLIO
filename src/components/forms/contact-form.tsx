@@ -28,7 +28,7 @@ export function ContactForm() {
         value={name}
         onChange={(event) => setName(event.target.value)}
         placeholder="Your name"
-        className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-brand-cyan"
+        className="w-full rounded-xl border border-black/15 bg-white/75 px-4 py-3 text-sm text-[#111] outline-none focus:border-[#2e5e4e]"
       />
       <input
         required
@@ -36,7 +36,7 @@ export function ContactForm() {
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         placeholder="Your email"
-        className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-brand-cyan"
+        className="w-full rounded-xl border border-black/15 bg-white/75 px-4 py-3 text-sm text-[#111] outline-none focus:border-[#2e5e4e]"
       />
       <textarea
         required
@@ -44,16 +44,16 @@ export function ContactForm() {
         value={message}
         onChange={(event) => setMessage(event.target.value)}
         placeholder="Tell me what you're building"
-        className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-brand-cyan"
+        className="w-full rounded-xl border border-black/15 bg-white/75 px-4 py-3 text-sm text-[#111] outline-none focus:border-[#2e5e4e]"
       />
       <button
         type="submit"
-        className="cta-pill rounded-full bg-brand-cyan px-6 py-3 text-sm font-medium text-slate-950"
+        className="cta-pill rounded-full bg-[#111111] px-6 py-3 text-sm font-medium text-[#f8f7f4]"
       >
         Send Message
       </button>
       {status === "ready" ? (
-        <p className="text-sm text-slate-300">Your email app opened with a prefilled draft.</p>
+        <p className="text-sm text-[#5f5f5f]">Your email app opened with a prefilled draft.</p>
       ) : null}
     </form>
   );

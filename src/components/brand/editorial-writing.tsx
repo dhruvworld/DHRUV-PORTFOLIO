@@ -3,14 +3,14 @@ import { blogPosts } from "@/content/blog-posts";
 
 export function EditorialWriting() {
   return (
-    <section className="mt-16">
-      <h2 className="section-title text-4xl font-semibold text-white md:text-5xl">AI Journal</h2>
-      <div className="mt-6 space-y-4">
+    <section className="mt-18">
+      <h2 className="section-title text-4xl font-semibold md:text-5xl">AI Journal</h2>
+      <div className="mt-8 space-y-6">
         {blogPosts.slice(0, 3).map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="block border-b border-white/10 pb-4">
-            <p className="text-xs uppercase tracking-[0.14em] text-brand-cyan">Scheduled</p>
-            <h3 className="mt-1 text-2xl text-white">{post.title}</h3>
-            <p className="mt-1 text-slate-400">{post.excerpt}</p>
+          <Link key={post.slug} href={`/blog/${post.slug}`} className="block border-b hairline pb-6">
+            <p className="text-xs uppercase tracking-[0.14em] text-[#2e5e4e]">Scheduled</p>
+            <h3 className="mt-1 text-3xl text-[#111]">{post.title}</h3>
+            <p className="mt-2 max-w-3xl text-[#6b6b6b]">{post.excerpt}</p>
           </Link>
         ))}
       </div>

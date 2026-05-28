@@ -40,8 +40,8 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <SiteShell>
-      <section className="glass-panel creator-glow rounded-3xl p-10 shadow-sm">
-        <h1 className="display-title text-5xl font-semibold tracking-tight text-white md:text-6xl">
+      <section className="py-2 md:py-6">
+        <h1 className="display-title text-5xl font-semibold tracking-tight md:text-6xl">
           Projects
         </h1>
         <p className="body-soft mt-6 max-w-4xl text-lg">
@@ -49,20 +49,20 @@ export default function ProjectsPage() {
         </p>
       </section>
 
-      <section className="mt-8 grid gap-5">
+      <section className="mt-12 grid gap-11">
         {highlightedProjects.map((project) => (
-          <article key={project.title} className="glass-panel creator-card rounded-3xl p-7 md:p-9">
-            <div className="relative mb-5 aspect-[16/8] overflow-hidden rounded-2xl border border-white/10">
+          <article key={project.title} className="border-b hairline pb-12">
+            <div className="relative mb-7 aspect-[16/8] overflow-hidden rounded-2xl border hairline">
               <Image
                 src={homepageGallery[project.title.length % homepageGallery.length].src}
                 alt={`${project.title} project visual`}
                 fill
-                className="object-cover"
+                className="object-cover grayscale-[16%] contrast-[1.03] brightness-[0.98]"
               />
             </div>
-            <h2 className="section-title text-4xl font-semibold text-white">{project.title}</h2>
-            <p className="mt-2 text-sm uppercase tracking-[0.14em] text-brand-cyan">{project.stack}</p>
-            <ul className="mt-6 space-y-3 text-sm text-slate-300 md:text-base">
+            <h2 className="section-title text-4xl font-semibold">{project.title}</h2>
+            <p className="mt-2 text-sm uppercase tracking-[0.14em] text-[#2e5e4e]">{project.stack}</p>
+            <ul className="mt-6 max-w-4xl space-y-3 text-sm text-[#4f4f4f] md:text-base">
               {project.details.map((line) => (
                 <li key={line}>{line}</li>
               ))}

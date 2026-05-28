@@ -13,31 +13,31 @@ import { VisualGallery } from "@/components/brand/visual-gallery";
 export default function Home() {
   return (
     <SiteShell>
-      <SectionReveal>
+      <SectionReveal className="md:pr-14">
         <CinematicHero />
       </SectionReveal>
-      <SectionReveal>
+      <SectionReveal className="md:pl-20">
         <IdentityStrip />
       </SectionReveal>
-      <SectionReveal>
+      <SectionReveal className="md:pr-20">
         <ManifestoSection />
       </SectionReveal>
-      <SectionReveal>
+      <SectionReveal className="md:pl-10">
         <SelectedWork />
       </SectionReveal>
-      <SectionReveal>
+      <SectionReveal className="md:pr-8">
         <CurrentFocus />
       </SectionReveal>
-      <SectionReveal>
+      <SectionReveal className="md:pl-16">
         <EditorialWriting />
       </SectionReveal>
-      <SectionReveal>
+      <SectionReveal className="md:pr-8">
         <QuantisPreview />
       </SectionReveal>
-      <SectionReveal>
+      <SectionReveal className="md:pl-8">
         <VisualGallery />
       </SectionReveal>
-      <SectionReveal>
+      <SectionReveal className="md:pr-12">
         <FinalCTA />
       </SectionReveal>
     </SiteShell>
