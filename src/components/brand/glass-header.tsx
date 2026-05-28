@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { primaryNav } from "@/lib/site-nav";
+import { exploreNav, primaryNav } from "@/lib/site-nav";
 
 export function GlassHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,13 +15,13 @@ export function GlassHeader() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-black/8 bg-[#f8f7f4]/88 backdrop-blur-xl">
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5" aria-label="Main">
+    <header className="sticky top-0 z-40 border-b border-black/8 bg-[#f8f7f4]/92 backdrop-blur-xl">
+      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4" aria-label="Main">
         <Link href="/" className="text-sm font-semibold tracking-tight text-[#132232] md:text-base">
           Dhruv Solanki
         </Link>
 
-        <div className="hidden items-center gap-5 text-sm md:flex">
+        <div className="hidden items-center gap-4 text-sm lg:gap-5">
           {primaryNav.map((item) => (
             <Link key={item.href} href={item.href} className="text-[#5b5b5b] transition hover:text-[#132232]">
               {item.label}
@@ -32,8 +32,7 @@ export function GlassHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/search"
-            className="hidden rounded-full border border-black/10 px-3 py-2 text-xs text-[#5b5b5b] transition hover:border-black/20 hover:text-[#132232] lg:inline-flex"
-            title="Open search"
+            className="hidden rounded-full border border-black/10 px-3 py-2 text-xs text-[#5b5b5b] transition hover:border-black/20 hover:text-[#132232] md:inline-flex"
           >
             Search
           </Link>
@@ -45,7 +44,7 @@ export function GlassHeader() {
           </Link>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border hairline text-[#132232] md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border hairline text-[#132232] lg:hidden"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -55,30 +54,70 @@ export function GlassHeader() {
         </div>
       </nav>
 
-      {menuOpen ? (
-        <div className="border-t hairline bg-[#f8f7f4] px-6 py-6 md:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col gap-4">
-            {primaryNav.map((item) => (
+      {/* Explore — visible on desktop/tablet, mirrors footer */}
+      <div className="hidden border-t border-black/6 lg:block" aria-label="Explore">
+        <div className="mx-auto flex max-w-7xl items-center gap-5 px-6 py-2.5">
+          <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#8a8a8a]">Explore</span>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm">
+            {exploreNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-lg font-medium text-[#132232]"
+                className="text-[#5f5f5f] transition hover:text-[#132232]"
               >
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/search"
-              onClick={() => setMenuOpen(false)}
-              className="text-lg font-medium text-[#132232]"
-            >
-              Search
-            </Link>
+          </div>
+        </div>
+      </div>
+
+      {menuOpen ? (
+        <div className="border-t hairline bg-[#f8f7f4] px-6 py-6 lg:hidden">
+          <div className="mx-auto flex max-w-7xl flex-col gap-6">
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#8a8a8a]">Navigate</p>
+              <div className="mt-3 flex flex-col gap-3">
+                {primaryNav.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="text-lg font-medium text-[#132232]"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/search"
+                  onClick={() => setMenuOpen(false)}
+                  className="text-lg font-medium text-[#132232]"
+                >
+                  Search
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#8a8a8a]">Explore</p>
+              <div className="mt-3 flex flex-col gap-3">
+                {exploreNav.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="text-lg font-medium text-[#132232]"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 inline-flex w-fit rounded-full bg-[#132232] px-5 py-3 text-sm font-medium text-[#f8f7f4]"
+              className="inline-flex w-fit rounded-full bg-[#132232] px-5 py-3 text-sm font-medium text-[#f8f7f4]"
             >
               Book a Call
             </Link>

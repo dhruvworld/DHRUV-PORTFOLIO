@@ -28,7 +28,7 @@ export default function ProjectsPage() {
           <article
             id={project.slug}
             key={project.slug}
-            className="scroll-mt-28 rounded-[1.35rem] border hairline bg-white/65 p-6 md:p-8"
+            className="scroll-mt-32 rounded-[1.35rem] border hairline bg-white/65 p-6 md:p-8 lg:scroll-mt-36"
           >
             <p className="text-xs uppercase tracking-[0.14em] text-[#2e5e4e]">{project.category}</p>
             <h2 className="section-title mt-2 text-4xl font-semibold">{project.title}</h2>

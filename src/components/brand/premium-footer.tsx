@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { footerExplore, primaryNav } from "@/lib/site-nav";
+import { exploreNav, primaryNav } from "@/lib/site-nav";
 import { socialLinks } from "@/lib/social";
 
 export function PremiumFooter() {
@@ -31,7 +31,7 @@ export function PremiumFooter() {
         <div>
           <p className="text-xs uppercase tracking-[0.16em] text-[#8a8a8a]">Explore</p>
           <div className="mt-3 flex flex-col gap-2 text-sm text-[#5f5f5f]">
-            {footerExplore.map((item) => (
+            {exploreNav.map((item) => (
               <Link key={item.href} href={item.href} className="hover:text-[#2e5e4e]">
                 {item.label}
               </Link>

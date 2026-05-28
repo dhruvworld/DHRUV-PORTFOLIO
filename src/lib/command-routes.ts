@@ -1,4 +1,4 @@
-import { footerExplore, primaryNav } from "@/lib/site-nav";
+import { exploreNav, primaryNav } from "@/lib/site-nav";
 
 export type CommandRoute = {
   href: string;
@@ -19,7 +19,7 @@ const extraRoutes: CommandRoute[] = [
 export const commandRoutes: CommandRoute[] = [
   ...extraRoutes,
   ...primaryNav.map((item) => ({ href: item.href, label: item.label })),
-  ...footerExplore
+  ...exploreNav
     .filter((item) => !primaryNav.some((nav) => nav.href === item.href))
     .map((item) => ({ href: item.href, label: item.label })),
 ].filter((route, index, list) => list.findIndex((entry) => entry.href === route.href) === index);
