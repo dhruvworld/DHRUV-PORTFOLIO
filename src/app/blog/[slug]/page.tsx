@@ -50,7 +50,10 @@ export default async function BlogPostPage({
 
   const today = new Date();
   const postDate = new Date(post.publishedAt);
-  const readingMinutes = getReadingTimeMinutes(post.content.join(" "));
+  const fullText = post.sections
+    ? post.sections.flatMap((s) => [s.heading, ...s.paragraphs]).join(" ")
+    : post.content.join(" ");
+  const readingMinutes = getReadingTimeMinutes(fullText);
   const metaLabel =
     postDate > today
       ? `Scheduled • ${formatReadingTime(readingMinutes)}`
@@ -68,9 +71,18 @@ export default async function BlogPostPage({
           { href: "/contact", label: "Contact" },
         ]}
       >
-        {post.content.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+        {post.sections
+          ? post.sections.map((section) => (
+              <div key={section.heading} className="mt-10 space-y-4 first:mt-0">
+                <h2 className="text-2xl font-semibold tracking-tight text-[#132232]">{section.heading}</h2>
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 60)}>{paragraph}</p>
+                ))}
+              </div>
+            ))
+          : post.content.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
       </EditorialArticle>
       <RelatedPosts currentSlug={post.slug} />
       <ConsultationCTA />

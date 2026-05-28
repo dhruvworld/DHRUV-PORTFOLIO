@@ -1,3 +1,8 @@
+export type BlogSection = {
+  heading: string;
+  paragraphs: string[];
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -6,6 +11,8 @@ export type BlogPost = {
   tags: string[];
   excerpt: string;
   content: string[];
+  /** Structured sections for long-form strategy posts */
+  sections?: BlogSection[];
 };
 
 export const blogPosts: BlogPost[] = [
@@ -52,12 +59,89 @@ export const blogPosts: BlogPost[] = [
     tags: ["portfolio", "strategy", "growth"],
     excerpt:
       "A modern framework for portfolio positioning, proof architecture, and conversion.",
-    content: [
-      "In 2026, portfolios are no longer galleries. They are authority systems. A strong portfolio should answer three questions fast: who you are, what you can execute, and why someone should trust you.",
-      "Positioning comes first. If the headline is vague, the rest of the page loses force. Strong positioning is specific to your domain and audience. It should make the right people feel immediately understood.",
-      "Proof should be layered. Show selected projects with context: challenge, execution, and measurable outcome. Generic screenshots are not enough. Decision quality and system thinking are now part of the evaluation standard.",
-      "Conversion is often ignored. A modern portfolio needs clear next actions: read writing, explore work, or start a conversation. Frictionless paths outperform complex funnels for founder and creator brands.",
-      "Finally, structure for growth. Your portfolio should support writing, resources, and case studies as your work matures. The best portfolio is not a launch artifact; it is a living operating surface for your reputation.",
+    content: [],
+    sections: [
+      {
+        heading: "Portfolios are authority systems, not galleries",
+        paragraphs: [
+          "In 2026, a portfolio is not a PDF and not a grid of screenshots. It is an operating system for your reputation: positioning, proof, discoverability, and conversion in one place.",
+          "A strong site answers three questions in under ten seconds: who you are, who you help, and why someone should trust you. Everything else — blog, case studies, resources — exists to reinforce those three answers.",
+        ],
+      },
+      {
+        heading: "1. Live project links (not just GitHub)",
+        paragraphs: [
+          "Hiring managers and clients do not want to imagine your work. They want to see it live.",
+          "Lead every project with a working URL when you have one: a deployed app, a live business site, a demo on Netlify or Vercel. Put GitHub second — code supports the story; it does not replace the product.",
+          "Link order that works: Live demo → Case study → GitHub. On this site, Quantis Global links to quantisglobal.co first; Dhruv World links to the live Netlify deployment before the DHRUV-PORTFOLIO repo.",
+        ],
+      },
+      {
+        heading: "2. A “who I help” line (not a skill list)",
+        paragraphs: [
+          "Do not open with “React, Node, MongoDB, Express…” — that is a resume fragment, not positioning.",
+          "Use a line that names your audience and outcome. Formula: I help [who] achieve [what] without [pain point].",
+          "Example on this site: I help founders, trade operators, and product teams launch faster — with live software, clear logistics, and AI workflows they can actually run.",
+          "Skills belong in a secondary line or an About section. The hero is for relevance, not vocabulary.",
+        ],
+      },
+      {
+        heading: "3. One case study (problem → solution → result)",
+        paragraphs: [
+          "Most portfolios list projects. Few explain impact. Pick one flagship story and structure it as Problem → Solution → Result.",
+          "Problem: What was broken or slow? Solution: What did you build or change? Result: Numbers, certifications, live URLs, or time saved — anything measurable.",
+          "On this site, Quantis Global is the featured case: fragmented international trade and opaque logistics (problem), a live import/export brand at quantisglobal.co (solution), 150+ countries and 24-hour quote response in positioning (result).",
+        ],
+      },
+      {
+        heading: "4. Contact that works (not only a form)",
+        paragraphs: [
+          "Email-only forms add friction and often get ignored. Add channels people already use: WhatsApp for quick replies, LinkedIn for professional outreach, and a clear email for formal intros.",
+          "State response time when you can — e.g. “Usually replies within a few hours.” It sets expectations and signals you are reachable.",
+          "Forms are fine as a backup. Direct links should be primary on the Contact page.",
+        ],
+      },
+      {
+        heading: "5. Proof (numbers, names, and outcomes)",
+        paragraphs: [
+          "Proof is not bragging — it is reducing risk for the reader. Use a small set of credible signals: countries served, certifications, client names (when allowed), degrees, repo count, or response SLAs.",
+          "Avoid fake testimonials. Real metrics from real ventures beat generic praise.",
+          "On this site: 150+ countries and 24hr quotes (Quantis), MS programs (SNHU / UNH), dhruvworld GitHub org, and named client work (e.g. H G Smelters Pvt Ltd).",
+        ],
+      },
+      {
+        heading: "Identity architecture: one person, multiple surfaces",
+        paragraphs: [
+          "If you operate under more than one name or brand, make the mapping explicit once — then repeat it in metadata and schema.",
+          "This ecosystem uses: Dhruv Solanki (professional), Dhruv Solankii (creator alias), Dhruv World (media / platform), and Quantis Global (business execution layer).",
+          "Each route has a job: Home positions. Projects prove. Journal builds topical depth. Case studies show thinking. Quantis Global sells trade credibility without diluting the personal brand.",
+        ],
+      },
+      {
+        heading: "SEO as architecture, not a plugin",
+        paragraphs: [
+          "Treat SEO as structure: canonical URLs, sitemap, JSON-LD Person and Organization, internal links between clusters (AI, business, technology), and consistent naming in titles and copy.",
+          "Target entity clarity before random keywords: your name, your aliases, your city, your venture. Long-tail articles support the entity; they do not replace it.",
+          "Ship llms.txt and clear /about, /projects, and /contact routes so both search engines and AI systems can map your identity graph.",
+        ],
+      },
+      {
+        heading: "How this site applies the strategy",
+        paragraphs: [
+          "Home: who-I-help line, proof strip, featured case study (PSR), selected work with live links first, then journal and a single closing CTA.",
+          "Projects: every entry uses live URL → case study → GitHub when available; client and founder work labeled by kind (live venture, client build, R&D).",
+          "Resources: only publish assets with real content (e.g. copy-paste AI prompts), not empty “coming soon” cards.",
+          "Built primarily in Cursor — fast iteration, same workflow for web (Next.js), trade sites, and experiments.",
+        ],
+      },
+      {
+        heading: "What to do next",
+        paragraphs: [
+          "Audit your current portfolio against the five checks: live links, who-I-help headline, one PSR case study, working contact channels, and proof on the page.",
+          "Remove placeholder projects and resources until they have something a visitor can use or click.",
+          "Publish one article per month that connects your work to a problem you solved — strategy compounds when you ship consistently.",
+        ],
+      },
     ],
   },
 ];
