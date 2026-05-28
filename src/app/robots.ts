@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/studio/", "/draft/"],
       },
     ],
-    sitemap: "https://dhruvsolanki.com/sitemap.xml",
-    host: "https://dhruvsolanki.com",
+    sitemap: `${siteConfig.siteUrl}/sitemap.xml`,
+    host: siteConfig.siteUrl,
   };
 }

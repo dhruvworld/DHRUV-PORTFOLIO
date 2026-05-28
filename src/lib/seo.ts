@@ -1,5 +1,5 @@
 export const siteConfig = {
-  siteUrl: "https://dhruvsolanki.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://dhruvworld.netlify.app",
   name: "Dhruv Solanki",
   creatorAlias: "Dhruv Solankii",
   mediaIdentity: "Dhruv World",

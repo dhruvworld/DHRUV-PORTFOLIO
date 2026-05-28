@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { caseStudies } from "@/content/case-studies";
-import { getBreadcrumbSchema } from "@/lib/seo";
+import { getBreadcrumbSchema, siteConfig } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -23,7 +23,7 @@ export async function generateMetadata({
     title: study.title,
     description: study.summary,
     alternates: {
-      canonical: `https://dhruvsolanki.com/case-studies/${study.slug}`,
+      canonical: `${siteConfig.siteUrl}/case-studies/${study.slug}`,
     },
   };
 }

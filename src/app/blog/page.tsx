@@ -15,6 +15,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const today = new Date();
+
   return (
     <SiteShell>
       <section className="glass-panel creator-glow rounded-3xl p-10 shadow-sm">
@@ -24,15 +26,19 @@ export default function BlogPage() {
         </p>
       </section>
       <section className="mt-8 grid gap-4 md:grid-cols-2">
-        {blogPosts.map((post) => (
-          <ContentCard
-            key={post.slug}
-            title={post.title}
-            description={post.excerpt}
-            href={`/blog/${post.slug}`}
-            meta={post.publishedAt}
-          />
-        ))}
+        {blogPosts.map((post) => {
+          const postDate = new Date(post.publishedAt);
+          const metaLabel = postDate > today ? "Scheduled" : post.publishedAt;
+          return (
+            <ContentCard
+              key={post.slug}
+              title={post.title}
+              description={post.excerpt}
+              href={`/blog/${post.slug}`}
+              meta={metaLabel}
+            />
+          );
+        })}
       </section>
     </SiteShell>
   );

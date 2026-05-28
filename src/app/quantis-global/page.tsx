@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 const servicePillars = [
@@ -15,6 +16,12 @@ const workflow = [
   "Ship: coordinate logistics flow across partners and channels.",
   "Deliver: align fulfillment expectations with business goals and timelines.",
 ];
+
+export const metadata: Metadata = {
+  title: "Quantis Global",
+  description:
+    "Quantis Global by Dhruv Solanki: premium trade, sourcing, procurement, and international business execution.",
+};
 
 export default function QuantisGlobalPage() {
   return (
@@ -34,7 +41,7 @@ export default function QuantisGlobalPage() {
           <Link href="/contact" className="rounded-full bg-white px-5 py-3 text-sm font-medium text-[#0b1020]">
             Explore Services
           </Link>
-          <Link href="/collaborations" className="rounded-full border border-white/20 px-5 py-3 text-sm font-medium">
+          <Link href="/contact" className="rounded-full border border-white/20 px-5 py-3 text-sm font-medium">
             Discuss Partnership
           </Link>
         </div>
@@ -79,8 +86,8 @@ export default function QuantisGlobalPage() {
           ecosystem and is integrated with Dhruv World content and case-study systems.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/business" className="rounded-full border border-white/20 px-4 py-2 text-sm">
-            Business
+          <Link href="/projects" className="rounded-full border border-white/20 px-4 py-2 text-sm">
+            Projects
           </Link>
           <Link href="/case-studies" className="rounded-full border border-white/20 px-4 py-2 text-sm">
             Case Studies

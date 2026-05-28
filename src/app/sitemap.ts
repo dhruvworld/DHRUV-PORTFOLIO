@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { dynamicSlugs } from "@/lib/route-content";
+import { siteConfig } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://dhruvsolanki.com";
+  const base = siteConfig.siteUrl;
   const now = new Date();
 
   const staticRoutes = [

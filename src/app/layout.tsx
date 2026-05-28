@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "@/components/providers";
+import { siteConfig } from "@/lib/seo";
 import { getOrganizationSchema, getPersonSchema, getWebsiteSchema } from "@/lib/seo";
 import "./globals.css";
 
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dhruvsolanki.com"),
+  metadataBase: new URL(siteConfig.siteUrl),
   title: {
     default: "Dhruv Solanki (Dhruv Solankii) | Dhruv World",
     template: "%s | Dhruv Solanki",
@@ -24,13 +25,13 @@ export const metadata: Metadata = {
   description:
     "Official digital identity platform of Dhruv Solanki (Dhruv Solankii), founder of Dhruv World. AI, technology, business, portfolio, and media ecosystem.",
   alternates: {
-    canonical: "https://dhruvsolanki.com",
+    canonical: siteConfig.siteUrl,
   },
   openGraph: {
     title: "Dhruv Solanki (Dhruv Solankii) | Dhruv World",
     description:
       "AI, business, technology, and creator ecosystem by Dhruv Solanki.",
-    url: "https://dhruvsolanki.com",
+    url: siteConfig.siteUrl,
     siteName: "Dhruv Solanki",
     type: "website",
     images: [

@@ -1,5 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Contact Dhruv Solanki for collaborations, consulting, and partnerships.",
+};
 
 export default function ContactPage() {
   return (
@@ -16,8 +22,18 @@ export default function ContactPage() {
       <section className="mt-8 glass-panel rounded-2xl p-7">
         <div className="grid gap-5 md:grid-cols-2">
           <div className="space-y-3 text-sm text-slate-300">
-            <p>Personal: DHRUV4701@GMAIL.COM</p>
-            <p>Work: TALKTOSHRUV.AI@GMAIL.COM</p>
+            <p>
+              Personal:{" "}
+              <a href="mailto:dhruv4701@gmail.com" className="underline decoration-white/30 underline-offset-4">
+                dhruv4701@gmail.com
+              </a>
+            </p>
+            <p>
+              Work:{" "}
+              <a href="mailto:talktodhruv.ai@gmail.com" className="underline decoration-white/30 underline-offset-4">
+                talktodhruv.ai@gmail.com
+              </a>
+            </p>
             <p>WhatsApp (IN): +91 99987 34388</p>
             <p>WhatsApp (US): +1 424 468 2423</p>
           </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { resources } from "@/content/resources";
-import { getBreadcrumbSchema } from "@/lib/seo";
+import { getBreadcrumbSchema, siteConfig } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -23,7 +23,7 @@ export async function generateMetadata({
     title: item.title,
     description: item.description,
     alternates: {
-      canonical: `https://dhruvsolanki.com/resources/${item.slug}`,
+      canonical: `${siteConfig.siteUrl}/resources/${item.slug}`,
     },
   };
 }

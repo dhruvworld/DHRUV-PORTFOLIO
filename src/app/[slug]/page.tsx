@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { RouteTemplate } from "@/components/route-template";
 import { dynamicRouteContent, dynamicSlugs } from "@/lib/route-content";
-import { getBreadcrumbSchema } from "@/lib/seo";
+import { getBreadcrumbSchema, siteConfig } from "@/lib/seo";
 
 type PageParams = {
   slug: string;
@@ -28,12 +28,12 @@ export async function generateMetadata({
     title: content.title,
     description: content.description,
     alternates: {
-      canonical: `https://dhruvsolanki.com/${slug}`,
+      canonical: `${siteConfig.siteUrl}/${slug}`,
     },
     openGraph: {
       title: `${content.title} | Dhruv Solanki`,
       description: content.description,
-      url: `https://dhruvsolanki.com/${slug}`,
+      url: `${siteConfig.siteUrl}/${slug}`,
       type: "website",
     },
   };
@@ -55,7 +55,7 @@ export default async function DynamicRoutePage({
     "@type": "WebPage",
     name: content.title,
     description: content.description,
-    url: `https://dhruvsolanki.com/${slug}`,
+    url: `${siteConfig.siteUrl}/${slug}`,
     about: {
       "@type": "Person",
       name: "Dhruv Solanki",
