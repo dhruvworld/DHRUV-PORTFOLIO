@@ -1,16 +1,67 @@
-import Image from "next/image";
-import { homepageGallery } from "@/lib/media";
+"use client";
+
+import { useRef } from "react";
+import { mediaAssets } from "@/lib/media";
+import { EditorialImage } from "@/components/brand/editorial-image";
 
 export function VisualGallery() {
+  const stripRef = useRef<HTMLDivElement>(null);
+
+  function scrollByCard(direction: "left" | "right") {
+    if (!stripRef.current) return;
+    const amount = Math.round(stripRef.current.clientWidth * 0.85);
+    stripRef.current.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  }
+
   return (
-    <section className="mt-22">
-      <h2 className="section-title text-4xl font-semibold">Visual Identity</h2>
-      <div className="mt-7 grid gap-6 md:grid-cols-3">
-        {homepageGallery.map((item) => (
-          <figure key={item.src} className="relative aspect-[4/3] overflow-hidden rounded-2xl border hairline">
-            <Image src={item.src} alt={item.alt} fill className="object-cover grayscale-[18%] contrast-[1.03] brightness-[0.98]" />
+    <section className="mt-28 rounded-[2rem] bg-[#d9aa3f] px-6 py-9 md:px-10 md:py-11">
+      <div className="flex items-end justify-between gap-4">
+        <div>
+          <h2 className="section-title text-4xl font-semibold text-[#132232]">Latest Works</h2>
+          <p className="mt-2 text-sm text-[#3f3f3f]">Perfect solution for digital experience</p>
+        </div>
+        <div className="hidden gap-2 md:flex">
+          <button
+            type="button"
+            onClick={() => scrollByCard("left")}
+            className="grid h-10 w-10 place-items-center rounded-full border border-black/20 bg-white/80 text-[#132232]"
+            aria-label="Previous works"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollByCard("right")}
+            className="grid h-10 w-10 place-items-center rounded-full border border-black/20 bg-[#132232] text-white"
+            aria-label="Next works"
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+      <div ref={stripRef} className="mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-3">
+        {mediaAssets.gallery.map((item, i) => (
+          <figure
+            key={`${item.src}-${i}`}
+            className={`relative min-w-[74%] snap-start overflow-hidden rounded-[1.6rem] border border-black/12 bg-[#f4f1ea] md:min-w-[30%] ${
+              i === 1 ? "md:mt-6" : ""
+            }`}
+          >
+            <div className="relative aspect-[3/5]">
+              <EditorialImage asset={item} className="grayscale-[4%]" />
+            </div>
           </figure>
         ))}
+      </div>
+
+      <div className="mt-5 flex justify-center gap-2 md:hidden">
+        <span className="h-2 w-9 rounded-full bg-[#132232]" />
+        <span className="h-2 w-2 rounded-full bg-[#6f6f6f]" />
+        <span className="h-2 w-2 rounded-full bg-[#6f6f6f]" />
       </div>
     </section>
   );

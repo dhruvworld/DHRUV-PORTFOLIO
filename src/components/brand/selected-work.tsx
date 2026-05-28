@@ -1,65 +1,63 @@
 import Link from "next/link";
+import { mediaAssets } from "@/lib/media";
+import { EditorialImage } from "@/components/brand/editorial-image";
 
 const projects = [
   {
     title: "Quantis Global",
     what: "International sourcing and trade execution platform.",
-    why: "Transforms fragmented procurement into a reliable operating system.",
-    status: "Active",
     category: "Business Systems",
   },
   {
     title: "SaveMePDF",
     what: "Fast document workflow for PDF, Word, and Excel tasks.",
-    why: "Improves creator and operator productivity through utility-first workflows.",
-    status: "In Build",
     category: "Productivity",
   },
   {
     title: "Post2Plan",
     what: "Turns raw ideas into structured publishing plans.",
-    why: "Creates consistent media cadence for authority and growth.",
-    status: "Prototype",
     category: "AI Workflow",
-  },
-  {
-    title: "OpenSourceDisplayLink",
-    what: "Cross-device display extension concept.",
-    why: "Explores low-latency interactions for practical utility software.",
-    status: "R&D",
-    category: "Engineering",
-  },
-  {
-    title: "Dhruv World",
-    what: "Personal digital identity and media infrastructure.",
-    why: "Unifies search presence, content, and founder narrative.",
-    status: "Live",
-    category: "Identity Platform",
   },
 ];
 
 export function SelectedWork() {
   return (
-    <section className="mt-22 space-y-11">
+    <section className="mt-28 space-y-10">
       <div className="flex items-end justify-between gap-4">
-        <h2 className="section-title text-4xl font-semibold md:text-5xl">Selected Work</h2>
-        <Link href="/projects" className="text-sm text-[#5f5f5f] hover:text-[#2e5e4e]">
-          View all projects
+        <h2 className="section-title text-4xl font-semibold md:text-5xl">Portfolio Highlights</h2>
+        <Link href="/projects" className="text-sm text-[#5f5f5f] hover:text-[#132232]">
+          View all projects ↗
         </Link>
       </div>
-      <div className="space-y-10">
-        {projects.map((project) => (
-          <article key={project.title} className="group border-b hairline pb-9 last:border-none">
-            <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em] text-[#777]">
-              <span>{project.category}</span>
-              <span>•</span>
-              <span>{project.status}</span>
-            </div>
-            <h3 className="mt-2 text-4xl font-semibold text-[#111]">{project.title}</h3>
-            <p className="mt-3 max-w-3xl text-[#333]">{project.what}</p>
-            <p className="mt-2 max-w-3xl text-[#6b6b6b]">{project.why}</p>
-          </article>
-        ))}
+
+      <div className="grid gap-7 md:grid-cols-3">
+        {projects.map((project, index) => {
+          const visual = mediaAssets.work[index];
+          return (
+            <article
+              key={project.title}
+              className="group overflow-hidden rounded-[1.35rem] border hairline bg-white/70"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-[#eceae5]">
+                <EditorialImage asset={visual} className="grayscale-[10%] transition duration-500 group-hover:scale-[1.02]" />
+                <div className="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-full bg-[#2b2f38] text-white shadow-[0_8px_18px_rgba(0,0,0,0.22)]">
+                  ↗
+                </div>
+              </div>
+              <div className="border-t hairline p-5">
+                <p className="text-xs uppercase tracking-[0.14em] text-[#6f6f6f]">{project.category}</p>
+                <h3 className="mt-2 text-2xl font-semibold tracking-tight text-[#132232]">{project.title}</h3>
+                <p className="mt-2 text-sm text-[#606060]">{project.what}</p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="flex items-center justify-center gap-2">
+        <span className="h-2 w-10 rounded-full bg-[#132232]" />
+        <span className="h-2 w-2 rounded-full bg-[#9a9a9a]" />
+        <span className="h-2 w-2 rounded-full bg-[#9a9a9a]" />
       </div>
     </section>
   );

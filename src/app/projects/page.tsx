@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
-import { homepageGallery } from "@/lib/media";
+import { mediaAssets } from "@/lib/media";
 
 const highlightedProjects = [
   {
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
           <article key={project.title} className="border-b hairline pb-12">
             <div className="relative mb-7 aspect-[16/8] overflow-hidden rounded-2xl border hairline">
               <Image
-                src={homepageGallery[project.title.length % homepageGallery.length].src}
+                src={mediaAssets.work[project.title.length % mediaAssets.work.length].src}
                 alt={`${project.title} project visual`}
                 fill
                 className="object-cover grayscale-[16%] contrast-[1.03] brightness-[0.98]"

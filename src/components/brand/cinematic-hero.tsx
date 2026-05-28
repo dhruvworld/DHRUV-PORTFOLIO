@@ -1,52 +1,57 @@
-import Image from "next/image";
 import Link from "next/link";
+import { mediaAssets } from "@/lib/media";
+import { EditorialImage } from "@/components/brand/editorial-image";
 
 export function CinematicHero() {
   return (
-    <section className="relative overflow-hidden pt-10 md:pt-16">
-      <div className="grid items-end gap-14 md:grid-cols-[1.2fr_0.8fr]">
-        <div>
-          <p className="text-xs uppercase tracking-[0.28em] text-[#2e5e4e]">Dhruv World</p>
-          <h1 className="display-title mt-4 text-[clamp(5rem,10vw,9rem)] font-semibold">
-            Dhruv
-            <br />
-            Solanki
-          </h1>
-          <p className="mt-7 text-sm uppercase tracking-[0.22em] text-[#2e5e4e]">
-            AI • Technology • Business • Digital Identity
-          </p>
-          <p className="body-soft mt-6 max-w-2xl text-lg">
-            Building AI-first digital systems across technology, business, and modern creation.
-          </p>
-          <div className="mt-11 flex flex-wrap gap-3">
-            <Link href="/projects" className="cta-pill rounded-full bg-[#111111] px-5 py-3 text-sm font-medium text-[#f8f7f4]">
-              Explore Work
-            </Link>
-            <Link href="/blog" className="cta-pill rounded-full border border-black/15 px-5 py-3 text-sm font-medium text-[#111111]">
-              Read Writing
-            </Link>
-            <Link href="/contact" className="cta-pill rounded-full border border-black/15 px-5 py-3 text-sm font-medium text-[#111111]">
-              Start a Conversation
-            </Link>
+    <section className="relative overflow-hidden pt-8 md:pt-14">
+      <div className="rounded-[2.2rem] border-[6px] border-[#232323] bg-[#f7f6f3] p-6 shadow-[0_20px_40px_rgba(0,0,0,0.12)] md:p-9">
+        <div className="grid gap-10 md:grid-cols-[1fr_1.08fr] md:items-center">
+          <div className="md:py-4">
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-sm text-[#4f4f4f]">
+              <p>
+                <span className="text-2xl font-semibold text-[#132232]">+200</span>
+                <span className="ml-2">Project completed</span>
+              </p>
+              <p>
+                <span className="text-2xl font-semibold text-[#132232]">+50</span>
+                <span className="ml-2">Startup raised</span>
+              </p>
+            </div>
+            <h1 className="display-title mt-10 text-[clamp(4.5rem,10vw,8.8rem)] font-medium text-[#132232]">
+              Hello
+            </h1>
+            <p className="mt-3 text-lg text-[#535353]">— It&apos;s Dhruv, an AI systems founder</p>
+            <p className="body-soft mt-7 max-w-md text-base">
+              Building practical AI-first products across automation, publishing, and business systems.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link
+                href="/projects"
+                className="cta-pill rounded-full bg-[#132232] px-5 py-3 text-sm font-medium text-[#f8f7f4]"
+              >
+                View Portfolio
+              </Link>
+              <Link
+                href="/contact"
+                className="cta-pill rounded-full border border-black/15 px-5 py-3 text-sm font-medium text-[#132232]"
+              >
+                Book a Call
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative min-h-[360px] overflow-hidden rounded-[1.35rem] border hairline bg-[#eceae5] md:min-h-[460px]">
+            <EditorialImage asset={mediaAssets.hero} priority className="grayscale-[8%] contrast-[1.02]" />
+            <div className="absolute right-4 top-4 grid h-14 w-14 place-items-center rounded-full bg-[#1f2430] text-xl text-white shadow-[0_8px_18px_rgba(0,0,0,0.2)]">
+              ↗
+            </div>
           </div>
         </div>
-        <div className="relative min-h-[520px]">
-          <div className="absolute inset-0 rounded-[2.2rem] border hairline bg-[linear-gradient(180deg,rgba(255,255,255,0.56),rgba(255,255,255,0.3))]" />
-          <div className="absolute -left-10 top-8 rounded-full border hairline bg-[#f5f3ef] px-4 py-2 text-xs text-[#5f5f5f]">
-            Founder
-          </div>
-          <div className="absolute -right-8 bottom-10 rounded-full border hairline bg-[#f5f3ef] px-4 py-2 text-xs text-[#5f5f5f]">
-            Dhruv Solankii
-          </div>
-          <div className="absolute inset-8 overflow-hidden rounded-[1.5rem] border hairline">
-            <Image
-              src="/media/founder-portrait.svg"
-              alt="Dhruv Solanki portrait visual"
-              fill
-              priority
-              className="object-cover grayscale-[16%] contrast-[1.03] brightness-[0.98]"
-            />
-          </div>
+
+        <div className="mt-8 flex items-center justify-between border-t hairline pt-5 text-sm text-[#5f5f5f]">
+          <span className="uppercase tracking-[0.18em]">Dhruv Solanki</span>
+          <span>Scroll down ↓</span>
         </div>
       </div>
     </section>
