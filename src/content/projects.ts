@@ -1,4 +1,10 @@
-export type ProjectKind = "live" | "case-study" | "academic" | "platform";
+export type ProjectKind =
+  | "live"
+  | "platform"
+  | "client"
+  | "academic"
+  | "experiment"
+  | "case-study";
 
 export type HighlightProject = {
   slug: string;
@@ -9,10 +15,18 @@ export type HighlightProject = {
   summary: string;
   stack: string;
   details: string[];
+  /** Primary link — on-site route, GitHub repo, or anchor */
   href: string;
+  githubRepo?: string;
   caseStudySlug?: string;
   featuredOnHome?: boolean;
 };
+
+const GITHUB_ORG = "https://github.com/dhruvworld";
+
+export function projectGithubUrl(repo: string): string {
+  return `${GITHUB_ORG}/${repo}`;
+}
 
 export const highlightProjects: HighlightProject[] = [
   {
@@ -23,30 +37,51 @@ export const highlightProjects: HighlightProject[] = [
     kindLabel: "Live venture",
     summary:
       "Import-export, global procurement, logistics coordination, and technology-driven trade operations.",
-    stack: "Business systems · Sourcing · SEO",
+    stack: "TypeScript · Next.js · Business systems · SEO",
     details: [
       "Founded a modern trading company focused on industrial products, packaging, chemicals, pharma raw materials, and consumer goods.",
       "Built trusted sourcing networks with verification, documentation readiness, and partner coordination.",
-      "Led branding, SEO, automation workflows, and digital systems for scalable operations.",
+      "Site and ops tooling built with Cursor.",
     ],
     href: "/quantis-global",
+    githubRepo: "Quantis-Global",
     caseStudySlug: "quantis-global-brand-foundation",
     featuredOnHome: true,
   },
   {
-    slug: "travel-website",
+    slug: "dhruv-world",
+    title: "Dhruv World",
+    category: "Digital identity",
+    kind: "platform",
+    kindLabel: "This platform",
+    summary: "Unified personal brand, editorial content, and search authority infrastructure.",
+    stack: "Next.js · TypeScript · Entity SEO",
+    details: [
+      "Connected routes, schema, and editorial publishing for long-term authority compounding.",
+      "Identity layer linking AI journal, projects, and business narrative (Quantis Global).",
+      "Built and iterated in Cursor.",
+    ],
+    href: "/",
+    githubRepo: "DHRUV-PORTFOLIO",
+    caseStudySlug: "digital-identity-architecture",
+    featuredOnHome: true,
+  },
+  {
+    slug: "travel-site",
     title: "Travel Website Platform",
     category: "Full-stack product",
     kind: "academic",
     kindLabel: "Graduate build",
     summary:
       "Scalable travel platform with admin dashboard, package management, and dynamic content.",
-    stack: "Next.js · Firebase · Tailwind CSS",
+    stack: "Next.js · Firebase · Tailwind CSS · TypeScript",
     details: [
       "Responsive UI with package management, image uploads, and admin controls.",
       "Firebase authentication and content management with SEO-focused structure.",
+      "Primary repo: travel-site (TypeScript). Earlier Python prototype: travel.",
     ],
-    href: "/projects#travel-website",
+    href: projectGithubUrl("travel-site"),
+    githubRepo: "travel-site",
     featuredOnHome: true,
   },
   {
@@ -57,13 +92,117 @@ export const highlightProjects: HighlightProject[] = [
     kindLabel: "R&D prototype",
     summary:
       "Cross-platform display extension with real-time streaming and low-latency pointer tracking.",
-    stack: "Streaming · WebP · Cross-platform",
+    stack: "Python · Streaming · WebP · Cross-platform",
     details: [
       "Inspired by Duet Display: screen streaming, compression optimization, and fullscreen rendering.",
       "Prototype direction for high-performance utility software across devices.",
     ],
-    href: "/projects#opensource-displaylink",
-    featuredOnHome: true,
+    href: projectGithubUrl("OpenSourceDisplayLink"),
+    githubRepo: "OpenSourceDisplayLink",
+  },
+  {
+    slug: "hg-app",
+    title: "HG App",
+    category: "Mobile application",
+    kind: "client",
+    kindLabel: "Client build",
+    summary: "Mobile application for HG smelters / industrial operations (details to be expanded).",
+    stack: "Dart · Flutter",
+    details: [
+      "Flutter/Dart codebase under dhruvworld/HG_app.",
+      "Related repo: h_g_smelters — more product context coming soon.",
+    ],
+    href: projectGithubUrl("HG_app"),
+    githubRepo: "HG_app",
+  },
+  {
+    slug: "h-g-smelters",
+    title: "H&G Smelters",
+    category: "Mobile application",
+    kind: "client",
+    kindLabel: "Client build",
+    summary: "Companion or variant smelters app in the HG project family (details to be expanded).",
+    stack: "Dart · Flutter",
+    details: ["Repository: dhruvworld/h_g_smelters.", "Case study and screenshots — coming soon."],
+    href: projectGithubUrl("h_g_smelters"),
+    githubRepo: "h_g_smelters",
+  },
+  {
+    slug: "megh",
+    title: "Megh",
+    category: "Web project",
+    kind: "client",
+    kindLabel: "Client / product",
+    summary: "Astro-based web project (scope and client narrative to be added).",
+    stack: "Astro",
+    details: ["Built with Cursor.", "Live URL and feature list — coming soon."],
+    href: projectGithubUrl("megh"),
+    githubRepo: "megh",
+  },
+  {
+    slug: "sir",
+    title: "Sir Data Checker",
+    category: "Web utility",
+    kind: "experiment",
+    kindLabel: "Tool",
+    summary: "Data checker utility — TypeScript web app (per GitHub: “Sir data checker”).",
+    stack: "TypeScript",
+    details: ["Repository: dhruvworld/sir.", "Use case and demo — coming soon."],
+    href: projectGithubUrl("sir"),
+    githubRepo: "sir",
+  },
+  {
+    slug: "epicsearch",
+    title: "Epic Search",
+    category: "Web experiment",
+    kind: "experiment",
+    kindLabel: "Experiment",
+    summary: "Search-oriented web experiment (HTML). Details to be added.",
+    stack: "HTML · Web",
+    details: ["Repository: dhruvworld/epicsearch.", "Product notes — coming soon."],
+    href: projectGithubUrl("epicsearch"),
+    githubRepo: "epicsearch",
+  },
+  {
+    slug: "bjpselfie",
+    title: "BJP Selfie Generator",
+    category: "Campaign web",
+    kind: "experiment",
+    kindLabel: "Campaign tool",
+    summary: "Selfie generator web experience for political/campaign use (repo: bjpselfie).",
+    stack: "HTML · Web",
+    details: [
+      "Listed as bjpselfiegenerator in planning; public GitHub repo: bjpselfie.",
+      "Launch context and screenshots — coming soon.",
+    ],
+    href: projectGithubUrl("bjpselfie"),
+    githubRepo: "bjpselfie",
+  },
+  {
+    slug: "shubham-tours",
+    title: "Shubham Tours",
+    category: "Client website",
+    kind: "client",
+    kindLabel: "Client build",
+    summary: "Tours / travel client website (planned under dhruvworld — repo link to be confirmed).",
+    stack: "Web · Cursor-built",
+    details: [
+      "Client project — Shubham Tours.",
+      "Repository visibility and live URL — to be linked when confirmed.",
+    ],
+    href: "/projects#shubham-tours",
+  },
+  {
+    slug: "travel-python",
+    title: "Travel (Python prototype)",
+    category: "Full-stack product",
+    kind: "academic",
+    kindLabel: "Earlier prototype",
+    summary: "Earlier Python-based travel project before the TypeScript travel-site build.",
+    stack: "Python",
+    details: ["Repository: dhruvworld/travel.", "Superseded by travel-site for the graduate platform."],
+    href: projectGithubUrl("travel"),
+    githubRepo: "travel",
   },
   {
     slug: "e-resume-portal",
@@ -76,24 +215,14 @@ export const highlightProjects: HighlightProject[] = [
     details: [
       "Authentication, admin-side management, and responsive resume workflows.",
       "Developed during INNOVATE WEBTEC internship with testing and QA focus.",
+      "GitHub link — to be added if published.",
     ],
     href: "/projects#e-resume-portal",
-  },
-  {
-    slug: "dhruv-world",
-    title: "Dhruv World",
-    category: "Digital identity",
-    kind: "platform",
-    kindLabel: "This platform",
-    summary: "Unified personal brand, editorial content, and search authority infrastructure.",
-    stack: "Next.js · Entity SEO · Content systems",
-    details: [
-      "Connected routes, schema, and editorial publishing for long-term authority compounding.",
-      "Identity layer linking AI journal, projects, and business narrative (Quantis Global).",
-    ],
-    href: "/case-studies/digital-identity-architecture",
-    caseStudySlug: "digital-identity-architecture",
   },
 ];
 
 export const homeFeaturedProjects = highlightProjects.filter((project) => project.featuredOnHome);
+
+/** Short line for About / meta — Cursor as default build environment */
+export const buildWorkflowNote =
+  "Projects across web, mobile, trade, and experiments are designed and shipped primarily in Cursor.";

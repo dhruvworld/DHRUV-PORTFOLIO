@@ -2,6 +2,7 @@
 
 > MS Computer Science student (SNHU, Manchester NH), founder of Quantis Global.
 > Full-stack engineer: Python, Django, Next.js, Firebase, AI workflows, international trade.
+> Builds primarily in Cursor. GitHub org: https://github.com/dhruvworld
 
 Canonical: https://dhruvworld.netlify.app
 
@@ -23,9 +24,17 @@ Canonical: https://dhruvworld.netlify.app
 - Python Intern, MASS INFOTECH (Nov 2023 – Jun 2024)
 - Python Django Intern, INNOVATE WEBTEC (Jan 2023 – Apr 2023)
 
-## Projects
-- Quantis Global — international trade & sourcing
-- Travel Website Platform — Next.js, Firebase, Tailwind
+## Projects (dhruvworld on GitHub)
+- Quantis-Global — international trade & sourcing (live venture)
+- DHRUV-PORTFOLIO — this digital identity site
+- travel-site — Next.js, Firebase, Tailwind (graduate platform)
+- travel — earlier Python travel prototype
 - OpenSourceDisplayLink — cross-platform display streaming
-- E-Resume Portal — Django
-- Dhruv World — digital identity platform (this site)
+- HG_app — Flutter/Dart mobile
+- h_g_smelters — related smelters mobile app
+- megh — Astro web project
+- sir — Sir data checker (TypeScript)
+- epicsearch — search web experiment
+- bjpselfie — BJP selfie generator (campaign web)
+- Shubham Tours — client tours site (repo TBD)
+- E-Resume Portal — Django internship project (repo TBD)

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { EditorialImage } from "@/components/brand/editorial-image";
 import { certifications, resumePdfPath } from "@/content/certifications";
+import { buildWorkflowNote } from "@/content/projects";
 import { focusAreas, technicalSkills } from "@/content/skills";
 import { mediaAssets } from "@/lib/media";
 
@@ -8,6 +9,7 @@ const highlights = [
   "Founder of Quantis Global — international sourcing, import-export, and logistics coordination.",
   "MS Computer Science at Southern New Hampshire University; MS IT from UNH Manchester.",
   "Full-stack builder: Python, Django, Next.js, Firebase, and AI workflow automation.",
+  buildWorkflowNote,
 ];
 
 export function AboutEditorial() {
