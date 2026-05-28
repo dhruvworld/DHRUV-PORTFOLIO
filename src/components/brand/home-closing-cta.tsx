@@ -23,12 +23,14 @@ export function HomeClosingCTA() {
           >
             Contact Dhruv
           </Link>
-          <Link
-            href="/quantis-global"
+          <a
+            href="https://quantisglobal.co"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full border border-[#f5f3ef]/30 px-5 py-2.5 text-sm font-medium text-[#f5f3ef]"
           >
-            Quantis Global ↗
-          </Link>
+            quantisglobal.co ↗
+          </a>
         </div>
       </div>
     </section>

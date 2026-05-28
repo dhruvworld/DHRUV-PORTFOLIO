@@ -36,12 +36,12 @@ export const highlightProjects: HighlightProject[] = [
     kind: "live",
     kindLabel: "Live venture",
     summary:
-      "Import-export, global procurement, logistics coordination, and technology-driven trade operations.",
-    stack: "TypeScript · Next.js · Business systems · SEO",
+      "Import & export solutions — logistics, customs clearance, and supply chain management across 150+ countries.",
+    stack: "Global trade · Logistics · Customs · Supply chain",
     details: [
-      "Founded a modern trading company focused on industrial products, packaging, chemicals, pharma raw materials, and consumer goods.",
-      "Built trusted sourcing networks with verification, documentation readiness, and partner coordination.",
-      "Site and ops tooling built with Cursor.",
+      "Your gateway to global trade — ocean, air, and land freight plus warehousing and end-to-end supply chain.",
+      "IEC, GST, and MSME certified operations with 24-hour quote response and transparent pricing.",
+      "Live site: quantisglobal.co",
     ],
     href: "/quantis-global",
     githubRepo: "Quantis-Global",
