@@ -12,10 +12,6 @@ export function PremiumFooter() {
             AI systems, business execution, and digital identity — built as one connected narrative.
           </p>
           <p className="mt-4 text-xs text-[#7a7a7a]">© {new Date().getFullYear()} Dhruv World. All rights reserved.</p>
-          <p className="mt-2 text-xs text-[#9a9a9a]">
-            Quick nav:{" "}
-            <kbd className="rounded border hairline bg-white/80 px-1.5 py-0.5 font-mono text-[10px]">⌘K</kbd>
-          </p>
         </div>
 
         <div>

@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { ContactForm } from "@/components/forms/contact-form";
-import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { socialLinks } from "@/lib/social";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -24,8 +23,6 @@ export default function ContactPage() {
           Manchester, New Hampshire · collaborations, Quantis Global trade inquiries, and engineering projects.
         </p>
       </section>
-
-      <ConsultationCTA />
 
       <section className="mt-10 rounded-2xl border hairline bg-white/60 p-7 md:p-9">
         <div className="grid gap-5 md:grid-cols-2">
