@@ -42,7 +42,12 @@ export function CinematicHero() {
           </div>
 
           <div className="relative min-h-[360px] overflow-hidden rounded-[1.35rem] border hairline bg-[#eceae5] md:min-h-[460px]">
-            <EditorialImage asset={mediaAssets.hero} priority className="grayscale-[8%] contrast-[1.02]" />
+            <EditorialImage
+              asset={mediaAssets.hero}
+              priority
+              sizes="(max-width: 768px) 100vw, 52vw"
+              className="grayscale-[8%] contrast-[1.02]"
+            />
             <div className="absolute right-4 top-4 grid h-14 w-14 place-items-center rounded-full bg-[#1f2430] text-xl text-white shadow-[0_8px_18px_rgba(0,0,0,0.2)]">
               ↗
             </div>

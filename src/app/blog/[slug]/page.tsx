@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { EditorialArticle } from "@/components/brand/editorial-article";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
+import { RelatedPosts } from "@/components/brand/related-posts";
 import { blogPosts } from "@/content/blog-posts";
 import { buildPageMetadata, getBlogPostingSchema, getBreadcrumbSchema } from "@/lib/seo";
 
@@ -66,6 +67,7 @@ export default async function BlogPostPage({
           <p key={paragraph}>{paragraph}</p>
         ))}
       </EditorialArticle>
+      <RelatedPosts currentSlug={post.slug} />
       <ConsultationCTA />
       <script
         type="application/ld+json"

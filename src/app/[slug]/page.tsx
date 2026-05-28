@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { PageIntro } from "@/components/brand/page-intro";
 import { dynamicRouteContent, dynamicSlugs } from "@/lib/route-content";
-import { getBreadcrumbSchema, siteConfig } from "@/lib/seo";
+import { getRelatedLinksForTopic } from "@/lib/related-links";
+import { buildPageMetadata, getBreadcrumbSchema, siteConfig } from "@/lib/seo";
 
 type PageParams = {
   slug: string;
@@ -25,19 +26,11 @@ export async function generateMetadata({
     return {};
   }
 
-  return {
+  return buildPageMetadata({
     title: content.title,
     description: content.description,
-    alternates: {
-      canonical: `${siteConfig.siteUrl}/${slug}`,
-    },
-    openGraph: {
-      title: `${content.title} | Dhruv Solanki`,
-      description: content.description,
-      url: `${siteConfig.siteUrl}/${slug}`,
-      type: "website",
-    },
-  };
+    path: `/${slug}`,
+  });
 }
 
 export default async function DynamicRoutePage({
@@ -64,22 +57,31 @@ export default async function DynamicRoutePage({
     },
   };
   const breadcrumbSchema = getBreadcrumbSchema(`/${slug}`, content.title);
+  const relatedLinks = getRelatedLinksForTopic(content.topic);
+  const eyebrow =
+    content.topic === "cluster"
+      ? "Topic Cluster"
+      : content.topic === "local"
+        ? "Regional Identity"
+        : content.topic === "media"
+          ? "Media Ecosystem"
+          : "Identity Page";
 
   return (
     <SiteShell>
-      <PageIntro eyebrow="Identity Page" title={content.title} description={content.description} />
+      <PageIntro eyebrow={eyebrow} title={content.title} description={content.description} />
       <section className="mt-10 rounded-2xl border hairline bg-white/60 p-7">
-        <h2 className="section-title text-2xl font-semibold">Related Paths</h2>
+        <h2 className="section-title text-2xl font-semibold">Related paths</h2>
         <div className="mt-4 flex flex-wrap gap-3 text-sm">
-          <Link href="/about" className="cta-pill rounded-full border border-black/15 px-4 py-2 text-[#132232]">
-            About
-          </Link>
-          <Link href="/blog" className="cta-pill rounded-full border border-black/15 px-4 py-2 text-[#132232]">
-            Blog
-          </Link>
-          <Link href="/contact" className="cta-pill rounded-full border border-black/15 px-4 py-2 text-[#132232]">
-            Contact
-          </Link>
+          {relatedLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="cta-pill rounded-full border border-black/15 px-4 py-2 text-[#132232]"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </section>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

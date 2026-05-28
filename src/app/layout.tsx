@@ -49,6 +49,17 @@ export const metadata: Metadata = {
     description: "AI, business, technology, and creator ecosystem by Dhruv Solanki.",
     images: ["/opengraph-image"],
   },
+  keywords: [
+    "Dhruv Solanki",
+    "Dhruv Solankii",
+    "Dhruv World",
+    "Quantis Global",
+    "AI founder",
+    "personal brand",
+  ],
+  authors: [{ name: "Dhruv Solanki", url: siteConfig.siteUrl }],
+  creator: "Dhruv Solanki",
+  applicationName: "Dhruv World",
   robots: {
     index: true,
     follow: true,
@@ -76,7 +87,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <link rel="preload" href="/media/hero.png" as="image" />
+        <link rel="preload" href="/media/hero.png" as="image" type="image/png" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
       </head>
       <body className="min-h-full flex flex-col">
         <Providers>{children}</Providers>

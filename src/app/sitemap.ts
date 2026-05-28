@@ -59,5 +59,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  return [...staticEntries, ...clusterEntries, ...blogEntries, ...resourceEntries, ...caseStudyEntries];
+  const utilityEntries = [
+    {
+      url: `${base}/llms.txt`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.3,
+    },
+  ];
+
+  return [
+    ...staticEntries,
+    ...clusterEntries,
+    ...blogEntries,
+    ...resourceEntries,
+    ...caseStudyEntries,
+    ...utilityEntries,
+  ];
 }
