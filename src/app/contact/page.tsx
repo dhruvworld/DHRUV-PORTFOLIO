@@ -4,11 +4,13 @@ import { SiteShell } from "@/components/site-shell";
 import { ContactForm } from "@/components/forms/contact-form";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { socialLinks } from "@/lib/social";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Contact",
   description: "Contact Dhruv Solanki for collaborations, consulting, and partnerships.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

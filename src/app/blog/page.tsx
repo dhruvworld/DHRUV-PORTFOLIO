@@ -4,16 +4,15 @@ import { SiteShell } from "@/components/site-shell";
 import { PageIntro } from "@/components/brand/page-intro";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { blogPosts } from "@/content/blog-posts";
+import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "AI Journal",
-  description: "Founder writing on AI systems, execution, technology, and digital authority.",
-  openGraph: {
-    images: ["/blog/opengraph-image"],
-  },
-  twitter: {
-    images: ["/blog/opengraph-image"],
-  },
+  ...buildPageMetadata({
+    title: "AI Journal",
+    description: "Founder writing on AI systems, execution, technology, and digital authority.",
+    path: "/blog",
+    ogImage: "/blog/opengraph-image",
+  }),
 };
 
 export default function BlogPage() {

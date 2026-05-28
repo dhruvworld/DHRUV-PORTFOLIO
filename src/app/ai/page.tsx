@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
 import { PageIntro } from "@/components/brand/page-intro";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
+import { buildPageMetadata } from "@/lib/seo";
 
 const tracks = [
   {
@@ -20,14 +21,12 @@ const tracks = [
 ];
 
 export const metadata: Metadata = {
-  title: "AI Lab",
-  description: "AI workflows, creator systems, and practical execution experiments by Dhruv Solanki.",
-  openGraph: {
-    images: ["/ai/opengraph-image"],
-  },
-  twitter: {
-    images: ["/ai/opengraph-image"],
-  },
+  ...buildPageMetadata({
+    title: "AI Lab",
+    description: "AI workflows, creator systems, and practical execution experiments by Dhruv Solanki.",
+    path: "/ai",
+    ogImage: "/ai/opengraph-image",
+  }),
 };
 
 export default function AiPage() {

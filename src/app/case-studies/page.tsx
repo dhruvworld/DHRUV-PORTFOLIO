@@ -4,12 +4,14 @@ import { PageIntro } from "@/components/brand/page-intro";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { ContentCard } from "@/components/content-card";
 import { caseStudies } from "@/content/case-studies";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Case Studies",
   description:
     "Case studies by Dhruv Solanki covering AI systems, digital identity architecture, and execution outcomes.",
-};
+  path: "/case-studies",
+});
 
 export default function CaseStudiesPage() {
   return (

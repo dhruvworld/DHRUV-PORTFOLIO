@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getSchemaSameAs } from "@/lib/social";
 
 export const siteConfig = {
@@ -8,6 +9,41 @@ export const siteConfig = {
   description:
     "Official digital identity platform of Dhruv Solanki (Dhruv Solankii), founder of Dhruv World.",
 };
+
+export function buildPageMetadata({
+  title,
+  description,
+  path,
+  ogImage,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  ogImage?: string;
+}): Metadata {
+  const url = `${siteConfig.siteUrl}${path}`;
+  const fullTitle = `${title} | ${siteConfig.name}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: fullTitle,
+      description,
+      url,
+      type: "website",
+      siteName: siteConfig.name,
+      ...(ogImage ? { images: [{ url: ogImage }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description,
+      ...(ogImage ? { images: [ogImage] } : {}),
+    },
+  };
+}
 
 export function getPersonSchema() {
   return {
@@ -30,7 +66,7 @@ export function getWebsiteSchema() {
     description: siteConfig.description,
     potentialAction: {
       "@type": "SearchAction",
-      target: `${siteConfig.siteUrl}/blog?q={search_term_string}`,
+      target: `${siteConfig.siteUrl}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   };

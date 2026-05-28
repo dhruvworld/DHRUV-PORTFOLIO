@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { PageIntro } from "@/components/brand/page-intro";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
+import { buildPageMetadata } from "@/lib/seo";
 
 const beliefs = [
   "Build systems, not noise.",
@@ -11,14 +12,12 @@ const beliefs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Founder",
-  description: "Founder manifesto, principles, and operating focus of Dhruv Solanki.",
-  openGraph: {
-    images: ["/founder/opengraph-image"],
-  },
-  twitter: {
-    images: ["/founder/opengraph-image"],
-  },
+  ...buildPageMetadata({
+    title: "Founder",
+    description: "Founder manifesto, principles, and operating focus of Dhruv Solanki.",
+    path: "/founder",
+    ogImage: "/founder/opengraph-image",
+  }),
 };
 
 export default function FounderPage() {

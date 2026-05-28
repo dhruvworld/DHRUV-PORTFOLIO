@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
+import { buildPageMetadata } from "@/lib/seo";
 
 const servicePillars = [
   "International Sourcing",
@@ -18,11 +19,12 @@ const workflow = [
   "Deliver: align fulfillment expectations with business goals and timelines.",
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Quantis Global",
   description:
     "Quantis Global by Dhruv Solanki: premium trade, sourcing, procurement, and international business execution.",
-};
+  path: "/quantis-global",
+});
 
 export default function QuantisGlobalPage() {
   return (

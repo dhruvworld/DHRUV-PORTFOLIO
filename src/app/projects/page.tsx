@@ -5,16 +5,14 @@ import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { EditorialImage } from "@/components/brand/editorial-image";
 import { highlightProjects } from "@/content/projects";
 import { mediaAssets } from "@/lib/media";
-import { siteConfig } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Projects",
   description:
     "Selected projects by Dhruv Solanki across Quantis Global, AI workflows, productivity tools, and digital identity systems.",
-  alternates: {
-    canonical: `${siteConfig.siteUrl}/projects`,
-  },
-};
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (
