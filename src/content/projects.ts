@@ -78,7 +78,7 @@ export const highlightProjects: HighlightProject[] = [
     details: [
       "Responsive UI with package management, image uploads, and admin controls.",
       "Firebase authentication and content management with SEO-focused structure.",
-      "Primary repo: travel-site (TypeScript). Earlier Python prototype: travel.",
+      "Repository: dhruvworld/travel-site.",
     ],
     href: projectGithubUrl("travel-site"),
     githubRepo: "travel-site",
@@ -191,18 +191,6 @@ export const highlightProjects: HighlightProject[] = [
       "Repository visibility and live URL — to be linked when confirmed.",
     ],
     href: "/projects#shubham-tours",
-  },
-  {
-    slug: "travel-python",
-    title: "Travel (Python prototype)",
-    category: "Full-stack product",
-    kind: "academic",
-    kindLabel: "Earlier prototype",
-    summary: "Earlier Python-based travel project before the TypeScript travel-site build.",
-    stack: "Python",
-    details: ["Repository: dhruvworld/travel.", "Superseded by travel-site for the graduate platform."],
-    href: projectGithubUrl("travel"),
-    githubRepo: "travel",
   },
   {
     slug: "e-resume-portal",

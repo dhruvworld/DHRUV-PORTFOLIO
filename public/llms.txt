@@ -28,7 +28,6 @@ Canonical: https://dhruvworld.netlify.app
 - Quantis-Global — international trade & sourcing (live venture)
 - DHRUV-PORTFOLIO — this digital identity site
 - travel-site — Next.js, Firebase, Tailwind (graduate platform)
-- travel — earlier Python travel prototype
 - OpenSourceDisplayLink — cross-platform display streaming
 - HG_app — Flutter/Dart mobile
 - h_g_smelters — related smelters mobile app
