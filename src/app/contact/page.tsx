@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { ContactForm } from "@/components/forms/contact-form";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
+import { socialLinks } from "@/lib/social";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -43,23 +44,20 @@ export default function ContactPage() {
             <p>WhatsApp (US): +1 424 468 2423</p>
           </div>
           <div className="flex flex-wrap content-start gap-3">
-            <Link
-              href="https://www.linkedin.com/in/dhruvworld/"
-              className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]"
-            >
+            <Link href={socialLinks.linkedin} className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]">
               LinkedIn
             </Link>
-            <Link
-              href="https://github.com/dhruvworld"
-              className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]"
-            >
+            <Link href={socialLinks.github} className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]">
               GitHub
             </Link>
-            <Link
-              href="https://www.facebook.com/dhruv.solanki.4701"
-              className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]"
-            >
+            <Link href={socialLinks.instagram} className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]">
+              Instagram
+            </Link>
+            <Link href={socialLinks.facebook} className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]">
               Facebook
+            </Link>
+            <Link href={socialLinks.whatsappIn} className="cta-pill rounded-full border border-black/15 px-4 py-2 text-sm text-[#132232]">
+              WhatsApp
             </Link>
           </div>
         </div>

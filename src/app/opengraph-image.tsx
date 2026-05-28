@@ -17,18 +17,16 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #0b1b33 0%, #0f172a 60%, #1e293b 100%)",
-          color: "white",
+          background: "linear-gradient(135deg, #f5f3ef 0%, #f8f7f4 55%, #efe9df 100%)",
+          color: "#132232",
           padding: "72px",
         }}
       >
-        <div style={{ fontSize: 26, color: "#c6a86a", letterSpacing: 4 }}>
-          DHRUV WORLD
-        </div>
-        <div style={{ fontSize: 74, fontWeight: 700, marginTop: 18 }}>Dhruv Solanki</div>
-        <div style={{ fontSize: 36, marginTop: 10, color: "#cbd5e1" }}>(Dhruv Solankii)</div>
-        <div style={{ fontSize: 28, marginTop: 26, color: "#e2e8f0" }}>
-          AI • Business • Technology • Creator
+        <div style={{ fontSize: 24, color: "#8f6a34", letterSpacing: 4 }}>DHRUV WORLD</div>
+        <div style={{ fontSize: 72, fontWeight: 700, marginTop: 18 }}>Dhruv Solanki</div>
+        <div style={{ fontSize: 34, marginTop: 10, color: "#5f5f5f" }}>Dhruv Solankii</div>
+        <div style={{ fontSize: 28, marginTop: 26, color: "#4f4f4f" }}>
+          AI • Business • Technology • Digital Identity
         </div>
       </div>
     ),

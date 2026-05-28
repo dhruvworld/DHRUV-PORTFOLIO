@@ -9,6 +9,7 @@ import { QuantisPreview } from "@/components/brand/quantis-preview";
 import { SectionReveal } from "@/components/brand/section-reveal";
 import { SelectedWork } from "@/components/brand/selected-work";
 import { VisualGallery } from "@/components/brand/visual-gallery";
+import { EditorialTestimonials } from "@/components/brand/editorial-testimonials";
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
       </SectionReveal>
       <SectionReveal>
         <EditorialWriting />
+      </SectionReveal>
+      <SectionReveal>
+        <EditorialTestimonials />
       </SectionReveal>
       <SectionReveal>
         <QuantisPreview />

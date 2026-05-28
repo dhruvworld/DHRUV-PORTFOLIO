@@ -27,19 +27,19 @@ export const mediaAssets = {
   },
   work: [
     {
-      src: "/media/project-strip.png",
+      src: "/media/project-01.png",
       alt: "Portfolio project one",
-      objectPosition: "18% 50%",
+      objectPosition: "center",
     },
     {
-      src: "/media/project-strip.png",
+      src: "/media/project-02.png",
       alt: "Portfolio project two",
-      objectPosition: "50% 50%",
+      objectPosition: "center",
     },
     {
-      src: "/media/project-strip.png",
+      src: "/media/project-03.png",
       alt: "Portfolio project three",
-      objectPosition: "82% 50%",
+      objectPosition: "center",
     },
   ],
   gallery: [

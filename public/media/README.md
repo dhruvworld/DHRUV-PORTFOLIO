@@ -7,7 +7,10 @@ Replace these files in `public/media/` to upgrade visuals — no code changes ne
 | `hero.png` | Homepage hero | Portrait or laptop hero, 1600×1200+ |
 | `about-center.png` | About card portrait | 4:5 ratio, min 1200×1500 |
 | `about-side.png` | About side portrait | Square 800×800+ |
-| `project-strip.png` | Work cards (3 crops) | Wide showcase image 2400×1200+ |
+| `project-01.png` | Work card 1 | 4:3 or 16:9 showcase |
+| `project-02.png` | Work card 2 | 4:3 or 16:9 showcase |
+| `project-03.png` | Work card 3 | 4:3 or 16:9 showcase |
+| `project-strip.png` | Legacy fallback | Optional |
 | `gallery-mobile.png` | Latest works carousel | Mobile mockups 1600×2400+ |
 | `experience.png` | Experience preview | Optional UI/timeline shot |
 | `consultation.png` | CTA banner background | Dark cinematic texture |

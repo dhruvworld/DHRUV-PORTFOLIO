@@ -4,11 +4,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const nav = [
-  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Work" },
-  { href: "/blog", label: "AI Journal" },
-  { href: "/quantis-global", label: "Quantis Global" },
+  { href: "/blog", label: "Journal" },
+  { href: "/founder", label: "Founder" },
   { href: "/contact", label: "Contact" },
 ];
 
