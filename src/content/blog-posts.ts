@@ -25,12 +25,83 @@ export const blogPosts: BlogPost[] = [
     tags: ["branding", "seo", "personal-brand"],
     excerpt:
       "Why identity architecture, entity SEO, and content systems matter more than a one-page portfolio.",
-    content: [
-      "Most personal websites are resumes with animation. They look polished but they are structurally weak. They rarely build long-term search authority, and they do not create a coherent identity graph.",
-      "I built this platform around one principle: identity compounds when narrative, proof, and discoverability work together. Every page has a role. Home positions. Projects prove execution. Writing expands topical depth. Entity pages reinforce naming consistency.",
-      "The biggest shift was treating SEO as architecture, not optimization. Instead of chasing random keywords, I focused on entity clarity: Dhruv Solanki, Dhruv Solankii, and Dhruv World. That consistency appears in metadata, schema, page copy, and internal links.",
-      "Design also changed the strategy. A premium interface is not decoration; it is trust signaling. Typography hierarchy, spacing rhythm, and motion restraint communicate confidence. If the design feels rushed, credibility drops before anyone reads a line.",
-      "The outcome is a system that can scale. Articles, resources, and case studies can grow without breaking structure. The goal is simple: become easy to understand for both people and search engines, while looking like a serious long-term brand.",
+    content: [],
+    sections: [
+      {
+        heading: "This is not a portfolio — it is identity infrastructure",
+        paragraphs: [
+          "Most personal websites are resumes with animation. They look polished but they are structurally weak: no entity graph, no content engine, no proof layer, and no reason for search engines to treat you as one consistent person over time.",
+          "I built Dhruv World as a long-term digital identity platform — personal brand, project proof, journal, resources, and business narrative (Quantis Global) in one connected system. The goal is to rank and be understood for Dhruv Solanki, Dhruv Solankii, and Dhruv World as linked identities, not scattered profiles.",
+          "Everything on this site follows one principle: identity compounds when narrative, proof, and discoverability work together.",
+        ],
+      },
+      {
+        heading: "Identity architecture: three names, one graph",
+        paragraphs: [
+          "Primary professional identity: Dhruv Solanki — metadata, schema, CV, collaborations, and formal outreach.",
+          "Creator identity: Dhruv Solankii — social-first content, personality, and creative narrative.",
+          "Media ecosystem: Dhruv World — the platform itself, journal, resources, and the hub that ties the others together.",
+          "Business execution layer: Quantis Global — trade and logistics credibility without burying the founder story.",
+          "Each route has a defined role. Home positions. About and timeline prove background. Projects show execution. Case studies show thinking. Journal builds topical depth. Quantis Global sells operational trust.",
+        ],
+      },
+      {
+        heading: "Entity SEO: architecture before keywords",
+        paragraphs: [
+          "I stopped treating SEO as a plugin and started treating it as structure. Target entity clarity first: your legal name, aliases, location, venture, and sameAs links to LinkedIn, GitHub, Instagram, YouTube, and Medium under the dhruvworld handle.",
+          "Sitewide JSON-LD: Person, WebSite, and Organization schemas on every page load. BlogPosting schema on articles. Breadcrumb schema on detail routes. Canonical URLs and Open Graph on all indexable pages.",
+          "Internal linking connects topical clusters (/ai, /business, /technology) to projects, case studies, and journal posts so crawlers see one ecosystem, not orphan pages.",
+          "Technical surface area: /robots.txt, /sitemap.xml (blog, resources, case studies, indexable clusters), /llms.txt for AI systems, and command-palette search for humans.",
+          "Thin or duplicate cluster pages are noindexed so the sitemap only promotes routes with real intent — quality over volume.",
+        ],
+      },
+      {
+        heading: "Content systems: publish once, compound forever",
+        paragraphs: [
+          "Blog (AI Journal): long-form articles on branding, AI workflows, and portfolio strategy — each with full text, reading time, and related posts.",
+          "Case studies: deep breakdowns (e.g. digital identity architecture, Quantis Global brand foundation) using problem → solution → result framing.",
+          "Resources: only real assets visitors can use — starting with copy-paste prompts (e.g. clean mirror photo prompt), not empty “coming soon” cards.",
+          "Projects: live URLs first, then case study, then GitHub — every entry labeled by kind (live venture, client build, R&D, platform).",
+          "Operating cadence intent: one pillar article per month, one case study per quarter, resources when there is something genuinely useful to share.",
+        ],
+      },
+      {
+        heading: "What I shipped technically",
+        paragraphs: [
+          "Stack: Next.js 16 (App Router), TypeScript, Tailwind v4, static generation for speed, Netlify for deployment at dhruvworld.netlify.app.",
+          "Content lives in typed modules (projects.ts, blog-posts.ts, resources.ts, quantis-global-site.ts, profile.ts) so copy updates do not require hunting through components.",
+          "Built and iterated primarily in Cursor — same workflow for this site, Quantis Global, client apps, and experiments on the dhruvworld GitHub org.",
+          "Real assets on the site: portrait photography, downloadable CV PDF, Quantis copy sourced from quantisglobal.co, and WhatsApp/LinkedIn-first contact.",
+        ],
+      },
+      {
+        heading: "Design as trust signaling",
+        paragraphs: [
+          "Editorial, text-first layout: warm ivory background, charcoal typography, restrained gold/teal accents — not dark cyberpunk or generic SaaS template aesthetics.",
+          "No fake testimonials, no decorative color swatch grids, no placeholder UI screenshots. Proof is projects, numbers, certifications, and live links.",
+          "Typography hierarchy, spacing, and motion restraint matter as much as code quality. If the surface feels rushed, credibility drops before anyone reads a line.",
+        ],
+      },
+      {
+        heading: "How the homepage is structured today",
+        paragraphs: [
+          "Hero: who-I-help line (not a skill list), portrait, CV download, and direct contact paths.",
+          "Proof strip: Quantis countries, quote SLA, GitHub project count, graduate programs.",
+          "Featured case study: Quantis Global in problem → solution → result format with link to quantisglobal.co.",
+          "Selected work: live demo → case study → GitHub on each card.",
+          "Journal + single closing CTA — no duplicate experience blocks or fake sections.",
+        ],
+      },
+      {
+        heading: "What I would tell you if you are building yours",
+        paragraphs: [
+          "Start with identity mapping on paper: one professional name, one creator alias, one media property — then mirror that in metadata and schema on day one.",
+          "Ship live links and one real case study before you add ten half-finished project cards.",
+          "Remove anything that says “coming soon” unless you are actively filling it this week.",
+          "Pair this build guide with Modern Portfolio Strategy in 2026 for the five conversion checks (live links, who I help, PSR case study, contact, proof).",
+          "The best personal site is not a launch artifact. It is a living operating surface for your reputation — built to grow without breaking structure.",
+        ],
+      },
     ],
   },
   {
