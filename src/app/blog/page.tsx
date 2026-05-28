@@ -18,8 +18,8 @@ export default function BlogPage() {
   return (
     <SiteShell>
       <section className="glass-panel creator-glow rounded-3xl p-10 shadow-sm">
-        <h1 className="display-title text-5xl font-semibold tracking-tight text-slate-900 md:text-6xl">AI Journal</h1>
-        <p className="body-soft mt-4 max-w-3xl text-lg text-slate-600">
+        <h1 className="display-title text-5xl font-semibold tracking-tight text-white md:text-6xl">AI Journal</h1>
+        <p className="body-soft mt-4 max-w-3xl text-lg">
           Writing on AI, systems, technology, and execution.
         </p>
       </section>

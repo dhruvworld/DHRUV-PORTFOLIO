@@ -68,15 +68,15 @@ export default async function DynamicRoutePage({
     <>
       <RouteTemplate title={content.title} description={content.description} />
       <section className="glass-panel mx-auto mt-6 w-full max-w-6xl rounded-3xl p-8">
-        <h2 className="section-title text-2xl font-semibold text-slate-900">Related Paths</h2>
+        <h2 className="section-title text-2xl font-semibold text-white">Related Paths</h2>
         <div className="mt-4 flex flex-wrap gap-3 text-sm">
-          <Link href="/dhruv-solanki" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
+          <Link href="/dhruv-solanki" className="cta-pill rounded-full border border-white/20 px-4 py-2 text-white">
             Dhruv Solanki
           </Link>
-          <Link href="/blog" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
+          <Link href="/blog" className="cta-pill rounded-full border border-white/20 px-4 py-2 text-white">
             Blog
           </Link>
-          <Link href="/contact" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
+          <Link href="/contact" className="cta-pill rounded-full border border-white/20 px-4 py-2 text-white">
             Contact
           </Link>
         </div>

@@ -56,9 +56,9 @@ export default async function BlogPostPage({
     <SiteShell>
       <article className="glass-panel rounded-3xl p-10 shadow-sm">
         <p className="text-xs uppercase tracking-[0.14em] text-brand-cyan">{post.publishedAt}</p>
-        <h1 className="section-title mt-3 text-4xl font-semibold tracking-tight text-slate-900">{post.title}</h1>
-        <p className="body-soft mt-4 max-w-3xl text-lg text-slate-600">{post.description}</p>
-        <div className="body-soft mt-8 space-y-4 text-base text-slate-700">
+        <h1 className="section-title mt-3 text-4xl font-semibold tracking-tight text-white">{post.title}</h1>
+        <p className="body-soft mt-4 max-w-3xl text-lg text-slate-300">{post.description}</p>
+        <div className="body-soft mt-8 space-y-4 text-base text-slate-300">
           <p>
             Dhruv Solanki (Dhruv Solankii) builds Dhruv World as a long-term internet
             identity platform powered by AI, technology, and business systems.
@@ -69,13 +69,13 @@ export default async function BlogPostPage({
           </p>
         </div>
         <div className="mt-8 flex flex-wrap gap-3 text-sm">
-          <Link href="/blog" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
+          <Link href="/blog" className="cta-pill rounded-full border border-white/20 px-4 py-2 text-white">
             Back to Blog
           </Link>
-          <Link href="/projects" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
+          <Link href="/projects" className="cta-pill rounded-full border border-white/20 px-4 py-2 text-white">
             Explore Projects
           </Link>
-          <Link href="/contact" className="cta-pill rounded-full border border-slate-200 px-4 py-2 text-slate-900">
+          <Link href="/contact" className="cta-pill rounded-full border border-white/20 px-4 py-2 text-white">
             Contact
           </Link>
         </div>

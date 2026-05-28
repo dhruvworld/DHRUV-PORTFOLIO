@@ -59,14 +59,14 @@ export function CommandPalette() {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center bg-slate-900/20 p-4 pt-28 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 pt-28 backdrop-blur-sm">
       <div className="glass-panel w-full max-w-2xl rounded-2xl p-4">
         <input
           autoFocus
           placeholder="Search routes..."
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-brand-cyan"
+          className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-brand-cyan"
         />
         <div className="mt-3 grid gap-2">
           {filtered.map((item) => (
@@ -74,7 +74,7 @@ export function CommandPalette() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 hover:border-brand-cyan"
+              className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 hover:border-brand-cyan"
             >
               {item.label}
             </Link>
@@ -84,7 +84,7 @@ export function CommandPalette() {
               key={action.label}
               type="button"
               onClick={() => copyText(action.value)}
-              className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-left text-sm text-slate-700 hover:border-brand-cyan"
+              className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-slate-200 hover:border-brand-cyan"
             >
               {action.label}
             </button>
@@ -92,14 +92,14 @@ export function CommandPalette() {
           <Link
             href="https://www.linkedin.com/in/dhruvworld/"
             onClick={() => setOpen(false)}
-            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 hover:border-brand-cyan"
+            className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 hover:border-brand-cyan"
           >
             Open LinkedIn
           </Link>
           <Link
             href="https://github.com/dhruvworld"
             onClick={() => setOpen(false)}
-            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 hover:border-brand-cyan"
+            className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 hover:border-brand-cyan"
           >
             Open GitHub
           </Link>

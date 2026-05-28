@@ -27,10 +27,10 @@ export default function ProjectsPage() {
   return (
     <SiteShell>
       <section className="glass-panel creator-glow rounded-3xl p-10 shadow-sm">
-        <h1 className="display-title text-5xl font-semibold tracking-tight text-slate-900 md:text-6xl">
+        <h1 className="display-title text-5xl font-semibold tracking-tight text-white md:text-6xl">
           Projects
         </h1>
-        <p className="body-soft mt-6 max-w-4xl text-lg text-slate-600">
+        <p className="body-soft mt-6 max-w-4xl text-lg">
           Selected builds across business execution, AI workflows, and product engineering.
         </p>
       </section>
@@ -38,9 +38,9 @@ export default function ProjectsPage() {
       <section className="mt-8 grid gap-5">
         {highlightedProjects.map((project) => (
           <article key={project.title} className="glass-panel creator-card rounded-3xl p-7 md:p-9">
-            <h2 className="section-title text-4xl font-semibold text-slate-900">{project.title}</h2>
+            <h2 className="section-title text-4xl font-semibold text-white">{project.title}</h2>
             <p className="mt-2 text-sm uppercase tracking-[0.14em] text-brand-cyan">{project.stack}</p>
-            <ul className="mt-6 space-y-3 text-sm text-slate-600 md:text-base">
+            <ul className="mt-6 space-y-3 text-sm text-slate-300 md:text-base">
               {project.details.map((line) => (
                 <li key={line}>{line}</li>
               ))}

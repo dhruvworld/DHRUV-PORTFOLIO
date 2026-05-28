@@ -6,8 +6,8 @@ export default function ResourcesPage() {
   return (
     <SiteShell>
       <section className="glass-panel creator-glow rounded-3xl p-8 shadow-sm md:p-10">
-        <h1 className="display-title text-5xl font-semibold tracking-tight text-slate-900 md:text-6xl">Resources</h1>
-        <p className="body-soft mt-4 max-w-3xl text-lg text-slate-600">
+        <h1 className="display-title text-5xl font-semibold tracking-tight text-white md:text-6xl">Resources</h1>
+        <p className="body-soft mt-4 max-w-3xl text-lg">
           Guides, frameworks, and practical assets for builders, students, and founders.
         </p>
       </section>
