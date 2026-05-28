@@ -27,7 +27,6 @@ Canonical: https://dhruvworld.netlify.app
 ## Projects (dhruvworld on GitHub)
 - Quantis-Global — international trade & sourcing (live venture)
 - DHRUV-PORTFOLIO — this digital identity site
-- travel-site — Next.js, Firebase, Tailwind (graduate platform)
 - OpenSourceDisplayLink — cross-platform display streaming
 - HG_app — Flutter/Dart mobile
 - h_g_smelters — related smelters mobile app

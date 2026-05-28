@@ -67,24 +67,6 @@ export const highlightProjects: HighlightProject[] = [
     featuredOnHome: true,
   },
   {
-    slug: "travel-site",
-    title: "Travel Website Platform",
-    category: "Full-stack product",
-    kind: "academic",
-    kindLabel: "Graduate build",
-    summary:
-      "Scalable travel platform with admin dashboard, package management, and dynamic content.",
-    stack: "Next.js · Firebase · Tailwind CSS · TypeScript",
-    details: [
-      "Responsive UI with package management, image uploads, and admin controls.",
-      "Firebase authentication and content management with SEO-focused structure.",
-      "Repository: dhruvworld/travel-site.",
-    ],
-    href: projectGithubUrl("travel-site"),
-    githubRepo: "travel-site",
-    featuredOnHome: true,
-  },
-  {
     slug: "opensource-displaylink",
     title: "OpenSourceDisplayLink",
     category: "Engineering R&D",

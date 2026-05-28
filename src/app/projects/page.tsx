@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Projects",
   description:
-    "Projects by Dhruv Solanki: Quantis Global, travel-site, OpenSourceDisplayLink, HG App, Megh, Sir, Epic Search, BJP Selfie, and more on GitHub (dhruvworld).",
+    "Projects by Dhruv Solanki: Quantis Global, OpenSourceDisplayLink, HG App, Megh, Sir, Epic Search, BJP Selfie, and more on GitHub (dhruvworld).",
   path: "/projects",
 });
 
