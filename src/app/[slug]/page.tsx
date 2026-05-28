@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { PageIntro } from "@/components/brand/page-intro";
-import { dynamicRouteContent, dynamicSlugs } from "@/lib/route-content";
+import { dynamicRouteContent, dynamicSlugs, isIndexableClusterSlug } from "@/lib/route-content";
 import { getRelatedLinksForTopic } from "@/lib/related-links";
 import { buildPageMetadata, getBreadcrumbSchema, siteConfig } from "@/lib/seo";
 
@@ -26,11 +26,20 @@ export async function generateMetadata({
     return {};
   }
 
-  return buildPageMetadata({
+  const meta = buildPageMetadata({
     title: content.title,
     description: content.description,
     path: `/${slug}`,
   });
+
+  if (!isIndexableClusterSlug(slug)) {
+    return {
+      ...meta,
+      robots: { index: false, follow: true },
+    };
+  }
+
+  return meta;
 }
 
 export default async function DynamicRoutePage({

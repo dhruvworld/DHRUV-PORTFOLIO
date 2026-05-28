@@ -1,7 +1,11 @@
+export type ProjectKind = "live" | "case-study" | "academic" | "platform";
+
 export type HighlightProject = {
   slug: string;
   title: string;
   category: string;
+  kind: ProjectKind;
+  kindLabel: string;
   summary: string;
   stack: string;
   details: string[];
@@ -10,12 +14,13 @@ export type HighlightProject = {
   featuredOnHome?: boolean;
 };
 
-/** Projects aligned with resume — no placeholder imagery required. */
 export const highlightProjects: HighlightProject[] = [
   {
     slug: "quantis-global",
     title: "Quantis Global",
     category: "International trade",
+    kind: "live",
+    kindLabel: "Live venture",
     summary:
       "Import-export, global procurement, logistics coordination, and technology-driven trade operations.",
     stack: "Business systems · Sourcing · SEO",
@@ -32,6 +37,8 @@ export const highlightProjects: HighlightProject[] = [
     slug: "travel-website",
     title: "Travel Website Platform",
     category: "Full-stack product",
+    kind: "academic",
+    kindLabel: "Graduate build",
     summary:
       "Scalable travel platform with admin dashboard, package management, and dynamic content.",
     stack: "Next.js · Firebase · Tailwind CSS",
@@ -46,6 +53,8 @@ export const highlightProjects: HighlightProject[] = [
     slug: "opensource-displaylink",
     title: "OpenSourceDisplayLink",
     category: "Engineering R&D",
+    kind: "academic",
+    kindLabel: "R&D prototype",
     summary:
       "Cross-platform display extension with real-time streaming and low-latency pointer tracking.",
     stack: "Streaming · WebP · Cross-platform",
@@ -60,6 +69,8 @@ export const highlightProjects: HighlightProject[] = [
     slug: "e-resume-portal",
     title: "E-Resume Portal",
     category: "Web application",
+    kind: "academic",
+    kindLabel: "Internship project",
     summary: "Resume generation and management platform built with Python and Django.",
     stack: "Python · Django · MySQL",
     details: [
@@ -72,6 +83,8 @@ export const highlightProjects: HighlightProject[] = [
     slug: "dhruv-world",
     title: "Dhruv World",
     category: "Digital identity",
+    kind: "platform",
+    kindLabel: "This platform",
     summary: "Unified personal brand, editorial content, and search authority infrastructure.",
     stack: "Next.js · Entity SEO · Content systems",
     details: [

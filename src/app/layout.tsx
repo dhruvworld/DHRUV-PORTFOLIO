@@ -88,6 +88,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
+        <link rel="preload" href="/media/portrait.png" as="image" type="image/png" />
       </head>
       <body className="min-h-full flex flex-col">
         <Providers>{children}</Providers>

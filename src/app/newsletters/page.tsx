@@ -37,6 +37,13 @@ export default function NewslettersPage() {
       />
       <section className="mt-8 rounded-2xl border hairline bg-white/65 p-7 md:p-9">
         <NewsletterForm />
+        <p className="mt-4 text-xs leading-relaxed text-[#7a7a7a]">
+          Live subscriptions require{" "}
+          <code className="rounded bg-[#f3f1ec] px-1 py-0.5 text-[10px]">RESEND_API_KEY</code>,{" "}
+          <code className="rounded bg-[#f3f1ec] px-1 py-0.5 text-[10px]">NEWSLETTER_FROM_EMAIL</code>, and{" "}
+          <code className="rounded bg-[#f3f1ec] px-1 py-0.5 text-[10px]">NEWSLETTER_AUDIENCE_ID</code> in
+          production. Until then, the form confirms intent but does not add contacts.
+        </p>
       </section>
 
       <section className="mt-12 grid gap-10 border-y hairline py-10 md:grid-cols-2">

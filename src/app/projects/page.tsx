@@ -30,7 +30,12 @@ export default function ProjectsPage() {
             key={project.slug}
             className="scroll-mt-32 rounded-[1.35rem] border hairline bg-white/65 p-6 md:p-8 lg:scroll-mt-36"
           >
-            <p className="text-xs uppercase tracking-[0.14em] text-[#2e5e4e]">{project.category}</p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="text-xs uppercase tracking-[0.14em] text-[#2e5e4e]">{project.category}</p>
+              <span className="rounded-full bg-[#f3f1ec] px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-[#2e5e4e]">
+                {project.kindLabel}
+              </span>
+            </div>
             <h2 className="section-title mt-2 text-4xl font-semibold">{project.title}</h2>
             <p className="mt-2 text-sm text-[#5f5f5f]">{project.stack}</p>
             <p className="body-soft mt-4 max-w-3xl">{project.summary}</p>

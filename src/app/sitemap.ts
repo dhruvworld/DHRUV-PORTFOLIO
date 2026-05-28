@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { blogPosts } from "@/content/blog-posts";
 import { caseStudies } from "@/content/case-studies";
 import { resources } from "@/content/resources";
-import { dynamicSlugs } from "@/lib/route-content";
+import { dynamicSlugs, isIndexableClusterSlug } from "@/lib/route-content";
 import { siteConfig } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "/" ? 1 : route === "/projects" || route === "/about" ? 0.9 : 0.8,
   }));
 
-  const clusterEntries = dynamicSlugs.map((slug) => ({
+  const clusterEntries = dynamicSlugs.filter(isIndexableClusterSlug).map((slug) => ({
     url: `${base}/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

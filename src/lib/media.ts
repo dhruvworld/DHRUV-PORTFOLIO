@@ -1,12 +1,17 @@
-/**
- * Optional media slots — only use real photography with descriptive alt text.
- * The live site is text-first; do not add UI screenshot placeholders here.
- */
 export type MediaAsset = {
   src: string;
   alt: string;
   objectPosition?: string;
+  width?: number;
+  height?: number;
 };
 
-/** Reserved for a future verified portrait. Not rendered until provided. */
-export const optionalPortrait: MediaAsset | null = null;
+export const mediaAssets = {
+  portrait: {
+    src: "/media/portrait.png",
+    alt: "Dhruv Solanki, founder of Quantis Global, computer science graduate student in Manchester New Hampshire",
+    objectPosition: "center top",
+    width: 1254,
+    height: 1254,
+  },
+} as const;

@@ -1,61 +1,67 @@
 import Link from "next/link";
-import { focusAreas } from "@/content/skills";
+import { EditorialImage } from "@/components/brand/editorial-image";
+import { mediaAssets } from "@/lib/media";
+import { resumePdfPath } from "@/content/certifications";
+import { socialLinks } from "@/lib/social";
 
 export function CinematicHero() {
   return (
-    <section className="relative overflow-hidden pt-8 md:pt-14" aria-labelledby="hero-heading">
-      <div className="rounded-[2.2rem] border-[6px] border-[#232323] bg-[#f7f6f3] p-6 shadow-[0_20px_40px_rgba(0,0,0,0.12)] md:p-9">
-        <div className="max-w-4xl md:py-4">
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-sm text-[#4f4f4f]">
-            <p>
-              <span className="text-2xl font-semibold text-[#132232]">MS</span>
-              <span className="ml-2">Computer Science · SNHU</span>
+    <section className="relative overflow-hidden pt-8 md:pt-12" aria-labelledby="hero-heading">
+      <div className="rounded-[2.2rem] border hairline bg-[#f7f6f3] p-6 shadow-[0_18px_36px_rgba(0,0,0,0.08)] md:p-8">
+        <div className="grid items-center gap-10 md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_320px]">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#5f5f5f]">
+              MS Computer Science · SNHU · Manchester, NH
             </p>
-            <p>
-              <span className="text-2xl font-semibold text-[#132232]">NH</span>
-              <span className="ml-2">Manchester, New Hampshire</span>
+            <h1
+              id="hero-heading"
+              className="display-title mt-5 text-[clamp(2.4rem,6vw,4.5rem)] font-semibold leading-[1.02] text-[#132232]"
+            >
+              Dhruv Solanki
+            </h1>
+            <p className="mt-3 text-lg text-[#434343]">
+              Founder of Quantis Global · full-stack engineer · AI workflow builder
             </p>
-          </div>
-          <h1
-            id="hero-heading"
-            className="display-title mt-10 text-[clamp(4.5rem,10vw,8.8rem)] font-medium text-[#132232]"
-          >
-            Hello
-          </h1>
-          <p className="mt-3 text-lg text-[#535353]">— Dhruv Solanki, founder &amp; engineer</p>
-          <p className="body-soft mt-7 max-w-2xl text-base leading-relaxed">
-            Computer Science graduate student and founder of Quantis Global. I build AI-powered workflows,
-            full-stack products, and digital brand systems — from Gujarat roots to Manchester, NH.
-          </p>
-          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Focus areas">
-            {focusAreas.map((area) => (
-              <li
-                key={area}
-                className="rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs uppercase tracking-[0.12em] text-[#555]"
+            <p className="body-soft mt-5 max-w-xl text-base leading-relaxed">
+              I build products and trade systems — Python, Django, Next.js, and practical AI execution for
+              founders, students, and global business partners.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="cta-pill rounded-full bg-[#132232] px-5 py-3 text-sm font-medium text-[#f8f7f4]"
               >
-                {area}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Link
-              href="/projects"
-              className="cta-pill rounded-full bg-[#132232] px-5 py-3 text-sm font-medium text-[#f8f7f4]"
-            >
-              View projects
-            </Link>
-            <Link
-              href="/about"
-              className="cta-pill rounded-full border border-black/15 px-5 py-3 text-sm font-medium text-[#132232]"
-            >
-              Timeline &amp; background
-            </Link>
+                Book a call
+              </Link>
+              <Link
+                href="/projects"
+                className="cta-pill rounded-full border border-black/15 px-5 py-3 text-sm font-medium text-[#132232]"
+              >
+                View projects
+              </Link>
+              <a
+                href={resumePdfPath}
+                className="cta-pill rounded-full border border-black/15 px-5 py-3 text-sm font-medium text-[#132232]"
+              >
+                Download CV
+              </a>
+              <Link
+                href={socialLinks.linkedin}
+                className="cta-pill rounded-full border border-black/15 px-5 py-3 text-sm font-medium text-[#132232]"
+              >
+                LinkedIn ↗
+              </Link>
+            </div>
           </div>
-        </div>
 
-        <div className="mt-8 flex items-center justify-between border-t hairline pt-5 text-sm text-[#5f5f5f]">
-          <span className="uppercase tracking-[0.18em]">Dhruv Solanki · Dhruv World</span>
-          <span>Scroll down ↓</span>
+          <figure className="relative mx-auto aspect-square w-full max-w-[320px] overflow-hidden rounded-[1.5rem] border hairline bg-[#eceae5]">
+            <EditorialImage
+              asset={mediaAssets.portrait}
+              priority
+              sizes="(max-width: 768px) 70vw, 320px"
+              className="grayscale-[6%]"
+            />
+          </figure>
         </div>
       </div>
     </section>

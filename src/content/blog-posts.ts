@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     title: "How I Built My Personal Brand Website",
     description:
       "A practical breakdown of building a long-term digital identity system, not just a portfolio.",
-    publishedAt: "2026-05-28",
+    publishedAt: "2026-05-08",
     tags: ["branding", "seo", "personal-brand"],
     excerpt:
       "Why identity architecture, entity SEO, and content systems matter more than a one-page portfolio.",
@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     title: "AI Tools Every Student Should Use",
     description:
       "A curated workflow of high-leverage AI tools for student builders and creators.",
-    publishedAt: "2026-05-29",
+    publishedAt: "2026-05-15",
     tags: ["ai", "productivity", "students"],
     excerpt:
       "A stack for research, writing, prototyping, and execution with minimal complexity.",
@@ -48,7 +48,7 @@ export const blogPosts: BlogPost[] = [
     title: "Modern Portfolio Strategy in 2026",
     description:
       "Portfolio strategy that improves trust, search visibility, and lead quality.",
-    publishedAt: "2026-05-30",
+    publishedAt: "2026-05-22",
     tags: ["portfolio", "strategy", "growth"],
     excerpt:
       "A modern framework for portfolio positioning, proof architecture, and conversion.",
