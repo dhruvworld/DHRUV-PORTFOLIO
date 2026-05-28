@@ -3,7 +3,7 @@ import Link from "next/link";
 export function PremiumFooter() {
   return (
     <footer className="border-t border-black/10">
-      <div className="mx-auto w-full max-w-6xl px-6 py-10">
+      <div className="mx-auto w-full max-w-7xl px-6 py-10">
         <p className="text-sm text-[#4f4f4f]">Dhruv Solanki = Dhruv Solankii = Dhruv World</p>
         <p className="mt-2 text-xs text-[#7a7a7a]">© {new Date().getFullYear()} Dhruv World. All rights reserved.</p>
         <div className="mt-4 flex flex-wrap gap-4 text-xs text-[#6b6b6b]">
