@@ -47,10 +47,23 @@ export default async function ResourceDetailPage({
         description={item.description}
         links={[{ href: "/resources", label: "Back to Resources" }]}
       >
-        <p>
-          This resource page is ready for Cloudinary assets, downloadable files, and embedded previews
-          with newsletter-gated distribution.
-        </p>
+        {item.body?.map((paragraph) => <p key={paragraph.slice(0, 48)}>{paragraph}</p>)}
+        {item.prompt ? (
+          <div className="mt-6">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#2e5e4e]">
+              Copy this prompt
+            </p>
+            <pre className="mt-3 overflow-x-auto rounded-xl border hairline bg-[#f7f6f3] p-5 text-sm leading-relaxed whitespace-pre-wrap text-[#333]">
+              {item.prompt}
+            </pre>
+          </div>
+        ) : null}
+        {!item.body?.length && !item.prompt ? (
+          <p>
+            This resource page is ready for Cloudinary assets, downloadable files, and embedded previews
+            with newsletter-gated distribution.
+          </p>
+        ) : null}
       </EditorialArticle>
       <ConsultationCTA />
       <script
