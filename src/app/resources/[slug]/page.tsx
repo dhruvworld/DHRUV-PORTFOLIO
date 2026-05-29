@@ -48,6 +48,19 @@ export default async function ResourceDetailPage({
         description={item.description}
         links={[{ href: "/resources", label: "Back to Resources" }]}
       >
+        {item.downloadUrl ? (
+          <div className="mb-8">
+            <a
+              href={item.downloadUrl}
+              download
+              target={item.downloadUrl.startsWith("http") ? "_blank" : undefined}
+              rel={item.downloadUrl.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="inline-flex items-center gap-2 rounded-full border border-[#2e5e4e]/30 bg-[#2e5e4e] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#244a3d]"
+            >
+              {item.downloadLabel ?? "Download full file"}
+            </a>
+          </div>
+        ) : null}
         {item.body?.length ? <ResourceBody lines={item.body} /> : null}
         {item.prompt ? (
           <div className="mt-6">

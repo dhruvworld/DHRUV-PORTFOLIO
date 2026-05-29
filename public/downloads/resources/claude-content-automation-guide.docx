@@ -1,0 +1,93 @@
+Source file: Claude-Content-Automation-Guide.docx
+
+THE PRACTICAL GUIDE
+
+Automate Your Content Creation with Claude
+
+Turn Claude into a repeatable content engine using Skills + your own brand context.
+
+This guide turns the 7-step carousel into a do-it-now playbook. The idea is simple: Skills teach Claude what to do (write a carousel, brainstorm hooks, plan a campaign), and context files teach Claude how to do it in your voice. Put both in place once, and a single prompt produces a full batch of on-brand content.
+
+THE MENTAL MODEL  How the system works
+
+Four layers stack together. Once they are set up, you only ever touch the last two.
+
+THE WORKFLOW  All 7 steps at a glance
+
+BEFORE YOU START  What you need
+
+STEP 1  Open Claude
+
+Slide 1 — start at claude.ai/customize, the home for Skills and Connectors.
+
+Go to claude.ai/customize. This is the control room for how Claude works with you — Skills, connectors, and the context that shapes every reply.
+
+STEP 2  Click Skills
+
+Slide 2 — Customize → Skills opens your personal skill workspace.
+
+In the Customize sidebar, click Skills. This opens your personal skill workspace — the library of workflows Claude can run for you.
+
+STEP 3  Browse skills
+
+Slide 3 — click the + icon, then “Browse skills” to explore ready-made workflows.
+
+Click the + icon at the top of the Skills panel, then choose Browse skills. This is where you see what Claude can already do out of the box. Click any skill to read its description, trigger, and preview before adding it.
+
+What each part of a skill tells you
+
+STEP 4  Download the right skills
+
+Slide 4 — pull skills from the marketing repo at github.com/coreyhaines31/marketingskills.
+
+Open the skills repository at github.com/coreyhaines31/marketingskills. The README lists every skill with a one-line description of when to use it. Download only the ones that match your workflow — planning, writing, research, and creative work.
+
+Pick skills by the job you’re hiring them for
+
+STEP 5  Add the skill to Claude
+
+Slide 5 — Skills → + → Create skill → paste or import the content.
+
+Installing a skill takes three clicks. Repeat for each skill you downloaded in Step 4.
+
+STEP 6  Give Claude context
+
+Slide 6 — upload your brand files, then run one simple prompt.
+
+Skills are the engine; context is the fuel. Upload these six short Markdown files so Claude writes in your voice, for your audience, toward your offers. Each can be a single page — done is better than perfect.
+
+The 6 context files — what to put in each
+
+The one prompt that runs it all
+
+PROMPT LIBRARY  More prompts to run with the same setup
+
+STEP 7  What you get
+
+Slide 7 — the payoff: a repeatable content engine.
+
+Once Skills + context + a prompt are in place, every run produces:
+
+KEEP IT SHARP  Troubleshooting
+
+THE ROUTINE  Your repeatable weekly workflow
+
+Here’s how the engine runs once it’s built. Total hands-on time: roughly one hour a week.
+
+DO IT NOW  Quick-start checklist
+
+Open claude.ai/customize
+
+Click Skills to open your skill workspace
+
+Click + → Browse skills to see what’s available
+
+Visit github.com/coreyhaines31/marketingskills and download 3–5 skills
+
+Add each skill: + → Create skill → paste the content
+
+Write your 6 context files and upload them
+
+Run the master prompt and review the batch
+
+Schedule, publish, and repeat the weekly routine
