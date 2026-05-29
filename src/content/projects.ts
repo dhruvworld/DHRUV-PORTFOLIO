@@ -67,7 +67,6 @@ export const highlightProjects: HighlightProject[] = [
     href: "/",
     liveUrl: "https://dhruvworld.netlify.app",
     githubRepo: "DHRUV-PORTFOLIO",
-    caseStudySlug: "digital-identity-architecture",
     featuredOnHome: true,
   },
   {
