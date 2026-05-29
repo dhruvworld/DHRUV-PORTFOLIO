@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
 import { PageIntro } from "@/components/brand/page-intro";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
-import { blogPosts } from "@/content/blog-posts";
+import { blogPosts, getPostPlainText } from "@/content/blog-posts";
 import { formatReadingTime, getReadingTimeMinutes } from "@/lib/reading-time";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -29,7 +29,7 @@ export default function BlogPage() {
       <section className="mt-12 space-y-7">
         {blogPosts.map((post) => {
           const postDate = new Date(post.publishedAt);
-          const reading = formatReadingTime(getReadingTimeMinutes(post.content.join(" ")));
+          const reading = formatReadingTime(getReadingTimeMinutes(getPostPlainText(post)));
           const metaLabel = postDate > today ? `Scheduled • ${reading}` : `${post.publishedAt} • ${reading}`;
           return (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="block border-b hairline pb-7">

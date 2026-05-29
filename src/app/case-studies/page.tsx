@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Case Studies",
   description:
-    "Case studies by Dhruv Solanki covering AI systems, digital identity architecture, and execution outcomes.",
+    "Case studies by Dhruv Solanki — deep execution breakdowns starting with Quantis Global, covering business strategy, brand systems, and trade operations.",
   path: "/case-studies",
 });
 

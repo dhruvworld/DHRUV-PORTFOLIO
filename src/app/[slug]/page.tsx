@@ -79,6 +79,22 @@ export default async function DynamicRoutePage({
   return (
     <SiteShell>
       <PageIntro eyebrow={eyebrow} title={content.title} description={content.description} />
+      {content.body?.length ? (
+        <div className="mt-10 space-y-10">
+          {content.body.map((section) => (
+            <section key={section.heading} className="max-w-3xl">
+              <h2 className="section-title text-2xl font-semibold tracking-tight text-[#132232]">
+                {section.heading}
+              </h2>
+              <div className="mt-4 space-y-4 text-base leading-relaxed text-[#4f4f4f]">
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 50)}>{paragraph}</p>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      ) : null}
       <section className="mt-10 rounded-2xl border hairline bg-white/60 p-7">
         <h2 className="section-title text-2xl font-semibold">Related paths</h2>
         <div className="mt-4 flex flex-wrap gap-3 text-sm">

@@ -15,6 +15,14 @@ export type BlogPost = {
   sections?: BlogSection[];
 };
 
+/** Full plain text of a post, whether it uses paragraphs or structured sections. */
+export function getPostPlainText(post: BlogPost): string {
+  if (post.sections?.length) {
+    return post.sections.flatMap((section) => [section.heading, ...section.paragraphs]).join(" ");
+  }
+  return post.content.join(" ");
+}
+
 export const blogPosts: BlogPost[] = [
   {
     slug: "how-i-built-personal-brand-website",

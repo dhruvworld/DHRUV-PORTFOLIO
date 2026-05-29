@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 import { EditorialArticle } from "@/components/brand/editorial-article";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { RelatedPosts } from "@/components/brand/related-posts";
-import { blogPosts } from "@/content/blog-posts";
+import { blogPosts, getPostPlainText } from "@/content/blog-posts";
 import { formatReadingTime, getReadingTimeMinutes } from "@/lib/reading-time";
 import { buildPageMetadata, getBlogPostingSchema, getBreadcrumbSchema } from "@/lib/seo";
 
@@ -50,10 +50,7 @@ export default async function BlogPostPage({
 
   const today = new Date();
   const postDate = new Date(post.publishedAt);
-  const fullText = post.sections
-    ? post.sections.flatMap((s) => [s.heading, ...s.paragraphs]).join(" ")
-    : post.content.join(" ");
-  const readingMinutes = getReadingTimeMinutes(fullText);
+  const readingMinutes = getReadingTimeMinutes(getPostPlainText(post));
   const metaLabel =
     postDate > today
       ? `Scheduled • ${formatReadingTime(readingMinutes)}`
