@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { EditorialArticle } from "@/components/brand/editorial-article";
+import { ResourceBody } from "@/components/brand/resource-body";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { resources } from "@/content/resources";
 import { buildPageMetadata, getBreadcrumbSchema } from "@/lib/seo";
@@ -47,7 +48,7 @@ export default async function ResourceDetailPage({
         description={item.description}
         links={[{ href: "/resources", label: "Back to Resources" }]}
       >
-        {item.body?.map((paragraph) => <p key={paragraph.slice(0, 48)}>{paragraph}</p>)}
+        {item.body?.length ? <ResourceBody lines={item.body} /> : null}
         {item.prompt ? (
           <div className="mt-6">
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#2e5e4e]">
