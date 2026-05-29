@@ -160,5 +160,43 @@
     ],
     "downloadUrl": "https://dhruvworld.netlify.app/downloads/resources/claude-content-automation-guide.pdf",
     "downloadLabel": "Download PDF"
+  },
+  {
+    "slug": "automate-content-creation-with-claude",
+    "title": "Automate Content Creation with Claude",
+    "description": "Learn how to turn Claude into a repeatable content engine using Skills + your own brand context.",
+    "type": "guide",
+    "audience": "builder",
+    "body": [
+      "## Overview",
+      "This guide teaches you how to automate content creation by setting up a system that combines skills, context files, and prompts. You'll learn how to use Claude's Skills feature to run workflows, create custom content, and produce a full batch of on-brand content with minimal hands-on time.",
+      "## Why It Matters",
+      "Marketing professionals, businesses, and content creators are constantly looking for ways to streamline their content creation process. With the rise of AI tools like Claude, automating content creation has become a viable option. By following this guide, you'll be able to produce high-quality, on-brand content with minimal effort, saving you time and increasing your productivity.",
+      "## Key Features",
+      "- Turn Claude into a repeatable content engine",
+      "- Use Skills + context files for automated content creation",
+      "- Produce a full batch of on-brand content with minimal effort",
+      "## Use Cases",
+      "- Marketing professionals looking to streamline their content creation process",
+      "- Businesses seeking to increase efficiency and consistency in their content output",
+      "- Content creators wanting to automate their workflow without sacrificing quality",
+      "## Example",
+      "A marketer uses Claude to automate their weekly content creation process, producing high-quality on-brand content with minimal effort. They set up a system that combines skills, context files, and prompts, allowing them to run a master prompt and produce a full batch of content with minimal hands-on time.",
+      "## Pros",
+      "- Streamlines content creation process",
+      "- Increases efficiency and consistency",
+      "- Allows for high-quality, on-brand content without sacrificing effort",
+      "## Cons",
+      "- Requires some initial setup and customization",
+      "- Limited flexibility in terms of skill selection and context file uploads",
+      "## Pricing",
+      "Check the official Claude website for pricing information.",
+      "## Best For",
+      "Marketing professionals, businesses, and content creators looking to automate their content creation process.",
+      "## Final Verdict",
+      "This guide is ideal for those seeking to streamline their content creation process using Claude's automation features. With the right setup and understanding of the system, users can produce high-quality on-brand content with minimal effort. By following this guide, you'll be able to unlock the full potential of Claude and take your content creation to the next level."
+    ],
+    "downloadUrl": "https://dhruvworld.netlify.app/downloads/resources/automate-content-creation-with-claude.docx",
+    "downloadLabel": "Download Word document"
   }
 ]
