@@ -1,0 +1,57 @@
+---
+description: Update README with detailed project docs whenever committing or pushing to git
+alwaysApply: true
+---
+
+# Git Push → README Documentation
+
+Whenever the user asks to **commit**, **push**, **add commit push**, or similar git publish actions:
+
+1. **Update `README.md` in the same session** before the commit (or include it in the commit).
+2. README must help **you and another developer** understand the project without opening the codebase.
+
+## Required README sections
+
+Keep these sections current (add/remove only if the project truly changed):
+
+| Section | What to include |
+|---------|-----------------|
+| **Project overview** | What it is, who it's for, live URL, repo URL |
+| **Identity / brand** | Names, domains, canonical URLs (if applicable) |
+| **Tech stack** | Framework, language, styling, hosting, key packages |
+| **Features (current)** | Bullet list of what actually works today — not planned |
+| **Routes / pages** | Main URLs and what each page does |
+| **Content & data** | Where copy lives (`src/content/*`), how to edit projects/blog/resources |
+| **Assets** | Images, PDFs, media paths under `public/` |
+| **Environment** | Required env vars from `.env.example` |
+| **Local development** | Install, dev, build, verify commands |
+| **Deployment** | Host (e.g. Netlify), branch, deploy notes |
+| **Project structure** | Short tree of important folders |
+| **Recent changes** | Dated bullets for what changed in **this** commit (changelog-style) |
+| **Known gaps / TODO** | Honest list of placeholders or missing config |
+
+## Writing rules
+
+- Use **plain language** and **complete sentences**.
+- Prefer **facts from the repo** over generic boilerplate.
+- After each git push, **Recent changes** gets new dated entries; trim entries older than ~10 releases if the section grows too long.
+- Do **not** commit secrets (`.env`, API keys).
+- Do **not** skip README updates because "changes were small" — even small commits get a one-line Recent changes entry.
+
+## Commit workflow
+
+```text
+1. git status / git diff — understand what changed
+2. Update README.md (especially Recent changes)
+3. git add README.md + code changes
+4. git commit → git push (only if user asked to push)
+```
+
+## Example Recent changes entry
+
+```markdown
+### 2026-05-29
+- Added site favicon (`src/app/icon.tsx`), fixed blog reading time for section-based posts
+- Enriched 9 SEO cluster pages with real body content
+- Removed unused testimonials, experience, and dead components
+```
