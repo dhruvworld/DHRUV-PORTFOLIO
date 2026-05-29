@@ -60,7 +60,15 @@ export default async function CaseStudyDetailPage({
         {study.content.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
-        <p className="rounded-xl border hairline bg-[#f8f7f4] p-4 text-sm text-[#444]">
+        {study.sections?.map((section) => (
+          <div key={section.heading} className="mt-10 space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-[#132232]">{section.heading}</h2>
+            {section.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 60)}>{paragraph}</p>
+            ))}
+          </div>
+        ))}
+        <p className="mt-10 rounded-xl border hairline bg-[#f8f7f4] p-4 text-sm text-[#444]">
           <span className="font-medium text-[#132232]">Outcome: </span>
           {study.outcome}
         </p>
