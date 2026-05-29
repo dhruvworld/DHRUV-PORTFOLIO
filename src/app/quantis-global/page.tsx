@@ -128,6 +128,28 @@ export default function QuantisGlobalPage() {
         </div>
       </section>
 
+      <section className="mt-10 rounded-[1.5rem] border hairline bg-[#f7f6f3] p-8 md:p-10">
+        <p className="text-xs uppercase tracking-[0.16em] text-[#8f6a34]">Founder story</p>
+        <h2 className="mt-2 text-3xl font-semibold tracking-tight">{q.originStory.title}</h2>
+        <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-[#4f4f4f]">
+          {q.originStory.paragraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-3xl font-semibold tracking-tight">{q.nameMeaning.title}</h2>
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-[#575757]">{q.nameMeaning.intro}</p>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {q.nameMeaning.points.map((point) => (
+            <article key={point.slice(0, 30)} className="rounded-xl border hairline bg-white/65 p-5">
+              <p className="text-sm leading-relaxed text-[#575757]">{point}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="mt-10 border-y hairline py-10">
         <h2 className="text-3xl font-semibold tracking-tight">Leadership Team</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
