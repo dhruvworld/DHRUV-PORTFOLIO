@@ -117,5 +117,48 @@
       "41 Master AI Prompts for Business is a valuable resource for businesses looking to harness the power of AI in their marketing efforts. With the right prompts, businesses can save time, improve quality, and automate repetitive tasks.",
       "**PROMPT:** ``` 41 Master AI Prompts for Business Curated by @_dhruvworld Note: These prompts can be used in ChatGPT, Gemini, Claude, or any other AI tool you’re using. Marketing & Content 1. Brand Voice Guide You are a brand strategist with 15 years of experience building voice guidelines for consumer brands. I will describe my business, my audience, and share 2-3 examples of content I like. 2. Monthly Content Calendar You are a social media strategist who creates content plans for product and service brands. Create a 30-day content calendar for [platform] with one post per day. Each post should have: a content pillar (educate / entertain / sell / build trust), a hook or opening line, a brief description of the post idea, and a suggested format (carousel, reel, static image, story). Mix the content pillars so no pillar repeats more than 3 days in a row. Avoid generic filler content. Every post should have a reason to exist. 3. Content Repurposing You are a content strategist who specializes in making one piece of content work across multiple platforms without it feeling copy-pasted. Take the content I give you and repurpose it into 6 different formats: a LinkedIn post, an Instagram caption, a short-form video script (under 60 seconds), an email newsletter intro, a Twitter/X thread opener, and a blog post introduction. Each version should feel native to its platform in tone and structure. Do not just shorten the original. Rewrite it for each context. 4. Email Campaign Sequence You are a direct response copywriter who writes email sequences for small businesses and e-commerce brands. Write a 5-email welcome sequence for new subscribers. The sequence should follow this arc: email 1 is a warm welcome and brand story, email 2 delivers value with no selling, email 3 introduces the product or service with a soft pitch, email 4 handles the top 3 objections people have before buying, and email 5 is a clear call to action with urgency. Each email should be under 250 words and written in a conversational tone. No subject line clickbait. 5. Ad Copy Variations You are a performance copywriter who writes ad copy for Meta and Google campaigns. Write 5 variations of ad copy for the product or service I describe. Each variation should lead with a different angle: one leads with the problem, one leads with the outcome, one leads with social proof, one leads with curiosity, and one leads with a direct offer. For each variation write: a headline (under 8 words), primary text (under 125 characters), and a call to action. Flag which audience or funnel stage each variation is best suited for. 6. Instagram Carousel Script You are a social media content writer who creates educational carousel posts that generate saves and shares. Write a 10-slide carousel on the topic I give you. Slide 1 is the hook and must make someone stop scrolling. Slides 2-8 deliver the value in short, punchy points. Slide 9 is a summary or key takeaway. Slide 10 is the call to action. Each slide should have no more than 30 words. Use plain language. Avoid jargon. The goal is for someone to save this post and come back to it. 7. YouTube or Podcast Script You are a scriptwriter who writes long-form video and audio content for entrepreneurs and brand builders. Write a full script for a [YouTube video / podcast episode] on the topic I give you. Structure it as: a hook that opens a loop in the first 30 seconds, a credibility moment that establishes why the viewer should trust you on this topic, the main content broken into 3-5 clear sections, a real example or story inside each section, and a closing that tells the viewer exactly what to do next. Write in a spoken, natural tone. No bullet points. Write it the way a person actually talks. 8. SEO Blog Posts You are an SEO content writer who writes articles that rank and are actually worth reading. Write a [word count] blog post on the topic below. ```"
     ]
+  },
+  {
+    "slug": "claude-content-automation-guide",
+    "title": "Claude Content Automation Guide",
+    "description": "Automate content creation with Claude using Skills and context files.",
+    "type": "guide",
+    "audience": "builder",
+    "body": [
+      "## Overview",
+      "This guide explains how to turn Claude into a repeatable content engine using Skills and context files. It outlines a 7-step process to set up the system and create a workflow that produces on-brand content.",
+      "## Why It Matters",
+      "Content creators, marketers, and business owners can benefit from automating their content creation workflow. By using Claude, users can save time and effort in content creation, produce consistent and high-quality content, and maintain a consistent brand voice.",
+      "## Key Features",
+      "- Automate content creation with Claude",
+      "- Use Skills to teach Claude what to do",
+      "- Context files teach Claude how to do it in your voice",
+      "- Repeatable content engine with minimal hands-on time",
+      "- Troubleshooting and routine maintenance",
+      "## Use Cases",
+      "- Content creators who want to automate their workflow",
+      "- Marketers who need to produce large amounts of content",
+      "- Business owners who want to maintain a consistent brand voice",
+      "- Anyone looking to reduce their content creation time and effort",
+      "## Example",
+      "To automate your content creation, start by opening Claude and accessing the Customize page. Then, click Skills to open the personal skill workspace and browse the available skills. Download the ones that match your workflow and add them to Claude. Give Claude context with your brand files and run a single prompt to produce a batch of on-brand content.",
+      "## Pros",
+      "- Saves time and effort in content creation",
+      "- Produces consistent and high-quality content",
+      "- Easy to set up and maintain",
+      "- Can be used by anyone with a Claude account",
+      "## Cons",
+      "- Requires some technical knowledge to set up",
+      "- May require additional skills to be developed",
+      "- Can be overwhelming for those new to Claude",
+      "## Pricing",
+      "Check the official Claude website for pricing information.",
+      "## Best For",
+      "This guide is best for content creators, marketers, and business owners who want to automate their content creation workflow and produce high-quality content quickly and efficiently.",
+      "## Final Verdict",
+      "This guide provides a clear and step-by-step process for automating content creation with Claude. While it requires some technical knowledge to set up, the payoff is well worth the effort. With this guide, users can save time and effort in content creation and produce consistent and high-quality content."
+    ],
+    "downloadUrl": "https://dhruvworld.netlify.app/downloads/resources/claude-content-automation-guide.docx",
+    "downloadLabel": "Download Word document"
   }
 ]

@@ -10,6 +10,9 @@ export type ResourceItem = {
   body?: string[];
   /** Copy-paste prompt for AI image tools */
   prompt?: string;
+  /** Full file or external download link */
+  downloadUrl?: string;
+  downloadLabel?: string;
 };
 
 const coreResources: ResourceItem[] = [
