@@ -1,3 +1,5 @@
+import published from "./resources-published.json";
+
 export type ResourceItem = {
   slug: string;
   title: string;
@@ -10,7 +12,7 @@ export type ResourceItem = {
   prompt?: string;
 };
 
-export const resources: ResourceItem[] = [
+const coreResources: ResourceItem[] = [
   {
     slug: "clean-mirror-photo-prompt",
     title: "Clean Mirror Photo Prompt",
@@ -25,4 +27,9 @@ export const resources: ResourceItem[] = [
     prompt:
       "Remove all dirt, smudges, fingerprints, dust, water stains, and haze from the mirror surface while keeping the reflection, person, pose, lighting, background, angle, facial features, outfit, and composition exactly the same. Make the mirror look perfectly clean and crystal clear with realistic reflections and natural lighting. Do not alter skin tone, body shape, hairstyle, accessories, or any objects in the scene. Only clean and restore the mirror quality while preserving the original photo's realism and details.",
   },
+];
+
+export const resources: ResourceItem[] = [
+  ...coreResources,
+  ...(published as ResourceItem[]),
 ];
