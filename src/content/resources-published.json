@@ -74,5 +74,48 @@
       "The DhruvWorld Content System is a valuable resource for anyone looking to build a consistent content creation habit. By implementing these 15 simple systems, users can increase their online presence, visibility, and trust, while reducing their content creation time and effort. If you're looking to take your content creation to the next level, this system is definitely worth checking out."
     ],
     "prompt": "Create a comprehensive guide to building a content system that helps creators, founders, and students create content consistently without burning out. Include 15 simple systems and provide examples of how to implement them."
+  },
+  {
+    "slug": "41-master-ai-prompts-for-business",
+    "title": "41 Master AI Prompts for Business",
+    "description": "**41 Master AI Prompts for Business**",
+    "type": "guide",
+    "audience": "founder",
+    "body": [
+      "**DESCRIPTION:** A curated list of AI prompts for business, covering marketing, content, and more.",
+      "## Overview",
+      "41 Master AI Prompts for Business is a collection of AI prompts curated by Dhruv World, designed to help business owners and marketers create high-quality content, ads, and more using AI tools like ChatGPT, Gemini, and Claude.",
+      "## Why It Matters",
+      "These prompts can save businesses time and effort in creating content, while also improving the quality and consistency of their marketing materials. With the right prompts, businesses can leverage AI to automate repetitive tasks and focus on high-level strategy and creativity.",
+      "## Key Features",
+      "- 41 AI prompts covering marketing, content, and more",
+      "- Designed for use with AI tools like ChatGPT, Gemini, and Claude",
+      "- Saves time and effort in creating content and marketing materials",
+      "- Improves quality and consistency of marketing materials",
+      "## Use Cases",
+      "- Automate content creation for social media and blogs",
+      "- Generate ad copy and landing page content",
+      "- Create email campaigns and sequences",
+      "- Develop SEO-friendly blog posts",
+      "- Repurpose content across multiple platforms",
+      "## Example",
+      "For prompt #2, Monthly Content Calendar, the AI tool would generate a 30-day content calendar with one post per day, each with a content pillar, hook, brief description, and suggested format.",
+      "## Pros",
+      "- Saves time and effort in content creation",
+      "- Improves quality and consistency of marketing materials",
+      "- Allows for automation of repetitive tasks",
+      "- Can be used with multiple AI tools",
+      "## Cons",
+      "- May require some setup and configuration",
+      "- May not be suitable for all types of businesses or industries",
+      "- Can be overwhelming to choose the right prompts",
+      "## Pricing",
+      "Check the official pricing for the AI tools you're using.",
+      "## Best For",
+      "Business owners and marketers who want to leverage AI to automate content creation and improve the quality and consistency of their marketing materials.",
+      "## Final Verdict",
+      "41 Master AI Prompts for Business is a valuable resource for businesses looking to harness the power of AI in their marketing efforts. With the right prompts, businesses can save time, improve quality, and automate repetitive tasks.",
+      "**PROMPT:** ``` 41 Master AI Prompts for Business Curated by @_dhruvworld Note: These prompts can be used in ChatGPT, Gemini, Claude, or any other AI tool you’re using. Marketing & Content 1. Brand Voice Guide You are a brand strategist with 15 years of experience building voice guidelines for consumer brands. I will describe my business, my audience, and share 2-3 examples of content I like. 2. Monthly Content Calendar You are a social media strategist who creates content plans for product and service brands. Create a 30-day content calendar for [platform] with one post per day. Each post should have: a content pillar (educate / entertain / sell / build trust), a hook or opening line, a brief description of the post idea, and a suggested format (carousel, reel, static image, story). Mix the content pillars so no pillar repeats more than 3 days in a row. Avoid generic filler content. Every post should have a reason to exist. 3. Content Repurposing You are a content strategist who specializes in making one piece of content work across multiple platforms without it feeling copy-pasted. Take the content I give you and repurpose it into 6 different formats: a LinkedIn post, an Instagram caption, a short-form video script (under 60 seconds), an email newsletter intro, a Twitter/X thread opener, and a blog post introduction. Each version should feel native to its platform in tone and structure. Do not just shorten the original. Rewrite it for each context. 4. Email Campaign Sequence You are a direct response copywriter who writes email sequences for small businesses and e-commerce brands. Write a 5-email welcome sequence for new subscribers. The sequence should follow this arc: email 1 is a warm welcome and brand story, email 2 delivers value with no selling, email 3 introduces the product or service with a soft pitch, email 4 handles the top 3 objections people have before buying, and email 5 is a clear call to action with urgency. Each email should be under 250 words and written in a conversational tone. No subject line clickbait. 5. Ad Copy Variations You are a performance copywriter who writes ad copy for Meta and Google campaigns. Write 5 variations of ad copy for the product or service I describe. Each variation should lead with a different angle: one leads with the problem, one leads with the outcome, one leads with social proof, one leads with curiosity, and one leads with a direct offer. For each variation write: a headline (under 8 words), primary text (under 125 characters), and a call to action. Flag which audience or funnel stage each variation is best suited for. 6. Instagram Carousel Script You are a social media content writer who creates educational carousel posts that generate saves and shares. Write a 10-slide carousel on the topic I give you. Slide 1 is the hook and must make someone stop scrolling. Slides 2-8 deliver the value in short, punchy points. Slide 9 is a summary or key takeaway. Slide 10 is the call to action. Each slide should have no more than 30 words. Use plain language. Avoid jargon. The goal is for someone to save this post and come back to it. 7. YouTube or Podcast Script You are a scriptwriter who writes long-form video and audio content for entrepreneurs and brand builders. Write a full script for a [YouTube video / podcast episode] on the topic I give you. Structure it as: a hook that opens a loop in the first 30 seconds, a credibility moment that establishes why the viewer should trust you on this topic, the main content broken into 3-5 clear sections, a real example or story inside each section, and a closing that tells the viewer exactly what to do next. Write in a spoken, natural tone. No bullet points. Write it the way a person actually talks. 8. SEO Blog Posts You are an SEO content writer who writes articles that rank and are actually worth reading. Write a [word count] blog post on the topic below. ```"
+    ]
   }
 ]
