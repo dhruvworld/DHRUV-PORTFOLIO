@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
 import { EditorialArticle } from "@/components/brand/editorial-article";
+import { CopyPromptBlock } from "@/components/brand/copy-prompt-block";
 import { ResourceBody } from "@/components/brand/resource-body";
 import { ConsultationCTA } from "@/components/brand/consultation-cta";
 import { resources } from "@/content/resources";
@@ -62,16 +63,7 @@ export default async function ResourceDetailPage({
           </div>
         ) : null}
         {item.body?.length ? <ResourceBody lines={item.body} /> : null}
-        {item.prompt ? (
-          <div className="mt-6">
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#2e5e4e]">
-              Copy this prompt
-            </p>
-            <pre className="mt-3 overflow-x-auto rounded-xl border hairline bg-[#f7f6f3] p-5 text-sm leading-relaxed whitespace-pre-wrap text-[#333]">
-              {item.prompt}
-            </pre>
-          </div>
-        ) : null}
+        {item.prompt ? <CopyPromptBlock prompt={item.prompt} /> : null}
         {!item.body?.length && !item.prompt ? (
           <p>
             This resource page is ready for Cloudinary assets, downloadable files, and embedded previews

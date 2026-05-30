@@ -166,6 +166,9 @@ docs/               # Launch checklist, env notes
 
 ## Recent changes
 
+### 2026-05-30
+- Resource prompt pages: **Copy prompt** button (clipboard) on all `/resources/*` pages that include a `prompt` field
+
 ### 2026-05-29 (later)
 - Added resource: **Premanand Maharaj Satsang Collage Prompt** (`/resources/premanand-maharaj-satsang-collage-prompt`) — 3-frame vertical devotional collage with reference-image identity
 
