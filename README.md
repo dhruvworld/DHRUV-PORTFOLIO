@@ -57,7 +57,7 @@ Canonical env URL: `NEXT_PUBLIC_SITE_URL` (currently Netlify). Long-term target 
 | `/projects` | Full project list (Quantis, Dhruv World, HG Smelters, GitHub experiments, etc.) |
 | `/case-studies` | Deep breakdowns (currently: Quantis Global Brand Foundation) |
 | `/blog` | AI Journal — 3 long-form posts |
-| `/resources` | Copy-paste assets (e.g. clean mirror photo prompt) |
+| `/resources` | Copy-paste AI prompts (mirror clean, Premanand Maharaj satsang collage, etc.) |
 | `/quantis-global` | Quantis services, founder story, leadership, contact |
 | `/contact` | WhatsApp, LinkedIn, email channels + form |
 | `/founder` | Short manifesto |
@@ -166,6 +166,9 @@ docs/               # Launch checklist, env notes
 
 ## Recent changes
 
+### 2026-05-29 (later)
+- Added resource: **Premanand Maharaj Satsang Collage Prompt** (`/resources/premanand-maharaj-satsang-collage-prompt`) — 3-frame vertical devotional collage with reference-image identity
+
 ### 2026-05-29
 - Added Cursor rule: **update README on every git commit/push** (`.cursor/rules/git-readme-on-push.mdc`)
 - Rewrote this README with full project documentation
@@ -174,7 +177,7 @@ docs/               # Launch checklist, env notes
 - Removed unused `testimonials.ts`, `experience.ts`, dead components (`CurrentFocus`, `QuantisPreview`, etc.)
 - Quantis founder story + “What Quantis Means” on `/quantis-global` and case study
 - Portfolio strategy + personal brand build articles expanded in journal
-- Resources: only live mirror-clean prompt (removed empty placeholder resources)
+- Resources: AI prompts (mirror clean, Premanand Maharaj satsang collage; removed empty placeholder resources)
 
 ### 2026-05-28
 - Portrait, lean homepage, Quantis copy from quantisglobal.co
